@@ -1,28 +1,49 @@
 `timescale 1ns / 1ps
 module top(
-output led0,
-output led1,
-output led2,
-output led3
+input clk,
+output reg led
 );
 
+reg [15:0] init_x = 16'b0000000000010001;
+reg [15:0] init_y = 16'b0000000000000011;
+reg init_zx = 1'b1;
+reg init_nx = 1'b1;
+reg init_zy = 1'b1;
+reg init_ny = 1'b1;
+reg init_f = 1'b1;
+reg init_no = 1'b1;
 
-wire [15:0] soutDEBUG;
+reg output_test = 16'b0000000000000001;
+reg zr_test = 1'b0;
 
-add16 add16_inst_a
-(
-    .ain(16'b0000000000000001),
-    .bin(16'b0000000000000101),
-    .sout(soutDEBUG)
+wire [15:0] init_out;
+wire init_zr;
+
+alu16 alu16_init (
+    .x(init_x),
+    .y(init_y),
+    .clk(clk),
+    .zx(init_zx),
+    .nx(init_nx),
+    .zy(init_zy),
+    .ny(init_ny),
+    .f(init_f),
+    .no(init_no),
+    .out(init_out),
+    .zr(init_zr)
 );
 
-assign led0 = soutDEBUG[0];
-assign led1 = soutDEBUG[1];
-assign led2 = soutDEBUG[2];
-assign led3 = soutDEBUG[3];
-
-
-
+always@(posedge clk)
+begin
+    if (output_test == init_out && zr_test == init_zr)
+    begin
+        led = 1'b1;
+    end
+    if (output_test != init_out || zr_test != init_zr)
+    begin
+        led = 1'b0;
+    end
+end
     
 
 endmodule

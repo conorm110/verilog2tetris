@@ -88,6 +88,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/add16.v
+  C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/alu16.v
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/full_adder.v
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/halfadder.v
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/top.v
