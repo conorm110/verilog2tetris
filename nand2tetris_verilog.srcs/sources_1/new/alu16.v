@@ -33,7 +33,8 @@ input ny,
 input f,
 input no,
 output reg [15:0] out,
-output reg zr
+output reg zr,
+output reg ng
     );
 
 reg [15:0] x_reg;
