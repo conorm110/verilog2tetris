@@ -8,11 +8,14 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module unisims_ver.LUT4
 Compiling module unisims_ver.LUT5
-Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT4
 Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
 Compiling module xil_defaultlib.alu16
 Compiling module unisims_ver.BUFG
 Compiling module unisims_ver.IBUF
