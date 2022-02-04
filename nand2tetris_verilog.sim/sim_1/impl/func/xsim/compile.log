@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.sim/sim_1/impl/func/xsim/top_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu16
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-311] analyzing module glbl
