@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.runs/impl_1'
+HD_PWD='C:/Users/akimr/Downloads/verilog2tetris-main/nand2tetris_verilog.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
