@@ -50,7 +50,7 @@ add16 add16_inst_a
     .sout(add16_out_temp)
 );
 
-always@(posedge clk)
+always@(x || y || clk || zx || nx || zy || ny || f | no)
 begin
     if (zx == 1'b1)
     begin
