@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Mon Feb  7 20:58:54 2022
+| Date         : Wed Feb  9 00:12:57 2022
 | Host         : DESKTOP-Q81VLV3 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,33 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 4
-+-----------+------------------+-----------------------------+------------+
-| Rule      | Severity         | Description                 | Violations |
-+-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 4          |
-+-----------+------------------+-----------------------------+------------+
+             Violations found: 0
++------+----------+-------------+------------+
+| Rule | Severity | Description | Violations |
++------+----------+-------------+------------+
++------+----------+-------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-17#1 Critical Warning
-Non-clocked sequential cell  
-The clock pin init_x_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#2 Critical Warning
-Non-clocked sequential cell  
-The clock pin init_x_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#3 Critical Warning
-Non-clocked sequential cell  
-The clock pin init_x_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#4 Critical Warning
-Non-clocked sequential cell  
-The clock pin init_x_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
 
