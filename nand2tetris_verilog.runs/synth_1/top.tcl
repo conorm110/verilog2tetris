@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s25csga324-1
 
@@ -89,6 +90,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/alu16.v
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/full_adder.v
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/halfadder.v
+  C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/mux.v
+  C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/mux16.v
   C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/sources_1/new/top.v
 }
 OPTRACE "Adding files" END { }

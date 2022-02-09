@@ -1,3 +1,9 @@
+`timescale 1ns / 1ps
+
+/**
+ * Computes the sum of two bits.
+ */
+
 module halfadder 
   (
    i_bit1,
