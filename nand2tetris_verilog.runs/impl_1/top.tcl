@@ -137,7 +137,6 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.runs/synth_1/top.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/constrs_1/new/master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

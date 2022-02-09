@@ -103,9 +103,6 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/constrs_1/new/master.xdc
-set_property used_in_implementation false [get_files C:/Users/akimr/Documents/GitHub/verilog2tetris/nand2tetris_verilog.srcs/constrs_1/new/master.xdc]
-
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental C:/Users/akimr/Documents/nand2tetris_verilog/nand2tetris_verilog.srcs/utils_1/imports/synth_1/top.dcp
