@@ -75,7 +75,7 @@ assign new_y[15] = ((y[15] & (~zy)) ^ (ny));
 
 wire [15:0] addout;
 wire [15:0] andout;
-add16 add16_alu_a ( .ain(new_x), .bin(new_y), .sout(addout));
+add16 add16_alu_a ( .a(new_x), .b(new_y), .out(addout));
 assign andout = new_x & new_y;
 
 wire [15:0] preout;
