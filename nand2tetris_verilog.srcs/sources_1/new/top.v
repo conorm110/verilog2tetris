@@ -1,8 +1,11 @@
 `timescale 1ns / 1ps
 module top(
+input inbit,
+input loadbit,
 output led_outgood,
 output led_zrgood,
-output led_nggood
+output led_nggood,
+output outbittest
 );
 
 
@@ -32,5 +35,12 @@ wire ng_cmp  = 1'b0;
 assign led_outgood = (out & out_cmp) | (~out & ~out_cmp);
 assign led_zrgood = (zr & zr_cmp) | (~zr & ~zr_cmp);
 assign led_nggood = (ng & ng_cmp) | (~ng & ~ng_cmp);
+
+reg outbitreg;
+assign outbittest = outbitreg;
+always@(posedge loadbit)
+begin
+    outbitreg = inbit;
+end
 
 endmodule
