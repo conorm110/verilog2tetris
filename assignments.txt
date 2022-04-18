@@ -1,0 +1,3 @@
+To, Assignment Name, Value
+sum_out, Location, PIN_87
+carry_out, Location, PIN_86
