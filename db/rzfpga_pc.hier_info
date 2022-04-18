@@ -1,3 +1,788 @@
 |rzfpga_pc
+led1 <= ALUn2t:ALU_instance_main.out
+led2 <= ALUn2t:ALU_instance_main.out
+led3 <= ALUn2t:ALU_instance_main.out
+led4 <= ALUn2t:ALU_instance_main.out
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main
+x[0] => new_x.IN0
+x[1] => new_x.IN0
+x[2] => new_x.IN0
+x[3] => new_x.IN0
+x[4] => new_x.IN0
+x[5] => new_x.IN0
+x[6] => new_x.IN0
+x[7] => new_x.IN0
+x[8] => new_x.IN0
+x[9] => new_x.IN0
+x[10] => new_x.IN0
+x[11] => new_x.IN0
+x[12] => new_x.IN0
+x[13] => new_x.IN0
+x[14] => new_x.IN0
+x[15] => new_x.IN0
+y[0] => new_y.IN0
+y[1] => new_y.IN0
+y[2] => new_y.IN0
+y[3] => new_y.IN0
+y[4] => new_y.IN0
+y[5] => new_y.IN0
+y[6] => new_y.IN0
+y[7] => new_y.IN0
+y[8] => new_y.IN0
+y[9] => new_y.IN0
+y[10] => new_y.IN0
+y[11] => new_y.IN0
+y[12] => new_y.IN0
+y[13] => new_y.IN0
+y[14] => new_y.IN0
+y[15] => new_y.IN0
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+zx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+nx => new_x.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+zy => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+ny => new_y.IN1
+f => f.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+no => out.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out.DB_MAX_OUTPUT_PORT_TYPE
+zr <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+ng <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+a[4] => a[4].IN1
+a[5] => a[5].IN1
+a[6] => a[6].IN1
+a[7] => a[7].IN1
+a[8] => a[8].IN1
+a[9] => a[9].IN1
+a[10] => a[10].IN1
+a[11] => a[11].IN1
+a[12] => a[12].IN1
+a[13] => a[13].IN1
+a[14] => a[14].IN1
+a[15] => a[15].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+b[4] => b[4].IN1
+b[5] => b[5].IN1
+b[6] => b[6].IN1
+b[7] => b[7].IN1
+b[8] => b[8].IN1
+b[9] => b[9].IN1
+b[10] => b[10].IN1
+b[11] => b[11].IN1
+b[12] => b[12].IN1
+b[13] => b[13].IN1
+b[14] => b[14].IN1
+b[15] => b[15].IN1
+out[0] <= FullAdder:full_adder_inst_a.sum
+out[1] <= FullAdder:full_adder_inst_b.sum
+out[2] <= FullAdder:full_adder_inst_c.sum
+out[3] <= FullAdder:full_adder_inst_d.sum
+out[4] <= FullAdder:full_adder_inst_e.sum
+out[5] <= FullAdder:full_adder_inst_f.sum
+out[6] <= FullAdder:full_adder_inst_g.sum
+out[7] <= FullAdder:full_adder_inst_h.sum
+out[8] <= FullAdder:full_adder_inst_i.sum
+out[9] <= FullAdder:full_adder_inst_j.sum
+out[10] <= FullAdder:full_adder_inst_k.sum
+out[11] <= FullAdder:full_adder_inst_l.sum
+out[12] <= FullAdder:full_adder_inst_m.sum
+out[13] <= FullAdder:full_adder_inst_n.sum
+out[14] <= FullAdder:full_adder_inst_o.sum
+out[15] <= FullAdder:full_adder_inst_p.sum
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_b
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_b|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_b|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_c
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_c|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_c|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_d
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_d|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_d|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_e
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_e|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_e|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_f
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_f|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_f|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_g
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_g|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_g|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_h
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_h|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_h|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_i
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_i|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_i|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_j
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_j|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_j|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_k
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_k|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_k|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_l
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_l|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_l|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_m
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_m|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_m|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_n
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_n|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_n|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_o
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_o|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_o|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p
+c => c.IN1
+a => a.IN1
+b => b.IN1
+sum <= HalfAdder:half_adder_inst_b.sum
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p|HalfAdder:half_adder_inst_a
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p|HalfAdder:half_adder_inst_b
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+a[4] => a[4].IN1
+a[5] => a[5].IN1
+a[6] => a[6].IN1
+a[7] => a[7].IN1
+a[8] => a[8].IN1
+a[9] => a[9].IN1
+a[10] => a[10].IN1
+a[11] => a[11].IN1
+a[12] => a[12].IN1
+a[13] => a[13].IN1
+a[14] => a[14].IN1
+a[15] => a[15].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+b[4] => b[4].IN1
+b[5] => b[5].IN1
+b[6] => b[6].IN1
+b[7] => b[7].IN1
+b[8] => b[8].IN1
+b[9] => b[9].IN1
+b[10] => b[10].IN1
+b[11] => b[11].IN1
+b[12] => b[12].IN1
+b[13] => b[13].IN1
+b[14] => b[14].IN1
+b[15] => b[15].IN1
+sel => sel.IN16
+out[0] <= Mux:mux16_a.out
+out[1] <= Mux:mux16_b.out
+out[2] <= Mux:mux16_c.out
+out[3] <= Mux:mux16_d.out
+out[4] <= Mux:mux16_e.out
+out[5] <= Mux:mux16_f.out
+out[6] <= Mux:mux16_g.out
+out[7] <= Mux:mux16_h.out
+out[8] <= Mux:mux16_i.out
+out[9] <= Mux:mux16_j.out
+out[10] <= Mux:mux16_k.out
+out[11] <= Mux:mux16_l.out
+out[12] <= Mux:mux16_m.out
+out[13] <= Mux:mux16_n.out
+out[14] <= Mux:mux16_o.out
+out[15] <= Mux:mux16_p.out
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_a
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_b
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_c
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_d
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_e
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_f
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_g
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_h
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_i
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_j
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_k
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_l
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_m
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_n
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_o
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|rzfpga_pc|ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_p
+a => aansel.IN0
+b => basel.IN0
+sel => basel.IN1
+sel => aansel.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
