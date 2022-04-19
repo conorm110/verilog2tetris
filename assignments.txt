@@ -1,3 +1,11 @@
 To, Assignment Name, Value
-sum_out, Location, PIN_87
-carry_out, Location, PIN_86
+clk, Location, PIN_23
+led1, Location, PIN_87
+led2, Location, PIN_86
+led3, Location, PIN_85
+led4, Location, PIN_84
+hsyncout, Location, PIN_101
+vsyncout, Location, PIN_103
+pix0, Location, PIN_104
+pix1, Location, PIN_105
+pix2, Location, PIN_106
