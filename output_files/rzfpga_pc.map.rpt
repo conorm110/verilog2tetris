@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Mon Apr 18 19:21:53 2022
+Tue Apr 19 15:42:35 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,8 +13,8 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "hvsync_generator:hvsync"
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
  10. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
  11. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
  12. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
@@ -47,15 +47,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 18 19:21:53 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 19 15:42:35 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 88                                          ;
-;     Total combinational functions  ; 88                                          ;
-;     Dedicated logic registers      ; 59                                          ;
-; Total registers                    ; 59                                          ;
+; Total logic elements               ; 91                                          ;
+;     Total combinational functions  ; 91                                          ;
+;     Dedicated logic registers      ; 57                                          ;
+; Total registers                    ; 57                                          ;
 ; Total pins                         ; 10                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -189,20 +189,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 88          ;
+; Estimated Total logic elements              ; 91          ;
 ;                                             ;             ;
-; Total combinational functions               ; 88          ;
+; Total combinational functions               ; 91          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 22          ;
-;     -- 3 input functions                    ; 2           ;
-;     -- <=2 input functions                  ; 64          ;
+;     -- 4 input functions                    ; 27          ;
+;     -- 3 input functions                    ; 3           ;
+;     -- <=2 input functions                  ; 61          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 39          ;
+;     -- normal mode                          ; 42          ;
 ;     -- arithmetic mode                      ; 49          ;
 ;                                             ;             ;
-; Total registers                             ; 59          ;
-;     -- Dedicated logic registers            ; 59          ;
+; Total registers                             ; 57          ;
+;     -- Dedicated logic registers            ; 57          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 10          ;
@@ -211,8 +211,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clk50~input ;
 ; Maximum fan-out                             ; 33          ;
-; Total fan-out                               ; 362         ;
-; Average fan-out                             ; 2.17        ;
+; Total fan-out                               ; 373         ;
+; Average fan-out                             ; 2.22        ;
 +---------------------------------------------+-------------+
 
 
@@ -221,11 +221,21 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name      ; Library Name ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
-; |rzfpga_pc                   ; 88 (3)              ; 59 (3)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
+; |rzfpga_pc                   ; 91 (4)              ; 57 (1)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
 ;    |clock_divider:wrapper|   ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|clock_divider:wrapper   ; clock_divider    ; work         ;
-;    |hvsync_generator:hvsync| ; 41 (41)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
+;    |hvsync_generator:hvsync| ; 43 (43)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; pixel[0,2]                            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -233,7 +243,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 59    ;
+; Total registers                              ; 57    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -241,17 +251,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hvsync_generator:hvsync"                                                                                           ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                                                  ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; CounterX[5..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; CounterX[9]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; CounterY       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -315,21 +314,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 59                          ;
+; cycloneiii_ff         ; 57                          ;
 ;     ENA               ; 10                          ;
-;     plain             ; 49                          ;
-; cycloneiii_lcell_comb ; 92                          ;
+;     plain             ; 47                          ;
+; cycloneiii_lcell_comb ; 95                          ;
 ;     arith             ; 49                          ;
 ;         2 data inputs ; 49                          ;
-;     normal            ; 43                          ;
+;     normal            ; 46                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 22                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 27                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.79                        ;
+; Average LUT depth     ; 2.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -348,7 +347,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Mon Apr 18 19:21:45 2022
+    Info: Processing started: Tue Apr 19 15:42:27 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -372,33 +371,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file hvsync_
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
     Info (12023): Found entity 1: clock_divider File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clock_divider.v Line: 1
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(64): truncated value with size 4 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 64
 Info (12128): Elaborating entity "ALUn2t" for hierarchy "ALUn2t:ALU_instance_main" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
 Info (12128): Elaborating entity "Add16" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/ALUn2t.v Line: 77
 Info (12128): Elaborating entity "FullAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Add16.v Line: 30
 Info (12128): Elaborating entity "HalfAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/FullAdder.v Line: 43
 Info (12128): Elaborating entity "Mux16" for hierarchy "ALUn2t:ALU_instance_main|Mux16:mux16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/ALUn2t.v Line: 81
 Info (12128): Elaborating entity "Mux" for hierarchy "ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux16.v Line: 20
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 52
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(18): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 18
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(27): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 27
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 58
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 54
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(19): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 19
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(28): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 28
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 60
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 2
     Warning (13410): Pin "led2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 3
     Warning (13410): Pin "led3" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 4
     Warning (13410): Pin "led4" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
+    Warning (13410): Pin "pix0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 8
+    Warning (13410): Pin "pix2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 88 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info (21061): Implemented 91 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4766 megabytes
-    Info: Processing ended: Mon Apr 18 19:21:53 2022
+    Info: Processing ended: Tue Apr 19 15:42:35 2022
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:16
 

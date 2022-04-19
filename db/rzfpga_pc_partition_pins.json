@@ -4,15 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "pix0",
-					"strict" : false
-				},
-				{
 					"name" : "pix1",
-					"strict" : false
-				},
-				{
-					"name" : "pix2",
 					"strict" : false
 				},
 				{

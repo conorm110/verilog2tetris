@@ -38,16 +38,18 @@ ALUn2t ALU_instance_main (
 
 wire inDisplayArea;
 wire [9:0] CounterX;
+wire [9:0] CounterY;
 reg [2:0] pixel;
 
 wire clk_25;
+
 
 hvsync_generator hvsync(
 .clk(clk_25),
 .vga_h_sync(hsyncout),
 .vga_v_sync(vsyncout),
 .CounterX(CounterX),
-//.CounterY(CounterY),
+.CounterY(CounterY),
 .inDisplayArea(inDisplayArea)
 );
 
@@ -61,7 +63,15 @@ clock_divider wrapper (
 always @(posedge clk_25)
 begin
 if (inDisplayArea)
-  pixel <= CounterX[9:6];
+  if (CounterX == 10'b0000000010 && CounterY == 10'b0000000010)
+  begin
+	pixel <= 3'b010;
+  end
+  else
+  begin
+	pixel <= 3'b000;
+  end
+  
 else // if it's not to display, go dark
   pixel <= 3'b000;
 end

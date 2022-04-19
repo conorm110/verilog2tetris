@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk50'
-Slack : -4.055
-TNS   : -70.319
+Slack : -4.403
+TNS   : -70.851
 
 Type  : Slow 1200mV 85C Model Setup 'clock_divider:wrapper|clk_25'
-Slack : -2.102
-TNS   : -39.708
+Slack : -2.155
+TNS   : -39.489
 
 Type  : Slow 1200mV 85C Model Hold 'clock_divider:wrapper|clk_25'
-Slack : 0.744
+Slack : 0.683
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk50'
-Slack : 0.759
+Slack : 0.760
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
@@ -24,18 +24,18 @@ TNS   : -52.071
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_divider:wrapper|clk_25'
 Slack : -1.487
-TNS   : -38.662
+TNS   : -35.688
 
 Type  : Slow 1200mV 0C Model Setup 'clk50'
-Slack : -3.746
-TNS   : -59.426
+Slack : -4.081
+TNS   : -59.932
 
 Type  : Slow 1200mV 0C Model Setup 'clock_divider:wrapper|clk_25'
-Slack : -1.816
-TNS   : -34.144
+Slack : -1.871
+TNS   : -34.366
 
 Type  : Slow 1200mV 0C Model Hold 'clock_divider:wrapper|clk_25'
-Slack : 0.659
+Slack : 0.617
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk50'
@@ -48,30 +48,30 @@ TNS   : -52.071
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_divider:wrapper|clk_25'
 Slack : -1.487
-TNS   : -39.146
+TNS   : -35.688
 
 Type  : Fast 1200mV 0C Model Setup 'clk50'
-Slack : -1.149
-TNS   : -12.885
+Slack : -1.331
+TNS   : -13.141
 
 Type  : Fast 1200mV 0C Model Setup 'clock_divider:wrapper|clk_25'
-Slack : -0.348
-TNS   : -3.216
+Slack : -0.359
+TNS   : -3.449
 
 Type  : Fast 1200mV 0C Model Hold 'clock_divider:wrapper|clk_25'
-Slack : 0.284
+Slack : 0.289
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk50'
-Slack : 0.303
+Slack : 0.302
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
 Slack : -3.000
-TNS   : -38.144
+TNS   : -38.112
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_divider:wrapper|clk_25'
 Slack : -1.000
-TNS   : -26.000
+TNS   : -24.000
 
 ------------------------------------------------------------
