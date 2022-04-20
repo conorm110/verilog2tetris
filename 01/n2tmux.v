@@ -10,7 +10,7 @@
  * OUT out;
  */
 
-module Mux(
+module n2tmux(
     input a,
     input b,
     input sel,

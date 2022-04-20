@@ -1,10 +1,51 @@
 module rzfpga_pc (
+	inout DQ0,
+	inout DQ1,
+	inout DQ2,
+	inout DQ3,
+	inout DQ4,
+	inout DQ5,
+	inout DQ6,
+	inout DQ7,
+	inout DQ8,
+	inout DQ9,
+	inout DQ10,
+	inout DQ11,
+	inout DQ12,
+	inout DQ13,
+	inout DQ14,
+	inout DQ15,
+	output SDA0,
+	output SDA1,
+	output SDA2,
+	output SDA3,
+	output SDA4,
+	output SDA5,
+	output SDA6,
+	output SDA7,
+	output SDA8,
+	output SDA9,
+	output SDA10,
+	output SDA11,
+	
+	output SDBS0,
+	output SDBS1,
+	output SDLDQM,
+	output SDUDQM,
+	output SDCKE,
+	output SDCLK,
+	output SDCS,
+	output SDRAS,
+	output SDCAS,
+	output SDWE,
+
 	output wire led1,
 	output wire led2,
 	output wire led3,
 	output wire led4,
 	
 	input clk50,
+	input ldk,
 	output pix0,
 	output pix1,
 	output pix2,
@@ -59,17 +100,26 @@ clock_divider wrapper (
   .clk_25(clk_25)
 );
 
+bram_ram_8 raminsta (
+	.in(16'b0000000000000100),
+	.address(3'b001),
+	.clk(clk_25),
+	.load(1'b0),
+	.out(testbus)
+);
+
+wire [15:0] testbus;
 
 always @(posedge clk_25)
 begin
 if (inDisplayArea)
   if (CounterX == 10'b0000000010 && CounterY == 10'b0000000010)
   begin
-	pixel <= 3'b010;
+	pixel <= testbus;
   end
   else
   begin
-	pixel <= 3'b000;
+	pixel <= testbus;
   end
   
 else // if it's not to display, go dark

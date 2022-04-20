@@ -51,29 +51,49 @@ set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_87 -to led1
+set_location_assignment PIN_86 -to led2
+set_location_assignment PIN_85 -to led3
+set_location_assignment PIN_84 -to led4
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE Mux16.v
-set_global_assignment -name VERILOG_FILE ALUn2t.v
-set_global_assignment -name VERILOG_FILE Mux.v
-set_global_assignment -name VERILOG_FILE Add16.v
-set_global_assignment -name SOURCE_FILE "../../../../Downloads/cyclone-21.1.0.842.qdz"
-set_global_assignment -name VERILOG_FILE rzfpga_pc.v
-set_global_assignment -name VERILOG_FILE HalfAdder.v
-set_global_assignment -name VERILOG_FILE FullAdder.v
-set_global_assignment -name VERILOG_FILE hvsync_generator.v
+set_location_assignment PIN_104 -to pix0
+set_location_assignment PIN_105 -to pix1
+set_location_assignment PIN_106 -to pix2
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
 set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
-set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS PROGRAMMING PIN"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name CYCLONEIII_CONFIGURATION_SCHEME "ACTIVE SERIAL"
-set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
-set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
 set_global_assignment -name STRATIXIII_UPDATE_MODE STANDARD
+set_location_assignment PIN_101 -to hsyncout
+set_location_assignment PIN_103 -to vsyncout
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_location_assignment PIN_23 -to clk50
+set_location_assignment PIN_88 -to ldk
+set_global_assignment -name VERILOG_FILE 01/n2tmux.v
+set_global_assignment -name VERILOG_FILE 01/n2tmux16.v
+set_global_assignment -name VERILOG_FILE VGA/hvsync_generator.v
+set_global_assignment -name VERILOG_FILE VGA/clock_divider.v
+set_global_assignment -name VERILOG_FILE 02/HalfAdder.v
+set_global_assignment -name VERILOG_FILE 02/FullAdder.v
+set_global_assignment -name VERILOG_FILE 02/Add16.v
+set_global_assignment -name VERILOG_FILE 02/ALUn2t.v
+set_global_assignment -name SOURCE_FILE "../../../../Downloads/cyclone-21.1.0.842.qdz"
+set_global_assignment -name VERILOG_FILE rzfpga_pc.v
+set_global_assignment -name VERILOG_FILE 01/n8WayMux16.v
+set_global_assignment -name VERILOG_FILE 01/dmux_8_way.v
+set_global_assignment -name VERILOG_FILE 01/dmux_4_way.v
+set_global_assignment -name VERILOG_FILE 01/dmux.v
+set_global_assignment -name VERILOG_FILE 03/BRAM/register.v
+set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_8.v
+set_location_assignment PIN_23 -to clk
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

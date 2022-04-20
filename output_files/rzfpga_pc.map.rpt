@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Tue Apr 19 15:42:35 2022
+Wed Apr 20 08:40:28 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -14,13 +14,32 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
- 11. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
- 12. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_h"
+ 12. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_g"
+ 13. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_f"
+ 14. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_e"
+ 15. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_d"
+ 16. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_c"
+ 17. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_b"
+ 18. Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_a"
+ 19. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g"
+ 20. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f"
+ 21. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e"
+ 22. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d"
+ 23. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c"
+ 24. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b"
+ 25. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a"
+ 26. Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta"
+ 27. Port Connectivity Checks: "bram_ram_8:raminsta"
+ 28. Port Connectivity Checks: "hvsync_generator:hvsync"
+ 29. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
+ 30. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
+ 31. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +66,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 19 15:42:35 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 20 08:40:28 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 91                                          ;
-;     Total combinational functions  ; 91                                          ;
-;     Dedicated logic registers      ; 57                                          ;
-; Total registers                    ; 57                                          ;
-; Total pins                         ; 10                                          ;
+; Total logic elements               ; 83                                          ;
+;     Total combinational functions  ; 83                                          ;
+;     Dedicated logic registers      ; 55                                          ;
+; Total registers                    ; 55                                          ;
+; Total pins                         ; 49                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -167,21 +186,27 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
-; Mux16.v                          ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux16.v            ;         ;
-; ALUn2t.v                         ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/ALUn2t.v           ;         ;
-; Mux.v                            ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux.v              ;         ;
-; Add16.v                          ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Add16.v            ;         ;
-; rzfpga_pc.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v        ;         ;
-; HalfAdder.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/HalfAdder.v        ;         ;
-; FullAdder.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/FullAdder.v        ;         ;
-; hvsync_generator.v               ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v ;         ;
-; clock_divider.v                  ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clock_divider.v    ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
+; 01/n2tmux.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v            ;         ;
+; 01/n2tmux16.v                    ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v          ;         ;
+; VGA/hvsync_generator.v           ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v ;         ;
+; VGA/clock_divider.v              ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/clock_divider.v    ;         ;
+; 02/HalfAdder.v                   ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v         ;         ;
+; 02/FullAdder.v                   ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v         ;         ;
+; 02/Add16.v                       ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v             ;         ;
+; 02/ALUn2t.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v            ;         ;
+; rzfpga_pc.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v            ;         ;
+; 01/n8WayMux16.v                  ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n8WayMux16.v        ;         ;
+; 01/dmux_8_way.v                  ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v        ;         ;
+; 01/dmux_4_way.v                  ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_4_way.v        ;         ;
+; 01/dmux.v                        ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux.v              ;         ;
+; 03/BRAM/register.v               ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/register.v     ;         ;
+; 03/BRAM/bram_ram_8.v             ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v   ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -189,30 +214,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 91          ;
+; Estimated Total logic elements              ; 83          ;
 ;                                             ;             ;
-; Total combinational functions               ; 91          ;
+; Total combinational functions               ; 83          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 27          ;
-;     -- 3 input functions                    ; 3           ;
-;     -- <=2 input functions                  ; 61          ;
+;     -- 4 input functions                    ; 21          ;
+;     -- 3 input functions                    ; 2           ;
+;     -- <=2 input functions                  ; 60          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 42          ;
+;     -- normal mode                          ; 34          ;
 ;     -- arithmetic mode                      ; 49          ;
 ;                                             ;             ;
-; Total registers                             ; 57          ;
-;     -- Dedicated logic registers            ; 57          ;
+; Total registers                             ; 55          ;
+;     -- Dedicated logic registers            ; 55          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 10          ;
+; I/O pins                                    ; 49          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clk50~input ;
 ; Maximum fan-out                             ; 33          ;
-; Total fan-out                               ; 373         ;
-; Average fan-out                             ; 2.22        ;
+; Total fan-out                               ; 394         ;
+; Average fan-out                             ; 1.56        ;
 +---------------------------------------------+-------------+
 
 
@@ -221,21 +246,40 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name      ; Library Name ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
-; |rzfpga_pc                   ; 91 (4)              ; 57 (1)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
+; |rzfpga_pc                   ; 83 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 49   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
 ;    |clock_divider:wrapper|   ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|clock_divider:wrapper   ; clock_divider    ; work         ;
-;    |hvsync_generator:hvsync| ; 43 (43)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
+;    |hvsync_generator:hvsync| ; 39 (39)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; pixel[0,2]                            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++-------------------------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal                     ;
++-------------------------------------------+----------------------------------------+
+; bram_ram_8:raminsta|register:reg_h|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_g|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_f|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_e|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_d|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_c|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_b|out[0] ; Stuck at GND due to stuck port data_in ;
+; bram_ram_8:raminsta|register:reg_a|out[0] ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|inDisplayArea     ; Lost fanout                            ;
+; pixel[0..2]                               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 12    ;                                        ;
++-------------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                             ;
++-------------------------------------------+---------------------------+-------------------------------------------------+
+; Register name                             ; Reason for Removal        ; Registers Removed due to This Register          ;
++-------------------------------------------+---------------------------+-------------------------------------------------+
+; bram_ram_8:raminsta|register:reg_h|out[0] ; Stuck at GND              ; hvsync_generator:hvsync|inDisplayArea, pixel[0] ;
+;                                           ; due to stuck port data_in ;                                                 ;
++-------------------------------------------+---------------------------+-------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -243,7 +287,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 57    ;
+; Total registers                              ; 55    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -251,6 +295,187 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_h"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_g"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_f"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_e"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_d"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_c"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_b"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|register:reg_a"                                                                                      ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g"                                                                       ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "a[15..1]" will be connected to GND. ;
+; b    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "b[15..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f"                                                                        ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "a[15..1]" will be connected to GND. ;
+; b    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "b[15..1]" will be connected to GND. ;
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts                    ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e"                                                                        ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "a[15..1]" will be connected to GND. ;
+; b    ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "b[15..1]" will be connected to GND. ;
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts                    ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d"                                                     ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c"                                                     ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b"                                                     ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a"                                                     ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[15..1]" have no fanouts ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta"                                                                                            ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "a[15..1]" will be connected to GND. ;
+; b    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "b[15..1]" will be connected to GND. ;
+; c    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "c[15..1]" will be connected to GND. ;
+; d    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "d[15..1]" will be connected to GND. ;
+; e    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "e[15..1]" will be connected to GND. ;
+; f    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "f[15..1]" will be connected to GND. ;
+; g    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "g[15..1]" will be connected to GND. ;
+; h    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "h[15..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_8:raminsta"                                                                         ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; in[15..3]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in[1..0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in[2]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; address[2..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; address[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; load          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out[15..3]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsync_generator:hvsync"                                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; CounterX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; CounterY ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -313,22 +538,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 57                          ;
+; boundary_port         ; 49                          ;
+; cycloneiii_ff         ; 55                          ;
 ;     ENA               ; 10                          ;
-;     plain             ; 47                          ;
-; cycloneiii_lcell_comb ; 95                          ;
+;     plain             ; 45                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 87                          ;
 ;     arith             ; 49                          ;
 ;         2 data inputs ; 49                          ;
-;     normal            ; 46                          ;
+;     normal            ; 38                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 27                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 21                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.87                        ;
+; Average LUT depth     ; 2.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -347,59 +573,144 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Tue Apr 19 15:42:27 2022
+    Info: Processing started: Wed Apr 20 08:40:18 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file mux16.v
-    Info (12023): Found entity 1: Mux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux16.v Line: 13
-Info (12021): Found 1 design units, including 1 entities, in source file alun2t.v
-    Info (12023): Found entity 1: ALUn2t File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/ALUn2t.v Line: 24
-Warning (12090): Entity "Mux" obtained from "Mux.v" instead of from Quartus Prime megafunction library File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux.v Line: 13
-Info (12021): Found 1 design units, including 1 entities, in source file mux.v
-    Info (12023): Found entity 1: Mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux.v Line: 13
-Info (12021): Found 1 design units, including 1 entities, in source file add16.v
-    Info (12023): Found entity 1: Add16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Add16.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tmux.v
+    Info (12023): Found entity 1: n2tmux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tmux16.v
+    Info (12023): Found entity 1: n2tmux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file vga/hvsync_generator.v
+    Info (12023): Found entity 1: hvsync_generator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/clock_divider.v
+    Info (12023): Found entity 1: clock_divider File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/clock_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 02/halfadder.v
+    Info (12023): Found entity 1: HalfAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file 02/fulladder.v
+    Info (12023): Found entity 1: FullAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file 02/add16.v
+    Info (12023): Found entity 1: Add16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file 02/alun2t.v
+    Info (12023): Found entity 1: ALUn2t File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file rzfpga_pc.v
     Info (12023): Found entity 1: rzfpga_pc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file halfadder.v
-    Info (12023): Found entity 1: HalfAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/HalfAdder.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file fulladder.v
-    Info (12023): Found entity 1: FullAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/FullAdder.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file hvsync_generator.v
-    Info (12023): Found entity 1: hvsync_generator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
-    Info (12023): Found entity 1: clock_divider File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clock_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 01/n8waymux16.v
+    Info (12023): Found entity 1: n8WayMux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n8WayMux16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 01/dmux_8_way.v
+    Info (12023): Found entity 1: dmux_8_way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 01/dmux_4_way.v
+    Info (12023): Found entity 1: dmux_4_way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_4_way.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 01/dmux.v
+    Info (12023): Found entity 1: dmux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/register.v
+    Info (12023): Found entity 1: register File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_8.v
+    Info (12023): Found entity 1: bram_ram_8 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 1
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
-Info (12128): Elaborating entity "ALUn2t" for hierarchy "ALUn2t:ALU_instance_main" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
-Info (12128): Elaborating entity "Add16" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/ALUn2t.v Line: 77
-Info (12128): Elaborating entity "FullAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Add16.v Line: 30
-Info (12128): Elaborating entity "HalfAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/FullAdder.v Line: 43
-Info (12128): Elaborating entity "Mux16" for hierarchy "ALUn2t:ALU_instance_main|Mux16:mux16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/ALUn2t.v Line: 81
-Info (12128): Elaborating entity "Mux" for hierarchy "ALUn2t:ALU_instance_main|Mux16:mux16_alu_a|Mux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/Mux16.v Line: 20
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 54
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(19): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 19
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(28): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/hvsync_generator.v Line: 28
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 60
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(118): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 118
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(122): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 122
+Warning (10034): Output port "SDA0" at rzfpga_pc.v(18) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 18
+Warning (10034): Output port "SDA1" at rzfpga_pc.v(19) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 19
+Warning (10034): Output port "SDA2" at rzfpga_pc.v(20) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 20
+Warning (10034): Output port "SDA3" at rzfpga_pc.v(21) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
+Warning (10034): Output port "SDA4" at rzfpga_pc.v(22) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+Warning (10034): Output port "SDA5" at rzfpga_pc.v(23) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 23
+Warning (10034): Output port "SDA6" at rzfpga_pc.v(24) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 24
+Warning (10034): Output port "SDA7" at rzfpga_pc.v(25) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
+Warning (10034): Output port "SDA8" at rzfpga_pc.v(26) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
+Warning (10034): Output port "SDA9" at rzfpga_pc.v(27) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
+Warning (10034): Output port "SDA10" at rzfpga_pc.v(28) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
+Warning (10034): Output port "SDA11" at rzfpga_pc.v(29) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
+Warning (10034): Output port "SDBS0" at rzfpga_pc.v(31) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
+Warning (10034): Output port "SDBS1" at rzfpga_pc.v(32) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 32
+Warning (10034): Output port "SDLDQM" at rzfpga_pc.v(33) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
+Warning (10034): Output port "SDUDQM" at rzfpga_pc.v(34) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
+Warning (10034): Output port "SDCKE" at rzfpga_pc.v(35) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
+Warning (10034): Output port "SDCLK" at rzfpga_pc.v(36) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 36
+Warning (10034): Output port "SDCS" at rzfpga_pc.v(37) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
+Warning (10034): Output port "SDRAS" at rzfpga_pc.v(38) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 38
+Warning (10034): Output port "SDCAS" at rzfpga_pc.v(39) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 39
+Warning (10034): Output port "SDWE" at rzfpga_pc.v(40) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 40
+Info (12128): Elaborating entity "ALUn2t" for hierarchy "ALUn2t:ALU_instance_main" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 78
+Info (12128): Elaborating entity "Add16" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 77
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 30
+Info (12128): Elaborating entity "HalfAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 43
+Info (12128): Elaborating entity "n2tmux16" for hierarchy "ALUn2t:ALU_instance_main|n2tmux16:mux16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 81
+Info (12128): Elaborating entity "n2tmux" for hierarchy "ALUn2t:ALU_instance_main|n2tmux16:mux16_alu_a|n2tmux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 20
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 95
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(19): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 19
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(28): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 28
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 101
+Info (12128): Elaborating entity "bram_ram_8" for hierarchy "bram_ram_8:raminsta" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 109
+Info (12128): Elaborating entity "dmux_8_way" for hierarchy "bram_ram_8:raminsta|dmux_8_way:dmux_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 20
+Info (12128): Elaborating entity "dmux" for hierarchy "bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux:split" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 14
+Info (12128): Elaborating entity "dmux_4_way" for hierarchy "bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_low_nibble" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 15
+Info (12128): Elaborating entity "n8WayMux16" for hierarchy "bram_ram_8:raminsta|n8WayMux16:n8waymux16insta" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 50
+Info (12128): Elaborating entity "register" for hierarchy "bram_ram_8:raminsta|register:reg_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 58
+Warning (12241): 17 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "DQ0" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 2
+    Warning (13040): bidirectional pin "DQ1" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 3
+    Warning (13040): bidirectional pin "DQ2" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 4
+    Warning (13040): bidirectional pin "DQ3" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
+    Warning (13040): bidirectional pin "DQ4" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 6
+    Warning (13040): bidirectional pin "DQ5" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 7
+    Warning (13040): bidirectional pin "DQ6" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 8
+    Warning (13040): bidirectional pin "DQ7" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 9
+    Warning (13040): bidirectional pin "DQ8" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 10
+    Warning (13040): bidirectional pin "DQ9" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 11
+    Warning (13040): bidirectional pin "DQ10" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
+    Warning (13040): bidirectional pin "DQ11" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 13
+    Warning (13040): bidirectional pin "DQ12" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 14
+    Warning (13040): bidirectional pin "DQ13" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 15
+    Warning (13040): bidirectional pin "DQ14" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 16
+    Warning (13040): bidirectional pin "DQ15" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 17
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 2
-    Warning (13410): Pin "led2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 3
-    Warning (13410): Pin "led3" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 4
-    Warning (13410): Pin "led4" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
-    Warning (13410): Pin "pix0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 8
-    Warning (13410): Pin "pix2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 10
+    Warning (13410): Pin "SDA0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 18
+    Warning (13410): Pin "SDA1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 19
+    Warning (13410): Pin "SDA2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 20
+    Warning (13410): Pin "SDA3" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
+    Warning (13410): Pin "SDA4" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+    Warning (13410): Pin "SDA5" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 23
+    Warning (13410): Pin "SDA6" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 24
+    Warning (13410): Pin "SDA7" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
+    Warning (13410): Pin "SDA8" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
+    Warning (13410): Pin "SDA9" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
+    Warning (13410): Pin "SDA10" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
+    Warning (13410): Pin "SDA11" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
+    Warning (13410): Pin "SDBS0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
+    Warning (13410): Pin "SDBS1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 32
+    Warning (13410): Pin "SDLDQM" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
+    Warning (13410): Pin "SDUDQM" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
+    Warning (13410): Pin "SDCKE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
+    Warning (13410): Pin "SDCLK" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 36
+    Warning (13410): Pin "SDCS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
+    Warning (13410): Pin "SDRAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 38
+    Warning (13410): Pin "SDCAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 39
+    Warning (13410): Pin "SDWE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 40
+    Warning (13410): Pin "led1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
+    Warning (13410): Pin "led2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
+    Warning (13410): Pin "led3" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13410): Pin "led4" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 45
+    Warning (13410): Pin "pix0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 49
+    Warning (13410): Pin "pix1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 50
+    Warning (13410): Pin "pix2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 91 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4766 megabytes
-    Info: Processing ended: Tue Apr 19 15:42:35 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:16
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ldk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
+Info (21057): Implemented 132 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 83 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
+    Info: Peak virtual memory: 4770 megabytes
+    Info: Processing ended: Wed Apr 20 08:40:28 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 
