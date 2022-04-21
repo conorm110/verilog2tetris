@@ -157,7 +157,7 @@ led3                         : 85        : output : 2.5 V             :         
 led2                         : 86        : output : 2.5 V             :         : 5         : Y              
 led1                         : 87        : output : 2.5 V             :         : 5         : Y              
 ldk                          : 88        : input  : 2.5 V             :         : 5         : Y              
-GND+                         : 89        :        :                   :         : 5         :                
+ldj                          : 89        : input  : 2.5 V             :         : 5         : Y              
 GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                

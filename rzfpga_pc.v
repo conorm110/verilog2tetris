@@ -46,6 +46,7 @@ module rzfpga_pc (
 	
 	input clk50,
 	input ldk,
+	input ldj,
 	output pix0,
 	output pix1,
 	output pix2,
@@ -60,18 +61,17 @@ wire ngbuf;
 assign led1 = ~outbuf[0];
 assign led2 = ~outbuf[1];
 assign led3 = ~outbuf[2];
-assign led4 = ~outbuf[3];
 
 
 ALUn2t ALU_instance_main (
-	.x(16'b0000000000001000),
-	.y(16'b0101010101010101),
+	.x(CounterX),
+	.y(CounterX),
 	.zx(1'b0),
-	.nx(1'b1),
+	.nx(1'b0),
 	.zy(1'b0),
 	.ny(1'b0),
 	.f(1'b1),
-	.no(1'b1),
+	.no(1'b0),
 	.out(outbuf),
 	.zr(zrbuf),
 	.ng(ngbuf)
@@ -100,26 +100,32 @@ clock_divider wrapper (
   .clk_25(clk_25)
 );
 
-bram_ram_8 raminsta (
-	.in(16'b0000000000000100),
-	.address(3'b001),
-	.clk(clk_25),
-	.load(1'b0),
-	.out(testbus)
-);
+wire [15:0] bufferedColor;
 
-wire [15:0] testbus;
+
+assign led4 = ldk;
+
+wire [15:0] nnn;
+assign nnn[0] = ldj;
+assign nnn[15:1] = 15'b000000000000010;
+
+register register_a (
+	.in(nnn),
+	.clk(clk50),
+	.load(~ldk),
+	.out(bufferedColor)
+);
 
 always @(posedge clk_25)
 begin
 if (inDisplayArea)
-  if (CounterX == 10'b0000000010 && CounterY == 10'b0000000010)
+  if (outbuf == CounterY)
   begin
-	pixel <= testbus;
+	pixel <= bufferedColor;
   end
   else
   begin
-	pixel <= testbus;
+	pixel <= 3'b000;
   end
   
 else // if it's not to display, go dark

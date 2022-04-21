@@ -15,39 +15,41 @@ DQ12 <> <UNC>
 DQ13 <> <UNC>
 DQ14 <> <UNC>
 DQ15 <> <UNC>
-SDA0 << <GND>
-SDA1 << <GND>
-SDA2 << <GND>
-SDA3 << <GND>
-SDA4 << <GND>
-SDA5 << <GND>
-SDA6 << <GND>
-SDA7 << <GND>
-SDA8 << <GND>
-SDA9 << <GND>
-SDA10 << <GND>
-SDA11 << <GND>
-SDBS0 << <GND>
-SDBS1 << <GND>
-SDLDQM << <GND>
-SDUDQM << <GND>
-SDCKE << <GND>
-SDCLK << <GND>
-SDCS << <GND>
-SDRAS << <GND>
-SDCAS << <GND>
-SDWE << <GND>
-led1 << ALUn2t:ALU_instance_main.out
-led2 << ALUn2t:ALU_instance_main.out
-led3 << ALUn2t:ALU_instance_main.out
-led4 << ALUn2t:ALU_instance_main.out
-clk50 => clk50.IN1
-ldk => ~NO_FANOUT~
-pix0 << pixel[0].DB_MAX_OUTPUT_PORT_TYPE
-pix1 << pixel[1].DB_MAX_OUTPUT_PORT_TYPE
-pix2 << pixel[2].DB_MAX_OUTPUT_PORT_TYPE
-hsyncout << hvsync_generator:hvsync.vga_h_sync
-vsyncout << hvsync_generator:hvsync.vga_v_sync
+SDA0 <= <GND>
+SDA1 <= <GND>
+SDA2 <= <GND>
+SDA3 <= <GND>
+SDA4 <= <GND>
+SDA5 <= <GND>
+SDA6 <= <GND>
+SDA7 <= <GND>
+SDA8 <= <GND>
+SDA9 <= <GND>
+SDA10 <= <GND>
+SDA11 <= <GND>
+SDBS0 <= <GND>
+SDBS1 <= <GND>
+SDLDQM <= <GND>
+SDUDQM <= <GND>
+SDCKE <= <GND>
+SDCLK <= <GND>
+SDCS <= <GND>
+SDRAS <= <GND>
+SDCAS <= <GND>
+SDWE <= <GND>
+led1 <= ALUn2t:ALU_instance_main.out
+led2 <= ALUn2t:ALU_instance_main.out
+led3 <= ALUn2t:ALU_instance_main.out
+led4 <= ldk.DB_MAX_OUTPUT_PORT_TYPE
+clk50 => clk50.IN2
+ldk => led4.DATAIN
+ldk => _.IN1
+ldj => nnn[0].IN1
+pix0 <= pixel[0].DB_MAX_OUTPUT_PORT_TYPE
+pix1 <= pixel[1].DB_MAX_OUTPUT_PORT_TYPE
+pix2 <= pixel[2].DB_MAX_OUTPUT_PORT_TYPE
+hsyncout <= hvsync_generator:hvsync.vga_h_sync
+vsyncout <= hvsync_generator:hvsync.vga_v_sync
 
 
 |rzfpga_pc|ALUn2t:ALU_instance_main
@@ -917,295 +919,59 @@ clk50 => counter_value[31].CLK
 clk_25 <= clk_25~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta
-in[0] => in[0].IN8
-in[1] => in[1].IN8
-in[2] => in[2].IN8
-in[3] => in[3].IN8
-in[4] => in[4].IN8
-in[5] => in[5].IN8
-in[6] => in[6].IN8
-in[7] => in[7].IN8
-in[8] => in[8].IN8
-in[9] => in[9].IN8
-in[10] => in[10].IN8
-in[11] => in[11].IN8
-in[12] => in[12].IN8
-in[13] => in[13].IN8
-in[14] => in[14].IN8
-in[15] => in[15].IN8
-address[0] => address[0].IN2
-address[1] => address[1].IN2
-address[2] => address[2].IN2
-clk => clk.IN8
+|rzfpga_pc|register:register_a
+in[0] => in[0].IN1
+in[1] => in[1].IN1
+in[2] => in[2].IN1
+in[3] => in[3].IN1
+in[4] => in[4].IN1
+in[5] => in[5].IN1
+in[6] => in[6].IN1
+in[7] => in[7].IN1
+in[8] => in[8].IN1
+in[9] => in[9].IN1
+in[10] => in[10].IN1
+in[11] => in[11].IN1
+in[12] => in[12].IN1
+in[13] => in[13].IN1
+in[14] => in[14].IN1
+in[15] => in[15].IN1
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => data[8].CLK
+clk => data[9].CLK
+clk => data[10].CLK
+clk => data[11].CLK
+clk => data[12].CLK
+clk => data[13].CLK
+clk => data[14].CLK
+clk => data[15].CLK
 load => load.IN1
-out[0] <= n8WayMux16:n8waymux16insta.out
-out[1] <= n8WayMux16:n8waymux16insta.out
-out[2] <= n8WayMux16:n8waymux16insta.out
-out[3] <= n8WayMux16:n8waymux16insta.out
-out[4] <= n8WayMux16:n8waymux16insta.out
-out[5] <= n8WayMux16:n8waymux16insta.out
-out[6] <= n8WayMux16:n8waymux16insta.out
-out[7] <= n8WayMux16:n8waymux16insta.out
-out[8] <= n8WayMux16:n8waymux16insta.out
-out[9] <= n8WayMux16:n8waymux16insta.out
-out[10] <= n8WayMux16:n8waymux16insta.out
-out[11] <= n8WayMux16:n8waymux16insta.out
-out[12] <= n8WayMux16:n8waymux16insta.out
-out[13] <= n8WayMux16:n8waymux16insta.out
-out[14] <= n8WayMux16:n8waymux16insta.out
-out[15] <= n8WayMux16:n8waymux16insta.out
+out[0] <= mmm[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= mmm[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= mmm[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= mmm[3].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= mmm[4].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= mmm[5].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= mmm[6].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= mmm[7].DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= mmm[8].DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= mmm[9].DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= mmm[10].DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= mmm[11].DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= mmm[12].DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= mmm[13].DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= mmm[14].DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= mmm[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a
-in => in.IN1
-select[0] => select[0].IN2
-select[1] => select[1].IN2
-select[2] => select[2].IN1
-a <= dmux_4_way:dmux_low_nibble.port2
-b <= dmux_4_way:dmux_low_nibble.port3
-c <= dmux_4_way:dmux_low_nibble.port4
-d <= dmux_4_way:dmux_low_nibble.port5
-e <= dmux_4_way:dmux_high_nibble.port2
-f <= dmux_4_way:dmux_high_nibble.port3
-g <= dmux_4_way:dmux_high_nibble.port4
-h <= dmux_4_way:dmux_high_nibble.port5
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux:split
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_low_nibble
-in => in.IN1
-sel[0] => sel[0].IN1
-sel[1] => sel[1].IN2
-a <= dmux:dmux_ab.port2
-b <= dmux:dmux_cd.port2
-c <= dmux:dmux_ab.port3
-d <= dmux:dmux_cd.port3
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_low_nibble|dmux:dmux_step1
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_low_nibble|dmux:dmux_ab
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_low_nibble|dmux:dmux_cd
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_high_nibble
-in => in.IN1
-sel[0] => sel[0].IN1
-sel[1] => sel[1].IN2
-a <= dmux:dmux_ab.port2
-b <= dmux:dmux_cd.port2
-c <= dmux:dmux_ab.port3
-d <= dmux:dmux_cd.port3
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_high_nibble|dmux:dmux_step1
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_high_nibble|dmux:dmux_ab
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|dmux_8_way:dmux_inst_a|dmux_4_way:dmux_high_nibble|dmux:dmux_cd
-in => b.IN0
-in => a.IN0
-select => b.IN1
-select => a.IN1
-a <= a.DB_MAX_OUTPUT_PORT_TYPE
-b <= b.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-c[0] => c[0].IN1
-c[1] => c[1].IN1
-c[2] => c[2].IN1
-c[3] => c[3].IN1
-c[4] => c[4].IN1
-c[5] => c[5].IN1
-c[6] => c[6].IN1
-c[7] => c[7].IN1
-c[8] => c[8].IN1
-c[9] => c[9].IN1
-c[10] => c[10].IN1
-c[11] => c[11].IN1
-c[12] => c[12].IN1
-c[13] => c[13].IN1
-c[14] => c[14].IN1
-c[15] => c[15].IN1
-d[0] => d[0].IN1
-d[1] => d[1].IN1
-d[2] => d[2].IN1
-d[3] => d[3].IN1
-d[4] => d[4].IN1
-d[5] => d[5].IN1
-d[6] => d[6].IN1
-d[7] => d[7].IN1
-d[8] => d[8].IN1
-d[9] => d[9].IN1
-d[10] => d[10].IN1
-d[11] => d[11].IN1
-d[12] => d[12].IN1
-d[13] => d[13].IN1
-d[14] => d[14].IN1
-d[15] => d[15].IN1
-e[0] => e[0].IN1
-e[1] => e[1].IN1
-e[2] => e[2].IN1
-e[3] => e[3].IN1
-e[4] => e[4].IN1
-e[5] => e[5].IN1
-e[6] => e[6].IN1
-e[7] => e[7].IN1
-e[8] => e[8].IN1
-e[9] => e[9].IN1
-e[10] => e[10].IN1
-e[11] => e[11].IN1
-e[12] => e[12].IN1
-e[13] => e[13].IN1
-e[14] => e[14].IN1
-e[15] => e[15].IN1
-f[0] => f[0].IN1
-f[1] => f[1].IN1
-f[2] => f[2].IN1
-f[3] => f[3].IN1
-f[4] => f[4].IN1
-f[5] => f[5].IN1
-f[6] => f[6].IN1
-f[7] => f[7].IN1
-f[8] => f[8].IN1
-f[9] => f[9].IN1
-f[10] => f[10].IN1
-f[11] => f[11].IN1
-f[12] => f[12].IN1
-f[13] => f[13].IN1
-f[14] => f[14].IN1
-f[15] => f[15].IN1
-g[0] => g[0].IN1
-g[1] => g[1].IN1
-g[2] => g[2].IN1
-g[3] => g[3].IN1
-g[4] => g[4].IN1
-g[5] => g[5].IN1
-g[6] => g[6].IN1
-g[7] => g[7].IN1
-g[8] => g[8].IN1
-g[9] => g[9].IN1
-g[10] => g[10].IN1
-g[11] => g[11].IN1
-g[12] => g[12].IN1
-g[13] => g[13].IN1
-g[14] => g[14].IN1
-g[15] => g[15].IN1
-h[0] => h[0].IN1
-h[1] => h[1].IN1
-h[2] => h[2].IN1
-h[3] => h[3].IN1
-h[4] => h[4].IN1
-h[5] => h[5].IN1
-h[6] => h[6].IN1
-h[7] => h[7].IN1
-h[8] => h[8].IN1
-h[9] => h[9].IN1
-h[10] => h[10].IN1
-h[11] => h[11].IN1
-h[12] => h[12].IN1
-h[13] => h[13].IN1
-h[14] => h[14].IN1
-h[15] => h[15].IN1
-sel[0] => sel[0].IN4
-sel[1] => sel[1].IN2
-sel[2] => sel[2].IN1
-out[0] <= n2tmux16:mux16inst_g.out
-out[1] <= n2tmux16:mux16inst_g.out
-out[2] <= n2tmux16:mux16inst_g.out
-out[3] <= n2tmux16:mux16inst_g.out
-out[4] <= n2tmux16:mux16inst_g.out
-out[5] <= n2tmux16:mux16inst_g.out
-out[6] <= n2tmux16:mux16inst_g.out
-out[7] <= n2tmux16:mux16inst_g.out
-out[8] <= n2tmux16:mux16inst_g.out
-out[9] <= n2tmux16:mux16inst_g.out
-out[10] <= n2tmux16:mux16inst_g.out
-out[11] <= n2tmux16:mux16inst_g.out
-out[12] <= n2tmux16:mux16inst_g.out
-out[13] <= n2tmux16:mux16inst_g.out
-out[14] <= n2tmux16:mux16inst_g.out
-out[15] <= n2tmux16:mux16inst_g.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -1257,7 +1023,7 @@ out[14] <= n2tmux:mux16_o.out
 out[15] <= n2tmux:mux16_p.out
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_a
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_a
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1265,7 +1031,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_b
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_b
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1273,7 +1039,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_c
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_c
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1281,7 +1047,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_d
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_d
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1289,7 +1055,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_e
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_e
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1297,7 +1063,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_f
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_f
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1305,7 +1071,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_g
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_g
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1313,7 +1079,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_h
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_h
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1321,7 +1087,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_i
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_i
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1329,7 +1095,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_j
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_j
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1337,7 +1103,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_k
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_k
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1345,7 +1111,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_l
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_l
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1353,7 +1119,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_m
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_m
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1361,7 +1127,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_n
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_n
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1369,7 +1135,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_o
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_o
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1377,1627 +1143,11 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_a|n2tmux:mux16_p
+|rzfpga_pc|register:register_a|n2tmux16:n2tmux_instance_a|n2tmux:mux16_p
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
 sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_a
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_b
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_c
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_d
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_e
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_f
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_g
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_h
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_i
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_j
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_k
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_l
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_m
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_n
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_o
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_b|n2tmux:mux16_p
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_a
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_b
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_c
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_d
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_e
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_f
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_g
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_h
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_i
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_j
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_k
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_l
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_m
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_n
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_o
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_c|n2tmux:mux16_p
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_a
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_b
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_c
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_d
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_e
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_f
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_g
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_h
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_i
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_j
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_k
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_l
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_m
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_n
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_o
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_d|n2tmux:mux16_p
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_a
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_b
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_c
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_d
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_e
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_f
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_g
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_h
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_i
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_j
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_k
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_l
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_m
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_n
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_o
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_e|n2tmux:mux16_p
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_a
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_b
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_c
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_d
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_e
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_f
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_g
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_h
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_i
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_j
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_k
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_l
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_m
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_n
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_o
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_f|n2tmux:mux16_p
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g
-a[0] => a[0].IN1
-a[1] => a[1].IN1
-a[2] => a[2].IN1
-a[3] => a[3].IN1
-a[4] => a[4].IN1
-a[5] => a[5].IN1
-a[6] => a[6].IN1
-a[7] => a[7].IN1
-a[8] => a[8].IN1
-a[9] => a[9].IN1
-a[10] => a[10].IN1
-a[11] => a[11].IN1
-a[12] => a[12].IN1
-a[13] => a[13].IN1
-a[14] => a[14].IN1
-a[15] => a[15].IN1
-b[0] => b[0].IN1
-b[1] => b[1].IN1
-b[2] => b[2].IN1
-b[3] => b[3].IN1
-b[4] => b[4].IN1
-b[5] => b[5].IN1
-b[6] => b[6].IN1
-b[7] => b[7].IN1
-b[8] => b[8].IN1
-b[9] => b[9].IN1
-b[10] => b[10].IN1
-b[11] => b[11].IN1
-b[12] => b[12].IN1
-b[13] => b[13].IN1
-b[14] => b[14].IN1
-b[15] => b[15].IN1
-sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_a
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_b
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_c
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_d
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_e
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_f
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_g
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_h
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_i
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_j
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_k
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_l
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_m
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_n
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_o
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|n8WayMux16:n8waymux16insta|n2tmux16:mux16inst_g|n2tmux:mux16_p
-a => aansel.IN0
-b => basel.IN0
-sel => basel.IN1
-sel => aansel.IN1
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_a
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_b
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_c
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_d
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_e
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_f
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_g
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|bram_ram_8:raminsta|register:reg_h
-in[0] => out[0]~reg0.DATAIN
-in[1] => out[1]~reg0.DATAIN
-in[2] => out[2]~reg0.DATAIN
-in[3] => out[3]~reg0.DATAIN
-in[4] => out[4]~reg0.DATAIN
-in[5] => out[5]~reg0.DATAIN
-in[6] => out[6]~reg0.DATAIN
-in[7] => out[7]~reg0.DATAIN
-in[8] => out[8]~reg0.DATAIN
-in[9] => out[9]~reg0.DATAIN
-in[10] => out[10]~reg0.DATAIN
-in[11] => out[11]~reg0.DATAIN
-in[12] => out[12]~reg0.DATAIN
-in[13] => out[13]~reg0.DATAIN
-in[14] => out[14]~reg0.DATAIN
-in[15] => out[15]~reg0.DATAIN
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-clk => out[8]~reg0.CLK
-clk => out[9]~reg0.CLK
-clk => out[10]~reg0.CLK
-clk => out[11]~reg0.CLK
-clk => out[12]~reg0.CLK
-clk => out[13]~reg0.CLK
-clk => out[14]~reg0.CLK
-clk => out[15]~reg0.CLK
-load => out[0]~reg0.ENA
-load => out[1]~reg0.ENA
-load => out[2]~reg0.ENA
-load => out[3]~reg0.ENA
-load => out[4]~reg0.ENA
-load => out[5]~reg0.ENA
-load => out[6]~reg0.ENA
-load => out[7]~reg0.ENA
-load => out[8]~reg0.ENA
-load => out[9]~reg0.ENA
-load => out[10]~reg0.ENA
-load => out[11]~reg0.ENA
-load => out[12]~reg0.ENA
-load => out[13]~reg0.ENA
-load => out[14]~reg0.ENA
-load => out[15]~reg0.ENA
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
