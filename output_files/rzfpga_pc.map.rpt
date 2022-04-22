@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Fri Apr 22 13:06:03 2022
+Fri Apr 22 15:59:31 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -16,13 +16,14 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "bram_ram_8:bram_ram_8_a"
- 12. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
- 13. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
- 14. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 11. Port Connectivity Checks: "bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e"
+ 12. Port Connectivity Checks: "bram_ram_64:bram_ram_64_a"
+ 13. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
+ 14. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
+ 15. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -49,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 22 13:06:03 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 22 15:59:31 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -188,6 +189,7 @@ https://fpgasoftware.intel.com/eula.
 ; 01/dmux.v                        ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux.v              ;         ;
 ; 03/BRAM/register.v               ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/register.v     ;         ;
 ; 03/BRAM/bram_ram_8.v             ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v   ;         ;
+; 03/BRAM/bram_ram_64.v            ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_64.v  ;         ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
 
 
@@ -223,33 +225,90 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Entity Name      ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+------------------+--------------+
-; |rzfpga_pc                   ; 97 (9)              ; 62 (3)                    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |rzfpga_pc                                             ; rzfpga_pc        ; work         ;
-;    |bram_ram_8:bram_ram_8_a| ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|bram_ram_8:bram_ram_8_a                     ; bram_ram_8       ; work         ;
-;       |register:register_c|  ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|bram_ram_8:bram_ram_8_a|register:register_c ; register         ; work         ;
-;    |hvsync_generator:hvsync| ; 85 (85)             ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync                     ; hvsync_generator ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name      ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+------------------+--------------+
+; |rzfpga_pc                      ; 97 (9)              ; 62 (3)                    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |rzfpga_pc                                                                       ; rzfpga_pc        ; work         ;
+;    |bram_ram_64:bram_ram_64_a|  ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|bram_ram_64:bram_ram_64_a                                             ; bram_ram_64      ; work         ;
+;       |bram_ram_8:bram_ram_8_g| ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g                     ; bram_ram_8       ; work         ;
+;          |register:register_b|  ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_b ; register         ; work         ;
+;    |hvsync_generator:hvsync|    ; 85 (85)             ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync                                               ; hvsync_generator ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                          ;
-+--------------------------------------------------------+--------------------+
-; Register name                                          ; Reason for Removal ;
-+--------------------------------------------------------+--------------------+
-; bram_ram_8:bram_ram_8_a|register:register_h|data[0..2] ; Lost fanout        ;
-; bram_ram_8:bram_ram_8_a|register:register_g|data[0..2] ; Lost fanout        ;
-; bram_ram_8:bram_ram_8_a|register:register_f|data[0..2] ; Lost fanout        ;
-; bram_ram_8:bram_ram_8_a|register:register_e|data[0..2] ; Lost fanout        ;
-; bram_ram_8:bram_ram_8_a|register:register_d|data[0..2] ; Lost fanout        ;
-; bram_ram_8:bram_ram_8_a|register:register_b|data[0..2] ; Lost fanout        ;
-; bram_ram_8:bram_ram_8_a|register:register_a|data[0..2] ; Lost fanout        ;
-; Total Number of Removed Registers = 21                 ;                    ;
-+--------------------------------------------------------+--------------------+
++-------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                    ;
++----------------------------------------------------------------------------------+--------------------+
+; Register name                                                                    ; Reason for Removal ;
++----------------------------------------------------------------------------------+--------------------+
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_a|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_h|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_g|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_f|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_e|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_d|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_c|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_b|data[0..2] ; Lost fanout        ;
+; bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_a|data[0..2] ; Lost fanout        ;
+; Total Number of Removed Registers = 189                                          ;                    ;
++----------------------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -276,17 +335,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "bram_ram_8:bram_ram_8_a"                                                                  ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; in[15..3]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; address[2] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; address[1] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; address[0] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; out[15..3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e"                                                                                             ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bram_ram_64:bram_ram_64_a"                                                                   ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; in[15..3]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; address[5..4] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; address[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; address[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out[15..3]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -366,7 +434,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Apr 22 13:05:55 2022
+    Info: Processing started: Fri Apr 22 15:59:22 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -398,6 +466,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file 03/bram
     Info (12023): Found entity 1: register File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/register.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_8.v
     Info (12023): Found entity 1: bram_ram_8 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_64.v
+    Info (12023): Found entity 1: bram_ram_64 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_64.v Line: 1
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(110): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 110
 Warning (10034): Output port "SDA0" at rzfpga_pc.v(28) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
@@ -431,13 +501,14 @@ Info (12128): Elaborating entity "n2tmux" for hierarchy "ALUn2t:ALU_instance_mai
 Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 85
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(34): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 34
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(40): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 40
-Info (12128): Elaborating entity "bram_ram_8" for hierarchy "bram_ram_8:bram_ram_8_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 102
-Info (12128): Elaborating entity "dmux_8_way" for hierarchy "bram_ram_8:bram_ram_8_a|dmux_8_way:dmux_8_way_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 37
-Info (12128): Elaborating entity "dmux" for hierarchy "bram_ram_8:bram_ram_8_a|dmux_8_way:dmux_8_way_a|dmux:split" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 14
-Info (12128): Elaborating entity "dmux_4_way" for hierarchy "bram_ram_8:bram_ram_8_a|dmux_8_way:dmux_8_way_a|dmux_4_way:dmux_low_nibble" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 15
-Info (12128): Elaborating entity "register" for hierarchy "bram_ram_8:bram_ram_8_a|register:register_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 44
-Info (12128): Elaborating entity "n8WayMux16" for hierarchy "bram_ram_8:bram_ram_8_a|n8WayMux16:n8WayMux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 100
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "bram_ram_64" for hierarchy "bram_ram_64:bram_ram_64_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 102
+Info (12128): Elaborating entity "dmux_8_way" for hierarchy "bram_ram_64:bram_ram_64_a|dmux_8_way:dmux_8_way_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_64.v Line: 37
+Info (12128): Elaborating entity "dmux" for hierarchy "bram_ram_64:bram_ram_64_a|dmux_8_way:dmux_8_way_a|dmux:split" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 14
+Info (12128): Elaborating entity "dmux_4_way" for hierarchy "bram_ram_64:bram_ram_64_a|dmux_8_way:dmux_8_way_a|dmux_4_way:dmux_low_nibble" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 15
+Info (12128): Elaborating entity "bram_ram_8" for hierarchy "bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_64.v Line: 45
+Info (12128): Elaborating entity "register" for hierarchy "bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 44
+Info (12128): Elaborating entity "n8WayMux16" for hierarchy "bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|n8WayMux16:n8WayMux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 100
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "DQ0" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
     Warning (13040): bidirectional pin "DQ1" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 13
@@ -479,7 +550,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SDCAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
     Warning (13410): Pin "SDWE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 49
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 21 registers lost all their fanouts during netlist optimizations.
+Info (17049): 189 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
@@ -488,9 +559,9 @@ Info (21057): Implemented 145 device resources after synthesis - the final resou
     Info (21060): Implemented 16 bidirectional pins
     Info (21061): Implemented 97 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4770 megabytes
-    Info: Processing ended: Fri Apr 22 13:06:03 2022
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Fri Apr 22 15:59:31 2022
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:17
 
 
