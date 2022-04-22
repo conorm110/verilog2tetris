@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Thu Apr 21 21:42:44 2022
+Thu Apr 21 22:01:23 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 21 21:42:44 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 21 22:01:23 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -164,7 +164,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -176,7 +177,6 @@ https://fpgasoftware.intel.com/eula.
 ; 01/n2tmux.v                      ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v            ;         ;
 ; 01/n2tmux16.v                    ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v          ;         ;
 ; VGA/hvsync_generator.v           ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v ;         ;
-; VGA/clock_divider.v              ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/clock_divider.v    ;         ;
 ; 02/HalfAdder.v                   ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v         ;         ;
 ; 02/FullAdder.v                   ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v         ;         ;
 ; 02/Add16.v                       ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v             ;         ;
@@ -224,8 +224,7 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name      ; Library Name ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 ; |rzfpga_pc                   ; 97 (9)              ; 62 (3)                    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
-;    |clock_divider:wrapper|   ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|clock_divider:wrapper   ; clock_divider    ; work         ;
-;    |hvsync_generator:hvsync| ; 41 (41)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
+;    |hvsync_generator:hvsync| ; 85 (85)             ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
 ;    |register:register_a|     ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|register:register_a     ; register         ; work         ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -342,7 +341,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Thu Apr 21 21:42:36 2022
+    Info: Processing started: Thu Apr 21 22:01:16 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -352,8 +351,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tm
     Info (12023): Found entity 1: n2tmux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file vga/hvsync_generator.v
     Info (12023): Found entity 1: hvsync_generator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga/clock_divider.v
-    Info (12023): Found entity 1: clock_divider File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/clock_divider.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file 02/halfadder.v
     Info (12023): Found entity 1: HalfAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file 02/fulladder.v
@@ -376,10 +373,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file 03/bram
     Info (12023): Found entity 1: register File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/register.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_8.v
     Info (12023): Found entity 1: bram_ram_8 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/slowclktest.v
-    Info (12023): Found entity 1: slowclktest File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/slowclktest.v Line: 1
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(116): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 116
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(109): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 109
 Warning (10034): Output port "SDA0" at rzfpga_pc.v(28) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
 Warning (10034): Output port "SDA1" at rzfpga_pc.v(29) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
 Warning (10034): Output port "SDA2" at rzfpga_pc.v(30) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 30
@@ -408,11 +403,10 @@ Info (12128): Elaborating entity "FullAdder" for hierarchy "ALUn2t:ALU_instance_
 Info (12128): Elaborating entity "HalfAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 43
 Info (12128): Elaborating entity "n2tmux16" for hierarchy "ALUn2t:ALU_instance_main|n2tmux16:mux16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 81
 Info (12128): Elaborating entity "n2tmux" for hierarchy "ALUn2t:ALU_instance_main|n2tmux16:mux16_alu_a|n2tmux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 20
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 78
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 92
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(19): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 19
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(28): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 28
-Info (12128): Elaborating entity "register" for hierarchy "register:register_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 108
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 85
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(34): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 34
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(40): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 40
+Info (12128): Elaborating entity "register" for hierarchy "register:register_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 101
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "DQ0" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
@@ -464,8 +458,8 @@ Info (21057): Implemented 145 device resources after synthesis - the final resou
     Info (21061): Implemented 97 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
     Info: Peak virtual memory: 4766 megabytes
-    Info: Processing ended: Thu Apr 21 21:42:44 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Thu Apr 21 22:01:23 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
 
 

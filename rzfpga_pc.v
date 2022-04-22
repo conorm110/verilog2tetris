@@ -70,20 +70,13 @@ ALUn2t ALU_instance_main (
 	.out(output_wire_alu)
 );
 
-// Creates 25MHz pixel clock
-wire clk25;
-clock_divider wrapper (
-  .clk50(clk50),
-  .clk_25(clk25)
-);
-
 // Generate HSync and VSync, also outputs current pixel
 wire inDisplayArea;
 wire [9:0] CounterX;
 wire [9:0] CounterY;
 reg [2:0] pixel;
 hvsync_generator hvsync(
-.clk(clk25),
+.clk50(clk50),
 .vga_h_sync(hsyncout),
 .vga_v_sync(vsyncout),
 .CounterX(CounterX),

@@ -1,5 +1,5 @@
 Fitter report for rzfpga_pc
-Thu Apr 21 21:42:47 2022
+Thu Apr 21 22:01:27 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Apr 21 21:42:47 2022       ;
+; Fitter Status                      ; Successful - Thu Apr 21 22:01:27 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -162,8 +162,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.7%      ;
-;     Processors 3-4         ;   0.7%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processors 3-4         ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -666,8 +666,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Compilation Hierarchy Node   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                ; Entity Name      ; Library Name ;
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------+------------------+--------------+
 ; |rzfpga_pc                   ; 98 (9)      ; 62 (3)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 36 (6)       ; 1 (0)             ; 61 (3)           ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
-;    |clock_divider:wrapper|   ; 45 (45)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 1 (1)             ; 32 (32)          ; |rzfpga_pc|clock_divider:wrapper   ; clock_divider    ; work         ;
-;    |hvsync_generator:hvsync| ; 41 (41)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 23 (23)          ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
+;    |hvsync_generator:hvsync| ; 86 (86)     ; 56 (56)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 1 (1)             ; 55 (55)          ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
 ;    |register:register_a|     ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |rzfpga_pc|register:register_a     ; register         ; work         ;
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -758,26 +757,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                              ;
-+----------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                             ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; clk50                            ; PIN_23            ; 39      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; clock_divider:wrapper|clk_25     ; FF_X26_Y10_N9     ; 23      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; hvsync_generator:hvsync|Equal0~2 ; LCCOMB_X31_Y18_N2 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; key0                             ; PIN_88            ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+----------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                               ;
++-----------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                              ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; clk50                             ; PIN_23            ; 39      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; hvsync_generator:hvsync|Equal1~2  ; LCCOMB_X31_Y18_N2 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; hvsync_generator:hvsync|pixel_clk ; FF_X26_Y10_N9     ; 23      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; key0                              ; PIN_88            ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
++-----------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                         ;
-+------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                         ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk50                        ; PIN_23        ; 39      ; 5                                    ; Global Clock         ; GCLK2            ; --                        ;
-; clock_divider:wrapper|clk_25 ; FF_X26_Y10_N9 ; 23      ; 2                                    ; Global Clock         ; GCLK6            ; --                        ;
-+------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                              ;
++-----------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                              ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; clk50                             ; PIN_23        ; 39      ; 5                                    ; Global Clock         ; GCLK2            ; --                        ;
+; hvsync_generator:hvsync|pixel_clk ; FF_X26_Y10_N9 ; 23      ; 2                                    ; Global Clock         ; GCLK6            ; --                        ;
++-----------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-----------------------------------------------+
@@ -1089,45 +1088,45 @@ Note: For more information on problematic transfers, consider running the Fitter
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+--------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                              ;
-+-----------------------------------------+------------------------------+-------------------+
-; Source Register                         ; Destination Register         ; Delay Added in ns ;
-+-----------------------------------------+------------------------------+-------------------+
-; clock_divider:wrapper|clk_25            ; clock_divider:wrapper|clk_25 ; 3.236             ;
-; clock_divider:wrapper|counter_value[30] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[29] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[28] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[27] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[26] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[25] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[24] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[23] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[22] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[21] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[20] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[19] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[18] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[17] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[16] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[1]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[2]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[3]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[4]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[5]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[6]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[7]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[8]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[9]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[10] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[11] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[12] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[13] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[14] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[15] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[0]  ; clock_divider:wrapper|clk_25 ; 1.548             ;
-; clock_divider:wrapper|counter_value[31] ; clock_divider:wrapper|clk_25 ; 1.548             ;
-+-----------------------------------------+------------------------------+-------------------+
++---------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                     ;
++-------------------------------------------+-----------------------------------+-------------------+
+; Source Register                           ; Destination Register              ; Delay Added in ns ;
++-------------------------------------------+-----------------------------------+-------------------+
+; hvsync_generator:hvsync|pixel_clk         ; hvsync_generator:hvsync|pixel_clk ; 3.236             ;
+; hvsync_generator:hvsync|counter_value[30] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[29] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[28] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[27] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[26] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[25] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[24] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[23] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[22] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[21] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[20] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[19] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[18] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[17] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[16] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[1]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[2]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[3]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[4]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[5]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[6]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[7]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[8]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[9]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[10] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[11] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[12] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[13] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[14] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[15] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[0]  ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
+; hvsync_generator:hvsync|counter_value[31] ; hvsync_generator:hvsync|pixel_clk ; 1.548             ;
++-------------------------------------------+-----------------------------------+-------------------+
 Note: This table only shows the top 33 path(s) that have the largest delay added for hold.
 
 
@@ -1158,10 +1157,10 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk50~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 3
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
-Info (176353): Automatically promoted node clock_divider:wrapper|clk_25  File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/clock_divider.v Line: 4
+Info (176353): Automatically promoted node hvsync_generator:hvsync|pixel_clk  File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 11
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node clock_divider:wrapper|clk_25~0 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/clock_divider.v Line: 4
+        Info (176357): Destination node hvsync_generator:hvsync|pixel_clk~0 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 11
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1180,12 +1179,12 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 16 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin DQ0 has a permanently disabled output enable File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
@@ -1206,9 +1205,9 @@ Warning (169064): Following 16 pins have no output enable or a GND or VCC output
     Info (169065): Pin DQ15 has a permanently disabled output enable File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
 Info (144001): Generated suppressed messages file C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/output_files/rzfpga_pc.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 5490 megabytes
-    Info: Processing ended: Thu Apr 21 21:42:47 2022
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 5492 megabytes
+    Info: Processing ended: Thu Apr 21 22:01:27 2022
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 
