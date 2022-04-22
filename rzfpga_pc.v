@@ -93,8 +93,9 @@ assign color_input[15:3] = 13'b000000000000000;
 
 // Load the color input into a custom register working as a buffer
 wire [15:0] buffered_color;
-register register_a (
+bram_ram_8 bram_ram_8_a (
 	.in(color_input),
+	.address(3'b010),
 	.clk(clk50),
 	.load(~key0),
 	.out(buffered_color)

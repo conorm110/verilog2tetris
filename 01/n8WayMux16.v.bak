@@ -11,51 +11,57 @@ module n8WayMux16(
     output [15:0] out
     );
 
-wire [15:0] res_ab;
-n2tmux16 n2tmux16_a (
+wire res_ab;
+wire res_cd;
+wire res_ef;
+wire res_gh;
+
+n2tmux16 mux16inst_a (
 	.a(a),
 	.b(b),
 	.sel(sel[0]),
 	.out(res_ab)
 );
-wire [15:0] res_cd;
-n2tmux16 n2tmux16_b (
+
+n2tmux16 mux16inst_b (
 	.a(c),
 	.b(d),
 	.sel(sel[0]),
 	.out(res_cd)
 );
-wire [15:0] res_abcd;
-n2tmux16 n2tmux16_c (
+
+n2tmux16 mux16inst_c (
+	.a(e),
+	.b(f),
+	.sel(sel[0]),
+	.out(res_ef)
+);
+
+n2tmux16 mux16inst_d (
+	.a(g),
+	.b(h),
+	.sel(sel[0]),
+	.out(res_gh)
+);
+
+wire res_abcd;
+wire res_efgh;
+
+n2tmux16 mux16inst_e (
 	.a(res_ab),
 	.b(res_cd),
 	.sel(sel[1]),
 	.out(res_abcd)
 );
 
-wire [15:0] res_ef;
-n2tmux16 n2tmux16_d (
-	.a(e),
-	.b(f),
-	.sel(sel[0]),
-	.out(res_ef)
-);
-wire [15:0] res_gh;
-n2tmux16 n2tmux16_e (
-	.a(g),
-	.b(h),
-	.sel(sel[0]),
-	.out(res_gh)
-);
-wire [15:0] res_efgh;
-n2tmux16 n2tmux16_f (
+n2tmux16 mux16inst_f (
 	.a(res_ef),
 	.b(res_gh),
 	.sel(sel[1]),
 	.out(res_efgh)
 );
 
-n2tmux16 n2tmux16_g (
+n2tmux16 mux16inst_g (
 	.a(res_abcd),
 	.b(res_efgh),
 	.sel(sel[2]),

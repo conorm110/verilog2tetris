@@ -6,6 +6,99 @@ module bram_ram_8 (
 	output [15:0] out
 );
 
+wire lda;
+wire ldb;
+wire ldc;
+wire ldd;
+wire lde;
+wire ldf;
+wire ldg;
+wire ldh;
+wire [15:0] outa;
+wire [15:0] outb;
+wire [15:0] outc;
+wire [15:0] outd;
+wire [15:0] oute;
+wire [15:0] outf;
+wire [15:0] outg;
+wire [15:0] outh;
+
+dmux_8_way dmux_8_way_a (
+	.in(load),
+	.select(address),
+	.a(lda),
+	.b(ldb),
+	.c(ldc),
+	.d(ldd),
+	.e(lde),
+	.f(ldf),
+	.g(ldg),
+	.h(ldh)
+);
+
+register register_a (
+	.in(in),
+	.clk(clk),
+	.load(lda),
+	.out(outa)
+);
+register register_b (
+	.in(in),
+	.clk(clk),
+	.load(ldb),
+	.out(outb)
+);
+register register_c (
+	.in(in),
+	.clk(clk),
+	.load(ldc),
+	.out(outc)
+);
+register register_d (
+	.in(in),
+	.clk(clk),
+	.load(ldd),
+	.out(outd)
+);
+register register_e (
+	.in(in),
+	.clk(clk),
+	.load(lde),
+	.out(oute)
+);
+register register_f (
+	.in(in),
+	.clk(clk),
+	.load(ldf),
+	.out(outf)
+);
+register register_g (
+	.in(in),
+	.clk(clk),
+	.load(ldg),
+	.out(outg)
+);
+register register_h (
+	.in(in),
+	.clk(clk),
+	.load(ldh),
+	.out(outh)
+);
+
+
+n8WayMux16 n8WayMux16_a (
+	.a(outa),
+	.b(outb),
+	.c(outc),
+	.d(outd),
+	.e(oute),
+	.f(outf),
+	.g(outg),
+	.h(outh),
+	.sel(address),
+	.out(out)
+);
+
 
 
 endmodule
