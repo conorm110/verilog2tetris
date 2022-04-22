@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Apr 21 17:26:15 2022
+Analysis & Synthesis Status : Successful - Thu Apr 21 21:42:44 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : rzfpga_pc
 Top-level Entity Name : rzfpga_pc
 Family : Cyclone IV E
-Total logic elements : 94
-    Total combinational functions : 94
-    Dedicated logic registers : 59
-Total registers : 59
-Total pins : 50
+Total logic elements : 97
+    Total combinational functions : 97
+    Dedicated logic registers : 62
+Total registers : 62
+Total pins : 48
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

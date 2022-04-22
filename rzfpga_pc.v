@@ -1,4 +1,14 @@
 module rzfpga_pc (
+	// System IO
+	input clk50,
+	
+	// General IO
+	input key0,
+	input key1,
+	input key2,
+	input key3,
+	
+	// SDRAM
 	inout DQ0,
 	inout DQ1,
 	inout DQ2,
@@ -27,7 +37,6 @@ module rzfpga_pc (
 	output SDA9,
 	output SDA10,
 	output SDA11,
-	
 	output SDBS0,
 	output SDBS1,
 	output SDLDQM,
@@ -38,15 +47,8 @@ module rzfpga_pc (
 	output SDRAS,
 	output SDCAS,
 	output SDWE,
-
-	output wire led1,
-	output wire led2,
-	output wire led3,
-	output wire led4,
 	
-	input clk50,
-	input ldk,
-	input ldj,
+	// VGA
 	output pix0,
 	output pix1,
 	output pix2,
@@ -54,15 +56,8 @@ module rzfpga_pc (
 	output vsyncout
 );
 
-wire [15:0] outbuf;
-wire zrbuf;
-wire ngbuf;
-
-assign led1 = ~outbuf[0];
-assign led2 = ~outbuf[1];
-assign led3 = ~outbuf[2];
-
-
+wire [15:0] output_wire_alu;
+// Set to add CounterX to CounterX, out = 2*CounterX
 ALUn2t ALU_instance_main (
 	.x(CounterX),
 	.y(CounterX),
@@ -72,21 +67,23 @@ ALUn2t ALU_instance_main (
 	.ny(1'b0),
 	.f(1'b1),
 	.no(1'b0),
-	.out(outbuf),
-	.zr(zrbuf),
-	.ng(ngbuf)
+	.out(output_wire_alu)
 );
 
+// Creates 25MHz pixel clock
+wire clk25;
+clock_divider wrapper (
+  .clk50(clk50),
+  .clk_25(clk25)
+);
+
+// Generate HSync and VSync, also outputs current pixel
 wire inDisplayArea;
 wire [9:0] CounterX;
 wire [9:0] CounterY;
 reg [2:0] pixel;
-
-wire clk_25;
-
-
 hvsync_generator hvsync(
-.clk(clk_25),
+.clk(clk25),
 .vga_h_sync(hsyncout),
 .vga_v_sync(vsyncout),
 .CounterX(CounterX),
@@ -94,47 +91,40 @@ hvsync_generator hvsync(
 .inDisplayArea(inDisplayArea)
 );
 
-// wrapper for clock divider
-clock_divider wrapper (
-  .clk50(clk50),
-  .clk_25(clk_25)
-);
+// Creates 16 bit wide color tied to button input but only first 3 bits are used
+wire [15:0] color_input;
+assign color_input[0] = ~key1;
+assign color_input[1] = ~key2;
+assign color_input[2] = ~key3;
+assign color_input[15:3] = 13'b000000000000000;
 
-wire [15:0] bufferedColor;
-
-
-assign led4 = ldk;
-
-wire [15:0] nnn;
-assign nnn[0] = ldj;
-assign nnn[15:1] = 15'b000000000000010;
-
+// Load the color input into a custom register working as a buffer
+wire [15:0] buffered_color;
 register register_a (
-	.in(nnn),
+	.in(color_input),
 	.clk(clk50),
-	.load(~ldk),
-	.out(bufferedColor)
+	.load(~key0),
+	.out(buffered_color)
 );
 
-always @(posedge clk_25)
+// Pixel Mapping
+always @(posedge clk50)
 begin
 if (inDisplayArea)
-  if (outbuf == CounterY)
+  if (output_wire_alu == CounterY)  // since the alu is outputting 2x, its checking if y = 2x
   begin
-	pixel <= bufferedColor;
+	pixel <= buffered_color; // use the user inputed color
   end
   else
   begin
-	pixel <= 3'b000;
+	pixel <= 3'b000; // otherwise show black
   end
-  
-else // if it's not to display, go dark
-  pixel <= 3'b000;
+else
+  pixel <= 3'b000; // disable color if in blanking period or porch
 end
 
 assign pix0 = pixel[0];
 assign pix1 = pixel[1];
 assign pix2 = pixel[2];
-
 
 endmodule

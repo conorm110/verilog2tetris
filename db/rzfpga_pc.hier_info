@@ -1,4 +1,9 @@
 |rzfpga_pc
+clk50 => clk50.IN2
+key0 => _.IN1
+key1 => color_input[0].IN1
+key2 => color_input[1].IN1
+key3 => color_input[2].IN1
 DQ0 <> <UNC>
 DQ1 <> <UNC>
 DQ2 <> <UNC>
@@ -37,14 +42,6 @@ SDCS <= <GND>
 SDRAS <= <GND>
 SDCAS <= <GND>
 SDWE <= <GND>
-led1 <= ALUn2t:ALU_instance_main.out
-led2 <= ALUn2t:ALU_instance_main.out
-led3 <= ALUn2t:ALU_instance_main.out
-led4 <= ldk.DB_MAX_OUTPUT_PORT_TYPE
-clk50 => clk50.IN2
-ldk => led4.DATAIN
-ldk => _.IN1
-ldj => nnn[0].IN1
 pix0 <= pixel[0].DB_MAX_OUTPUT_PORT_TYPE
 pix1 <= pixel[1].DB_MAX_OUTPUT_PORT_TYPE
 pix2 <= pixel[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -833,6 +830,43 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|rzfpga_pc|clock_divider:wrapper
+clk50 => clk_25~reg0.CLK
+clk50 => counter_value[0].CLK
+clk50 => counter_value[1].CLK
+clk50 => counter_value[2].CLK
+clk50 => counter_value[3].CLK
+clk50 => counter_value[4].CLK
+clk50 => counter_value[5].CLK
+clk50 => counter_value[6].CLK
+clk50 => counter_value[7].CLK
+clk50 => counter_value[8].CLK
+clk50 => counter_value[9].CLK
+clk50 => counter_value[10].CLK
+clk50 => counter_value[11].CLK
+clk50 => counter_value[12].CLK
+clk50 => counter_value[13].CLK
+clk50 => counter_value[14].CLK
+clk50 => counter_value[15].CLK
+clk50 => counter_value[16].CLK
+clk50 => counter_value[17].CLK
+clk50 => counter_value[18].CLK
+clk50 => counter_value[19].CLK
+clk50 => counter_value[20].CLK
+clk50 => counter_value[21].CLK
+clk50 => counter_value[22].CLK
+clk50 => counter_value[23].CLK
+clk50 => counter_value[24].CLK
+clk50 => counter_value[25].CLK
+clk50 => counter_value[26].CLK
+clk50 => counter_value[27].CLK
+clk50 => counter_value[28].CLK
+clk50 => counter_value[29].CLK
+clk50 => counter_value[30].CLK
+clk50 => counter_value[31].CLK
+clk_25 <= clk_25~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |rzfpga_pc|hvsync_generator:hvsync
 clk => inDisplayArea~reg0.CLK
 clk => vga_VS.CLK
@@ -880,43 +914,6 @@ CounterY[6] <= CounterY[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CounterY[7] <= CounterY[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CounterY[8] <= CounterY[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CounterY[9] <= CounterY[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|rzfpga_pc|clock_divider:wrapper
-clk50 => clk_25~reg0.CLK
-clk50 => counter_value[0].CLK
-clk50 => counter_value[1].CLK
-clk50 => counter_value[2].CLK
-clk50 => counter_value[3].CLK
-clk50 => counter_value[4].CLK
-clk50 => counter_value[5].CLK
-clk50 => counter_value[6].CLK
-clk50 => counter_value[7].CLK
-clk50 => counter_value[8].CLK
-clk50 => counter_value[9].CLK
-clk50 => counter_value[10].CLK
-clk50 => counter_value[11].CLK
-clk50 => counter_value[12].CLK
-clk50 => counter_value[13].CLK
-clk50 => counter_value[14].CLK
-clk50 => counter_value[15].CLK
-clk50 => counter_value[16].CLK
-clk50 => counter_value[17].CLK
-clk50 => counter_value[18].CLK
-clk50 => counter_value[19].CLK
-clk50 => counter_value[20].CLK
-clk50 => counter_value[21].CLK
-clk50 => counter_value[22].CLK
-clk50 => counter_value[23].CLK
-clk50 => counter_value[24].CLK
-clk50 => counter_value[25].CLK
-clk50 => counter_value[26].CLK
-clk50 => counter_value[27].CLK
-clk50 => counter_value[28].CLK
-clk50 => counter_value[29].CLK
-clk50 => counter_value[30].CLK
-clk50 => counter_value[31].CLK
-clk_25 <= clk_25~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |rzfpga_pc|register:register_a

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Thu Apr 21 17:26:15 2022
+Thu Apr 21 21:42:44 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,16 +13,15 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Port Connectivity Checks: "register:register_a"
- 12. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
- 13. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
- 14. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "register:register_a"
+ 11. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
+ 12. Port Connectivity Checks: "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
+ 13. Port Connectivity Checks: "ALUn2t:ALU_instance_main"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -49,16 +48,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 21 17:26:15 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 21 21:42:44 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 94                                          ;
-;     Total combinational functions  ; 94                                          ;
-;     Dedicated logic registers      ; 59                                          ;
-; Total registers                    ; 59                                          ;
-; Total pins                         ; 50                                          ;
+; Total logic elements               ; 97                                          ;
+;     Total combinational functions  ; 97                                          ;
+;     Dedicated logic registers      ; 62                                          ;
+; Total registers                    ; 62                                          ;
+; Total pins                         ; 48                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -192,30 +191,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 94          ;
+; Estimated Total logic elements              ; 97          ;
 ;                                             ;             ;
-; Total combinational functions               ; 94          ;
+; Total combinational functions               ; 97          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 29          ;
-;     -- 3 input functions                    ; 4           ;
-;     -- <=2 input functions                  ; 61          ;
+;     -- 4 input functions                    ; 31          ;
+;     -- 3 input functions                    ; 2           ;
+;     -- <=2 input functions                  ; 64          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 45          ;
+;     -- normal mode                          ; 48          ;
 ;     -- arithmetic mode                      ; 49          ;
 ;                                             ;             ;
-; Total registers                             ; 59          ;
-;     -- Dedicated logic registers            ; 59          ;
+; Total registers                             ; 62          ;
+;     -- Dedicated logic registers            ; 62          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 50          ;
+; I/O pins                                    ; 48          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clk50~input ;
-; Maximum fan-out                             ; 34          ;
-; Total fan-out                               ; 448         ;
-; Average fan-out                             ; 1.67        ;
+; Maximum fan-out                             ; 39          ;
+; Total fan-out                               ; 458         ;
+; Average fan-out                             ; 1.69        ;
 +---------------------------------------------+-------------+
 
 
@@ -224,34 +223,12 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name      ; Library Name ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
-; |rzfpga_pc                   ; 94 (8)              ; 59 (2)                    ; 0           ; 0            ; 0       ; 0         ; 50   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
+; |rzfpga_pc                   ; 97 (9)              ; 62 (3)                    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |rzfpga_pc                         ; rzfpga_pc        ; work         ;
 ;    |clock_divider:wrapper|   ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|clock_divider:wrapper   ; clock_divider    ; work         ;
 ;    |hvsync_generator:hvsync| ; 41 (41)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync ; hvsync_generator ; work         ;
-;    |register:register_a|     ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|register:register_a     ; register         ; work         ;
+;    |register:register_a|     ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|register:register_a     ; register         ; work         ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; register:register_a|data[2]           ; Stuck at VCC due to stuck port data_in ;
-; register:register_a|data[1]           ; Stuck at GND due to stuck port data_in ;
-; pixel[1]                              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                      ;
-+-----------------------------+---------------------------+----------------------------------------+
-; Register name               ; Reason for Removal        ; Registers Removed due to This Register ;
-+-----------------------------+---------------------------+----------------------------------------+
-; register:register_a|data[1] ; Stuck at GND              ; pixel[1]                               ;
-;                             ; due to stuck port data_in ;                                        ;
-+-----------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -259,14 +236,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 59    ;
+; Total registers                              ; 62    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 13    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |rzfpga_pc|pixel[1]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -275,8 +261,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Port       ; Type   ; Severity ; Details                                                                             ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 ; in[15..3]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; in[2]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; in[1]      ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; out[15..3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -313,8 +297,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ny   ; Input  ; Info     ; Stuck at GND                                                                                                                                  ;
 ; f    ; Input  ; Info     ; Stuck at VCC                                                                                                                                  ;
 ; no   ; Input  ; Info     ; Stuck at GND                                                                                                                                  ;
-; zr   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                           ;
-; ng   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                           ;
+; zr   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
+; ng   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
 +------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -323,23 +307,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 50                          ;
-; cycloneiii_ff         ; 59                          ;
-;     ENA               ; 10                          ;
+; boundary_port         ; 48                          ;
+; cycloneiii_ff         ; 62                          ;
+;     ENA               ; 13                          ;
 ;     plain             ; 49                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
 ; cycloneiii_lcell_comb ; 100                         ;
 ;     arith             ; 49                          ;
 ;         2 data inputs ; 49                          ;
 ;     normal            ; 51                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 7                           ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
 ;         2 data inputs ; 9                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 29                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 31                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.59                        ;
+; Average LUT depth     ; 2.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -358,7 +342,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Thu Apr 21 17:26:08 2022
+    Info: Processing started: Thu Apr 21 21:42:36 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -395,95 +379,93 @@ Info (12021): Found 1 design units, including 1 entities, in source file 03/bram
 Info (12021): Found 1 design units, including 1 entities, in source file 03/slowclktest.v
     Info (12023): Found entity 1: slowclktest File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/slowclktest.v Line: 1
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(124): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 124
-Warning (10034): Output port "SDA0" at rzfpga_pc.v(18) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 18
-Warning (10034): Output port "SDA1" at rzfpga_pc.v(19) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 19
-Warning (10034): Output port "SDA2" at rzfpga_pc.v(20) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 20
-Warning (10034): Output port "SDA3" at rzfpga_pc.v(21) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
-Warning (10034): Output port "SDA4" at rzfpga_pc.v(22) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
-Warning (10034): Output port "SDA5" at rzfpga_pc.v(23) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 23
-Warning (10034): Output port "SDA6" at rzfpga_pc.v(24) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 24
-Warning (10034): Output port "SDA7" at rzfpga_pc.v(25) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
-Warning (10034): Output port "SDA8" at rzfpga_pc.v(26) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
-Warning (10034): Output port "SDA9" at rzfpga_pc.v(27) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
-Warning (10034): Output port "SDA10" at rzfpga_pc.v(28) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-Warning (10034): Output port "SDA11" at rzfpga_pc.v(29) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
-Warning (10034): Output port "SDBS0" at rzfpga_pc.v(31) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
-Warning (10034): Output port "SDBS1" at rzfpga_pc.v(32) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 32
-Warning (10034): Output port "SDLDQM" at rzfpga_pc.v(33) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
-Warning (10034): Output port "SDUDQM" at rzfpga_pc.v(34) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
-Warning (10034): Output port "SDCKE" at rzfpga_pc.v(35) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
-Warning (10034): Output port "SDCLK" at rzfpga_pc.v(36) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 36
-Warning (10034): Output port "SDCS" at rzfpga_pc.v(37) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
-Warning (10034): Output port "SDRAS" at rzfpga_pc.v(38) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 38
-Warning (10034): Output port "SDCAS" at rzfpga_pc.v(39) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 39
-Warning (10034): Output port "SDWE" at rzfpga_pc.v(40) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 40
-Info (12128): Elaborating entity "ALUn2t" for hierarchy "ALUn2t:ALU_instance_main" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 78
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(116): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 116
+Warning (10034): Output port "SDA0" at rzfpga_pc.v(28) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
+Warning (10034): Output port "SDA1" at rzfpga_pc.v(29) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
+Warning (10034): Output port "SDA2" at rzfpga_pc.v(30) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 30
+Warning (10034): Output port "SDA3" at rzfpga_pc.v(31) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
+Warning (10034): Output port "SDA4" at rzfpga_pc.v(32) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 32
+Warning (10034): Output port "SDA5" at rzfpga_pc.v(33) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
+Warning (10034): Output port "SDA6" at rzfpga_pc.v(34) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
+Warning (10034): Output port "SDA7" at rzfpga_pc.v(35) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
+Warning (10034): Output port "SDA8" at rzfpga_pc.v(36) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 36
+Warning (10034): Output port "SDA9" at rzfpga_pc.v(37) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
+Warning (10034): Output port "SDA10" at rzfpga_pc.v(38) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 38
+Warning (10034): Output port "SDA11" at rzfpga_pc.v(39) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 39
+Warning (10034): Output port "SDBS0" at rzfpga_pc.v(40) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 40
+Warning (10034): Output port "SDBS1" at rzfpga_pc.v(41) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 41
+Warning (10034): Output port "SDLDQM" at rzfpga_pc.v(42) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
+Warning (10034): Output port "SDUDQM" at rzfpga_pc.v(43) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
+Warning (10034): Output port "SDCKE" at rzfpga_pc.v(44) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+Warning (10034): Output port "SDCLK" at rzfpga_pc.v(45) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 45
+Warning (10034): Output port "SDCS" at rzfpga_pc.v(46) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 46
+Warning (10034): Output port "SDRAS" at rzfpga_pc.v(47) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 47
+Warning (10034): Output port "SDCAS" at rzfpga_pc.v(48) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
+Warning (10034): Output port "SDWE" at rzfpga_pc.v(49) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 49
+Info (12128): Elaborating entity "ALUn2t" for hierarchy "ALUn2t:ALU_instance_main" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 71
 Info (12128): Elaborating entity "Add16" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 77
 Info (12128): Elaborating entity "FullAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 30
 Info (12128): Elaborating entity "HalfAdder" for hierarchy "ALUn2t:ALU_instance_main|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 43
 Info (12128): Elaborating entity "n2tmux16" for hierarchy "ALUn2t:ALU_instance_main|n2tmux16:mux16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 81
 Info (12128): Elaborating entity "n2tmux" for hierarchy "ALUn2t:ALU_instance_main|n2tmux16:mux16_alu_a|n2tmux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 20
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 95
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 78
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 92
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(19): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 19
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(28): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 28
-Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:wrapper" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 101
-Info (12128): Elaborating entity "register" for hierarchy "register:register_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 117
+Info (12128): Elaborating entity "register" for hierarchy "register:register_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 108
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "DQ0" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 2
-    Warning (13040): bidirectional pin "DQ1" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 3
-    Warning (13040): bidirectional pin "DQ2" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 4
-    Warning (13040): bidirectional pin "DQ3" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
-    Warning (13040): bidirectional pin "DQ4" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 6
-    Warning (13040): bidirectional pin "DQ5" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 7
-    Warning (13040): bidirectional pin "DQ6" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 8
-    Warning (13040): bidirectional pin "DQ7" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 9
-    Warning (13040): bidirectional pin "DQ8" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 10
-    Warning (13040): bidirectional pin "DQ9" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 11
-    Warning (13040): bidirectional pin "DQ10" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
-    Warning (13040): bidirectional pin "DQ11" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 13
-    Warning (13040): bidirectional pin "DQ12" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 14
-    Warning (13040): bidirectional pin "DQ13" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 15
-    Warning (13040): bidirectional pin "DQ14" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 16
-    Warning (13040): bidirectional pin "DQ15" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 17
+    Warning (13040): bidirectional pin "DQ0" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
+    Warning (13040): bidirectional pin "DQ1" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 13
+    Warning (13040): bidirectional pin "DQ2" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 14
+    Warning (13040): bidirectional pin "DQ3" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 15
+    Warning (13040): bidirectional pin "DQ4" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 16
+    Warning (13040): bidirectional pin "DQ5" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 17
+    Warning (13040): bidirectional pin "DQ6" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 18
+    Warning (13040): bidirectional pin "DQ7" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 19
+    Warning (13040): bidirectional pin "DQ8" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 20
+    Warning (13040): bidirectional pin "DQ9" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
+    Warning (13040): bidirectional pin "DQ10" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+    Warning (13040): bidirectional pin "DQ11" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 23
+    Warning (13040): bidirectional pin "DQ12" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 24
+    Warning (13040): bidirectional pin "DQ13" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
+    Warning (13040): bidirectional pin "DQ14" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
+    Warning (13040): bidirectional pin "DQ15" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SDA0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 18
-    Warning (13410): Pin "SDA1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 19
-    Warning (13410): Pin "SDA2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 20
-    Warning (13410): Pin "SDA3" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
-    Warning (13410): Pin "SDA4" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
-    Warning (13410): Pin "SDA5" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 23
-    Warning (13410): Pin "SDA6" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 24
-    Warning (13410): Pin "SDA7" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
-    Warning (13410): Pin "SDA8" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
-    Warning (13410): Pin "SDA9" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
-    Warning (13410): Pin "SDA10" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13410): Pin "SDA11" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
-    Warning (13410): Pin "SDBS0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
-    Warning (13410): Pin "SDBS1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 32
-    Warning (13410): Pin "SDLDQM" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
-    Warning (13410): Pin "SDUDQM" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
-    Warning (13410): Pin "SDCKE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
-    Warning (13410): Pin "SDCLK" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 36
-    Warning (13410): Pin "SDCS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
-    Warning (13410): Pin "SDRAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 38
-    Warning (13410): Pin "SDCAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 39
-    Warning (13410): Pin "SDWE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 40
-    Warning (13410): Pin "led1" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
-    Warning (13410): Pin "pix1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
+    Warning (13410): Pin "SDA0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
+    Warning (13410): Pin "SDA1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
+    Warning (13410): Pin "SDA2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 30
+    Warning (13410): Pin "SDA3" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
+    Warning (13410): Pin "SDA4" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 32
+    Warning (13410): Pin "SDA5" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
+    Warning (13410): Pin "SDA6" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
+    Warning (13410): Pin "SDA7" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
+    Warning (13410): Pin "SDA8" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 36
+    Warning (13410): Pin "SDA9" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 37
+    Warning (13410): Pin "SDA10" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 38
+    Warning (13410): Pin "SDA11" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 39
+    Warning (13410): Pin "SDBS0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 40
+    Warning (13410): Pin "SDBS1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 41
+    Warning (13410): Pin "SDLDQM" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
+    Warning (13410): Pin "SDUDQM" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
+    Warning (13410): Pin "SDCKE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13410): Pin "SDCLK" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 45
+    Warning (13410): Pin "SDCS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 46
+    Warning (13410): Pin "SDRAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 47
+    Warning (13410): Pin "SDCAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
+    Warning (13410): Pin "SDWE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 49
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 31 output pins
+Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 27 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 94 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
+    Info (21061): Implemented 97 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
     Info: Peak virtual memory: 4766 megabytes
-    Info: Processing ended: Thu Apr 21 17:26:15 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Processing ended: Thu Apr 21 21:42:44 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 

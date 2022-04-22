@@ -51,10 +51,6 @@ set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_87 -to led1
-set_location_assignment PIN_86 -to led2
-set_location_assignment PIN_85 -to led3
-set_location_assignment PIN_84 -to led4
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_104 -to pix0
@@ -78,7 +74,6 @@ set_location_assignment PIN_101 -to hsyncout
 set_location_assignment PIN_103 -to vsyncout
 set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_location_assignment PIN_23 -to clk50
-set_location_assignment PIN_88 -to ldk
 set_global_assignment -name VERILOG_FILE 01/n2tmux.v
 set_global_assignment -name VERILOG_FILE 01/n2tmux16.v
 set_global_assignment -name VERILOG_FILE VGA/hvsync_generator.v
@@ -95,7 +90,6 @@ set_global_assignment -name VERILOG_FILE 01/dmux_4_way.v
 set_global_assignment -name VERILOG_FILE 01/dmux.v
 set_global_assignment -name VERILOG_FILE 03/BRAM/register.v
 set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_8.v
-set_location_assignment PIN_23 -to clk
 set_location_assignment PIN_28 -to DQ0
 set_location_assignment PIN_30 -to DQ1
 set_location_assignment PIN_31 -to DQ2
@@ -135,5 +129,9 @@ set_location_assignment PIN_74 -to SDBS1
 set_location_assignment PIN_42 -to SDLDQM
 set_location_assignment PIN_55 -to SDUDQM
 set_global_assignment -name VERILOG_FILE 03/slowclktest.v
-set_location_assignment PIN_89 -to ldj
+set_location_assignment PIN_91 -to ldg
+set_location_assignment PIN_88 -to key0
+set_location_assignment PIN_89 -to key1
+set_location_assignment PIN_90 -to key2
+set_location_assignment PIN_91 -to key3
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
