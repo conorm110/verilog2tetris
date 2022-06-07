@@ -2,7 +2,7 @@
 Verilog2Tetris is based off the same designs from the Nand2Tetris curriculum but instead of using a custom HDL everything is written in Verilog. The file layout is made for Intel Quartus and the default pin assignments are for the RZ-EasyFPGA A2.2 FPGA (Cyclone IV) development board.
 
 ## Current Functionality
-Currently, the code runs the ALU from Nand2Tetris. Soon, a commit with a memory controller splitting the SD RAM into 16K RAM, VRAM, and some reserved space will be pushed.
+Currently, the code runs the ALU from Nand2Tetris and has 4KB of block ram. It is hard coded to graph and linear function you input.
 
 ## Future Goals
 Once the main part of Nand2Tetris is completed and translated over to Verilog with everything confirmed to be working on the RZ-EasyFPGA A2.2 FPGA, adapting the simple computer to work with a Verilog-coded VGA adapter will begin. After that PS/2 keyboard support will be added as the RZ_EasyFPGA A2.2 board has a PS/2 port. Finally, I also want to add debug functioality over the built in DSUB-9 port.
@@ -18,3 +18,4 @@ The RZ-EasyFPGA is not an easy FPGA to set up and it is a pain (mostly because I
 7. Now open the .qpf, this should open with Quartus Lite by default (this is good)
 8. To program, go to tools -> programmer, select your hardware device and make sure it is set to JTAG. Then select the only file displaced and hit the run button 
 
+![diagram](https://docs.google.com/drawings/d/e/2PACX-1vThhPI7H7_1E36BgRAzLkUydulztc1dD9MvsmBA6jBnoDiTIOIBJGaJPRUbA1Rsx93hKw9AE3IByAk6/pub?w=4512&h=2448)
