@@ -134,4 +134,10 @@ set_global_assignment -name VERILOG_FILE 03/BRAM/register.v
 set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_8.v
 set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_64.v
 set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_512.v
+set_global_assignment -name VERILOG_FILE program_counter.v
+set_global_assignment -name VERILOG_FILE 05/hack_cpu.v
+set_location_assignment PIN_87 -to led1
+set_location_assignment PIN_86 -to led2
+set_location_assignment PIN_85 -to led3
+set_location_assignment PIN_84 -to led4
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

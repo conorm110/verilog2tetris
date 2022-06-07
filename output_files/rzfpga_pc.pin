@@ -152,10 +152,10 @@ SDA2                         : 80        : output : 2.5 V             :         
 VCCIO5                       : 81        : power  :                   : 2.5V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
 SDA3                         : 83        : output : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
+led4                         : 84        : output : 2.5 V             :         : 5         : Y              
+led3                         : 85        : output : 2.5 V             :         : 5         : Y              
+led2                         : 86        : output : 2.5 V             :         : 5         : Y              
+led1                         : 87        : output : 2.5 V             :         : 5         : Y              
 key0                         : 88        : input  : 2.5 V             :         : 5         : Y              
 key1                         : 89        : input  : 2.5 V             :         : 5         : Y              
 key2                         : 90        : input  : 2.5 V             :         : 6         : Y              

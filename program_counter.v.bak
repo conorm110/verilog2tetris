@@ -1,0 +1,8 @@
+module program_counter (
+	input [15:0] in,
+	input clk,
+	input load,
+	output [15:0] out
+);
+
+endmodule

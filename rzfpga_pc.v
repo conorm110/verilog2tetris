@@ -47,6 +47,10 @@ module rzfpga_pc (
 	output SDRAS,
 	output SDCAS,
 	output SDWE,
+	output led1,
+	output led2,
+	output led3,
+	output led4,
 	
 	// VGA
 	output pix0,
@@ -56,69 +60,24 @@ module rzfpga_pc (
 	output vsyncout
 );
 
-wire [15:0] output_wire_alu;
-// Set to add CounterX to CounterX, out = 2*CounterX
-ALUn2t ALU_instance_main (
-	.x(CounterX),
-	.y(CounterX),
-	.zx(1'b0),
-	.nx(1'b0),
-	.zy(1'b0),
-	.ny(1'b0),
-	.f(1'b1),
-	.no(1'b0),
-	.out(output_wire_alu)
-);
 
-// Generate HSync and VSync, also outputs current pixel
-wire inDisplayArea;
-wire [9:0] CounterX;
-wire [9:0] CounterY;
-reg [2:0] pixel;
-hvsync_generator hvsync(
-.clk50(clk50),
-.vga_h_sync(hsyncout),
-.vga_v_sync(vsyncout),
-.CounterX(CounterX),
-.CounterY(CounterY),
-.inDisplayArea(inDisplayArea)
-);
-
-// Creates 16 bit wide color tied to button input but only first 3 bits are used
-wire [15:0] color_input;
-assign color_input[0] = ~key1;
-assign color_input[1] = ~key2;
-assign color_input[2] = ~key3;
-assign color_input[15:3] = 13'b000000000000000;
-
-// Load the color input into a custom register working as a buffer
-wire [15:0] buffered_color;
-bram_ram_512 bram_ram_512_a (
-	.in(color_input),
-	.address(9'b11101111),
+wire [15:0] data_out_bus;
+wire [14:0] data_address_bus;
+wire [14:0] instruction_address_bus;
+assign led1 = data_address_bus[0];
+assign led2 = data_address_bus[1];
+assign led3 = data_address_bus[2];
+assign led4 = data_address_bus[3];
+wire we;
+hack_cpu cpu (
 	.clk(clk50),
-	.load(~key0),
-	.out(buffered_color)
+	.instr_bus(16'b0000000000000001),
+	.data_in_bus(16'b000000000000), // eventually needs to be ram out
+	.reset(1'b0), // set to a button after debuging
+	.data_out_bus(data_out_bus),
+	.write_enable(we),
+	.data_address_bus(data_address_bus),
+	.instruction_address_bus(instruction_address_bus)
 );
-
-// Pixel Mapping
-always @(posedge clk50)
-begin
-if (inDisplayArea)
-  if (output_wire_alu == CounterY)  // since the alu is outputting 2x, its checking if y = 2x
-  begin
-	pixel <= buffered_color; // use the user inputed color
-  end
-  else
-  begin
-	pixel <= 3'b000; // otherwise show black
-  end
-else
-  pixel <= 3'b000; // disable color if in blanking period or porch
-end
-
-assign pix0 = pixel[0];
-assign pix1 = pixel[1];
-assign pix2 = pixel[2];
 
 endmodule
