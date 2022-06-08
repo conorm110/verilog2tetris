@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Tue Jun  7 19:17:31 2022
+Wed Jun  8 08:28:21 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -16,17 +16,18 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   8. Registers Removed During Synthesis
   9. Removed Registers Triggering Further Register Optimizations
  10. General Register Statistics
- 11. Port Connectivity Checks: "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e"
- 12. Port Connectivity Checks: "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e"
- 13. Port Connectivity Checks: "bram_ram_512:main_ram"
- 14. Port Connectivity Checks: "hack_cpu:cpu|program_counter:pc_inst"
- 15. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
- 16. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
- 17. Port Connectivity Checks: "hack_cpu:cpu|register:d_register"
- 18. Port Connectivity Checks: "hack_cpu:cpu"
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e"
+ 13. Port Connectivity Checks: "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e"
+ 14. Port Connectivity Checks: "bram_ram_512:main_ram"
+ 15. Port Connectivity Checks: "hack_cpu:cpu|program_counter:pc_inst"
+ 16. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
+ 17. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
+ 18. Port Connectivity Checks: "hack_cpu:cpu|register:d_register"
+ 19. Port Connectivity Checks: "hack_cpu:cpu"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +54,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun  7 19:17:31 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun  8 08:28:21 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 17                                          ;
-;     Total combinational functions  ; 17                                          ;
-;     Dedicated logic registers      ; 15                                          ;
-; Total registers                    ; 15                                          ;
+; Total logic elements               ; 43                                          ;
+;     Total combinational functions  ; 42                                          ;
+;     Dedicated logic registers      ; 20                                          ;
+; Total registers                    ; 20                                          ;
 ; Total pins                         ; 52                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -195,6 +196,7 @@ https://fpgasoftware.intel.com/eula.
 ; 03/BRAM/bram_ram_512.v           ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_512.v ;         ;
 ; program_counter.v                ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/program_counter.v      ;         ;
 ; 05/hack_cpu.v                    ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v          ;         ;
+; 04/rom_simulator.v               ; yes             ; User Verilog HDL File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_simulator.v     ;         ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------+---------+
 
 
@@ -203,20 +205,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 17          ;
+; Estimated Total logic elements              ; 43          ;
 ;                                             ;             ;
-; Total combinational functions               ; 17          ;
+; Total combinational functions               ; 42          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 1           ;
+;     -- 4 input functions                    ; 22          ;
 ;     -- 3 input functions                    ; 1           ;
-;     -- <=2 input functions                  ; 15          ;
+;     -- <=2 input functions                  ; 19          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 3           ;
+;     -- normal mode                          ; 28          ;
 ;     -- arithmetic mode                      ; 14          ;
 ;                                             ;             ;
-; Total registers                             ; 15          ;
-;     -- Dedicated logic registers            ; 15          ;
+; Total registers                             ; 20          ;
+;     -- Dedicated logic registers            ; 20          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 52          ;
@@ -224,9 +226,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clk50~input ;
-; Maximum fan-out                             ; 15          ;
-; Total fan-out                               ; 150         ;
-; Average fan-out                             ; 0.99        ;
+; Maximum fan-out                             ; 20          ;
+; Total fan-out                               ; 243         ;
+; Average fan-out                             ; 1.34        ;
 +---------------------------------------------+-------------+
 
 
@@ -235,563 +237,555 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name     ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+-----------------+--------------+
-; |rzfpga_pc                      ; 17 (2)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |rzfpga_pc                                      ; rzfpga_pc       ; work         ;
-;    |hack_cpu:cpu|               ; 15 (0)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu                         ; hack_cpu        ; work         ;
-;       |program_counter:pc_inst| ; 15 (15)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|program_counter:pc_inst ; program_counter ; work         ;
+; |rzfpga_pc                      ; 42 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |rzfpga_pc                                      ; rzfpga_pc       ; work         ;
+;    |hack_cpu:cpu|               ; 34 (1)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu                         ; hack_cpu        ; work         ;
+;       |ALUn2t:alu_inst_a|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a       ; ALUn2t          ; work         ;
+;       |program_counter:pc_inst| ; 30 (30)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|program_counter:pc_inst ; program_counter ; work         ;
+;       |register:a_register|     ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|register:a_register     ; register        ; work         ;
+;    |rom_simulator:rom|          ; 8 (8)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|rom_simulator:rom                    ; rom_simulator   ; work         ;
 +---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                             ;
-+---------------------------------------------------------------------------------------------------------+--------------------------------------+
-; Register name                                                                                           ; Reason for Removal                   ;
-+---------------------------------------------------------------------------------------------------------+--------------------------------------+
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock ;
-; hack_cpu:cpu|register:a_register|data[0..15]                                                            ; Lost fanout                          ;
-; hack_cpu:cpu|program_counter:pc_inst|out[15]                                                            ; Lost fanout                          ;
-; Total Number of Removed Registers = 8209                                                                ;                                      ;
-+---------------------------------------------------------------------------------------------------------+--------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                             ;
++---------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+; Register name                                                                                           ; Reason for Removal                                   ;
++---------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_g|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_f|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_d|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_c|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_b|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_h|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_g|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_f|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_e|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_d|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_c|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_b|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_h|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_g|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_f|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_e|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_d|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_c|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_b|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|register:register_a|data[0..15] ; Stuck at GND due to stuck port clock                 ;
+; rom_simulator:rom|data[2]                                                                               ; Merged with rom_simulator:rom|data[0]                ;
+; rom_simulator:rom|data[5..9,12]                                                                         ; Merged with rom_simulator:rom|data[3]                ;
+; rom_simulator:rom|data[11,13..15]                                                                       ; Merged with rom_simulator:rom|data[10]               ;
+; rom_simulator:rom|data[3]                                                                               ; Stuck at GND due to stuck port data_in               ;
+; hack_cpu:cpu|register:a_register|data[2]                                                                ; Merged with hack_cpu:cpu|register:a_register|data[0] ;
+; hack_cpu:cpu|register:a_register|data[5..15]                                                            ; Merged with hack_cpu:cpu|register:a_register|data[3] ;
+; hack_cpu:cpu|register:a_register|data[3]                                                                ; Stuck at GND due to stuck port data_in               ;
+; rom_simulator:rom|data[4]                                                                               ; Merged with rom_simulator:rom|data[0]                ;
+; hack_cpu:cpu|register:a_register|data[0]                                                                ; Merged with hack_cpu:cpu|register:a_register|data[4] ;
+; hack_cpu:cpu|program_counter:pc_inst|out[15]                                                            ; Lost fanout                                          ;
+; Total Number of Removed Registers = 8220                                                                ;                                                      ;
++---------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                          ;
-+------------------------------------------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------------------------+
-; Register name                                                                                        ; Reason for Removal      ; Registers Removed due to This Register                                              ;
-+------------------------------------------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------------------------+
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_h|register:register_h|data[0]  ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[4], hack_cpu:cpu|register:a_register|data[3], ;
-;                                                                                                      ; due to stuck port clock ; hack_cpu:cpu|register:a_register|data[2], hack_cpu:cpu|register:a_register|data[1], ;
-;                                                                                                      ;                         ; hack_cpu:cpu|register:a_register|data[0]                                            ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_h|bram_ram_8:bram_ram_8_e|register:register_a|data[0]  ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[7], hack_cpu:cpu|register:a_register|data[6], ;
-;                                                                                                      ; due to stuck port clock ; hack_cpu:cpu|register:a_register|data[5]                                            ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[0]  ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[8]                                            ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[9]  ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[9]                                            ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[10] ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[10]                                           ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[11] ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[11]                                           ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[12] ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[12]                                           ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[13] ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[13]                                           ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[14] ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[14]                                           ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-; bram_ram_512:main_ram|bram_ram_64:bram_ram_64_e|bram_ram_8:bram_ram_8_a|register:register_a|data[15] ; Stuck at GND            ; hack_cpu:cpu|register:a_register|data[15]                                           ;
-;                                                                                                      ; due to stuck port clock ;                                                                                     ;
-+------------------------------------------------------------------------------------------------------+-------------------------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                      ;
++---------------------------+---------------------------+------------------------------------------+
+; Register name             ; Reason for Removal        ; Registers Removed due to This Register   ;
++---------------------------+---------------------------+------------------------------------------+
+; rom_simulator:rom|data[3] ; Stuck at GND              ; hack_cpu:cpu|register:a_register|data[3] ;
+;                           ; due to stuck port data_in ;                                          ;
++---------------------------+---------------------------+------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -799,14 +793,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 15    ;
-; Number of registers using Synchronous Clear  ; 15    ;
+; Total registers                              ; 20    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 5     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |rzfpga_pc|hack_cpu:cpu|program_counter:pc_inst|out[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |rzfpga_pc|hack_cpu:cpu|program_counter:pc_inst|out[1] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |rzfpga_pc|rom_simulator:rom|data[10]                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -874,20 +879,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+-----------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hack_cpu:cpu"                                                                                                ;
-+-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                          ; Type   ; Severity ; Details                                                                             ;
-+-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; instr_bus[15..4]              ; Input  ; Info     ; Stuck at GND                                                                        ;
-; instr_bus[3]                  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; instr_bus[2]                  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; instr_bus[1]                  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; instr_bus[0]                  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_address_bus[14..9]       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; instruction_address_bus[9..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; instruction_address_bus[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hack_cpu:cpu"                                                                                          ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                             ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_address_bus[14..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -896,20 +894,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 52                          ;
-; cycloneiii_ff         ; 15                          ;
-;     SCLR              ; 15                          ;
+; cycloneiii_ff         ; 20                          ;
+;     ENA               ; 5                           ;
+;     plain             ; 15                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 20                          ;
+; cycloneiii_lcell_comb ; 46                          ;
 ;     arith             ; 14                          ;
 ;         2 data inputs ; 14                          ;
-;     normal            ; 6                           ;
+;     normal            ; 32                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
+;         4 data inputs ; 22                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.52                        ;
+; Max LUT depth         ; 3.40                        ;
+; Average LUT depth     ; 2.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -928,7 +928,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Tue Jun  7 19:16:45 2022
+    Info: Processing started: Wed Jun  8 08:28:01 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -969,7 +969,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file program
 Warning (10275): Verilog HDL Module Instantiation warning at hack_cpu.v(65): ignored dangling comma in List of Port Connections File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 65
 Info (12021): Found 1 design units, including 1 entities, in source file 05/hack_cpu.v
     Info (12023): Found entity 1: hack_cpu File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at rzfpga_pc.v(87): created implicit net for "clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 87
+Info (12021): Found 1 design units, including 1 entities, in source file 04/rom_simulator.v
+    Info (12023): Found entity 1: rom_simulator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_simulator.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at rzfpga_pc.v(88): created implicit net for "clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 88
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
 Warning (10034): Output port "SDA0" at rzfpga_pc.v(28) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
 Warning (10034): Output port "SDA1" at rzfpga_pc.v(29) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 29
@@ -998,7 +1000,7 @@ Warning (10034): Output port "pix1" at rzfpga_pc.v(57) has no driver File: C:/Us
 Warning (10034): Output port "pix2" at rzfpga_pc.v(58) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 58
 Warning (10034): Output port "hsyncout" at rzfpga_pc.v(59) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 59
 Warning (10034): Output port "vsyncout" at rzfpga_pc.v(61) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 61
-Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 82
+Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 83
 Info (12128): Elaborating entity "n2tmux16" for hierarchy "hack_cpu:cpu|n2tmux16:mux16_areg_in" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 30
 Info (12128): Elaborating entity "n2tmux" for hierarchy "hack_cpu:cpu|n2tmux16:mux16_areg_in|n2tmux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 20
 Info (12128): Elaborating entity "register" for hierarchy "hack_cpu:cpu|register:a_register" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 37
@@ -1008,13 +1010,14 @@ Info (12128): Elaborating entity "FullAdder" for hierarchy "hack_cpu:cpu|ALUn2t:
 Info (12128): Elaborating entity "HalfAdder" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 43
 Info (12128): Elaborating entity "program_counter" for hierarchy "hack_cpu:cpu|program_counter:pc_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 87
 Warning (10230): Verilog HDL assignment warning at program_counter.v(12): truncated value with size 32 to match size of target (16) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/program_counter.v Line: 12
-Info (12128): Elaborating entity "bram_ram_512" for hierarchy "bram_ram_512:main_ram" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 90
+Info (12128): Elaborating entity "bram_ram_512" for hierarchy "bram_ram_512:main_ram" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 91
 Info (12128): Elaborating entity "dmux_8_way" for hierarchy "bram_ram_512:main_ram|dmux_8_way:dmux_8_way_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_512.v Line: 37
 Info (12128): Elaborating entity "dmux" for hierarchy "bram_ram_512:main_ram|dmux_8_way:dmux_8_way_a|dmux:split" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 14
 Info (12128): Elaborating entity "dmux_4_way" for hierarchy "bram_ram_512:main_ram|dmux_8_way:dmux_8_way_a|dmux_4_way:dmux_low_nibble" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 15
 Info (12128): Elaborating entity "bram_ram_64" for hierarchy "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_512.v Line: 45
 Info (12128): Elaborating entity "bram_ram_8" for hierarchy "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_64.v Line: 45
 Info (12128): Elaborating entity "n8WayMux16" for hierarchy "bram_ram_512:main_ram|bram_ram_64:bram_ram_64_a|bram_ram_8:bram_ram_8_a|n8WayMux16:n8WayMux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 100
+Info (12128): Elaborating entity "rom_simulator" for hierarchy "rom_simulator:rom" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 96
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "DQ0" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 12
@@ -1056,31 +1059,29 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SDRAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 47
     Warning (13410): Pin "SDCAS" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
     Warning (13410): Pin "SDWE" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 49
-    Warning (13410): Pin "led2" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
-    Warning (13410): Pin "led3" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 52
-    Warning (13410): Pin "led4" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 53
+    Warning (13410): Pin "led1" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 50
     Warning (13410): Pin "pix0" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 56
     Warning (13410): Pin "pix1" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 57
     Warning (13410): Pin "pix2" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 58
     Warning (13410): Pin "hsyncout" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 59
     Warning (13410): Pin "vsyncout" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 61
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key1" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 7
     Warning (15610): No output dependent on input pin "key2" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 8
     Warning (15610): No output dependent on input pin "key3" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 9
-Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 31 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 17 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 84 warnings
-    Info: Peak virtual memory: 5018 megabytes
-    Info: Processing ended: Tue Jun  7 19:17:31 2022
-    Info: Elapsed time: 00:00:46
-    Info: Total CPU time (on all processors): 00:01:00
+    Info (21061): Implemented 43 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 5019 megabytes
+    Info: Processing ended: Wed Jun  8 08:28:21 2022
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:28
 
 

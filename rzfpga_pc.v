@@ -60,20 +60,21 @@ module rzfpga_pc (
 	output vsyncout
 );
 
+wire [15:0] instr_in_bus;
 wire [15:0] data_in_bus;
 wire [15:0] data_out_bus;
 wire [14:0] data_address_bus;
 wire [14:0] instruction_address_bus;
 
-assign led4 = 1'b1;
-assign led3 = 1'b1;
-assign led2 = 1'b1;
-assign led1 = ~(instruction_address_bus[14] & instruction_address_bus[13] & instruction_address_bus[12] & instruction_address_bus[11] & instruction_address_bus[10] & instruction_address_bus[4]);
+assign led4 = ~data_out_bus[0];
+assign led3 = ~data_out_bus[1];
+assign led2 = ~data_out_bus[2];
+assign led1 = ~data_out_bus[3];
 wire we;
 hack_cpu cpu (
 	.clk(clk50),
-	.instr_bus(16'b0000000000001010),
-	.data_in_bus(data_in_bus), // eventually needs to be ram out
+	.instr_bus(instr_in_bus),
+	.data_in_bus(data_in_bus),
 	.reset(~key0), // set to a button after debuging
 	.data_out_bus(data_out_bus),
 	.write_enable(we),
@@ -87,5 +88,10 @@ bram_ram_512 main_ram (
 	.clk(clk),
 	.load(we),
 	.out(data_in_bus)
+);
+rom_simulator rom (
+	.clk(clk50),
+	.address(instruction_address_bus),
+	.data(instr_in_bus)
 );
 endmodule
