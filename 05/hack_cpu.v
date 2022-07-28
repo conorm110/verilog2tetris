@@ -1,89 +1,111 @@
 module hack_cpu (
 	input clk,
-	input [15:0] instr_bus,
-	input [15:0] data_in_bus,
+	
+	input [15:0] inM,
+	input [15:0] instruction,
 	input reset,
-	output [15:0] data_out_bus,
-	output write_enable,
-	output [14:0] data_address_bus,
-	output [14:0] instruction_address_bus
+	
+	output [15:0] outM,
+	output writeM,
+	output [14:0] addressM,
+	output [14:0] pc
 );
 
-wire [15:0] areg_in_bus;
-wire [15:0] areg_out_bus;
-wire [15:0] alu_out_bus;
-wire [15:0] alu_y_bus;
-wire [15:0] alu_x_bus;
-wire zr;
-wire ng;
-wire [15:0] pc_out_bus;
-assign data_address_bus = areg_out_bus[14:0];
-assign data_out_bus = alu_out_bus;
-assign instruction_address_bus = pc_out_bus[14:0];
-assign write_enable = instr_bus[15] & instr_bus[3];
+wire aInstructionSignal = ~instruction[15]; // A Instruction control signal; true if this is an A Instruction
+wire cInstructionSignal = instruction[15]; // C Instruction control signal; true if this is a C Instruction
 
-n2tmux16 mux16_areg_in (
-	.a(alu_out_bus),
-	.b(instr_bus),
-	.sel(~instr_bus[15]),
-	.out(areg_in_bus)
+assign writeM = cInstructionSignal & instruction[3];
+wire dRegisterLoad = cInstructionSignal & instruction[4];
+wire tempARegisterLoad = cInstructionSignal & instruction[5];
+wire aRegisterLoad = aInstructionSignal | tempARegisterLoad;
+
+reg [15:0] dRegisterOut;
+always @(posedge clk)
+begin
+	if(dRegisterLoad)
+	begin
+		dRegisterOut <= aluOut;
+	end
+end
+
+wire [15:0] aRegisterIn;
+n2tmux16 Mux16_aluOut_instruction (
+	.a(aluOut),
+	.b(instruction),
+	.sel(aInstructionSignal),
+	.out(aRegisterIn)
 );
 
-register a_register (
-	.in(areg_in_bus),
-	.clk(clk),
-	.load(~instr_bus[15] | instr_bus[5]),
-	.out(areg_out_bus)
+reg [15:0] aRegisterOut;
+always @(posedge clk)
+begin
+	if(aRegisterLoad)
+	begin
+		aRegisterOut <= aRegisterIn;
+	end
+end
+assign addressM = aRegisterOut[14:0];
+
+wire [15:0] aluInputY;
+n2tmux16 Mux16_aRegisterOut_inM (
+	.a(aRegisterOut),
+	.b(inM),
+	.sel(instruction[12]),
+	.out(aluInputY)
 );
 
-n2tmux16 mux16_y_in (
-	.a(areg_out_bus),
-	.b(data_in_bus),
-	.sel(instr_bus[15] & instr_bus[12]),
-	.out(alu_y_bus)
-);
 
-register d_register (
-	.in(alu_out_bus),
-	.clk(clk),
-	.load(instr_bus[15] & instr_bus[4]),
-	.out()
-);
-
+wire [15:0] aluOut;
+wire zrOut;
+wire ngOut;
 ALUn2t alu_inst_a (
-	.x(alu_x_bus),
-	.y(alu_y_bus),
-	.zx(instr_bus[11]),
-	.nx(instr_bus[10]),
-	.zy(instr_bus[9]),
-	.ny(instr_bus[8]),
-	.f(instr_bus[7]),
-	.no(instr_bus[6]),
-	.out(alu_out_bus),
-	.zr(zr),
-	.ng(ng),
+	.x(dRegisterOut),
+	.y(aluInputY),
+	.zx(instruction[11]),
+	.nx(instruction[10]),
+	.zy(instruction[9]),
+	.ny(instruction[8]),
+	.f(instruction[7]),
+	.no(instruction[6]),
+	.out(aluOut),
+	.zr(zrOut),
+	.ng(ngOut)
+);
+assign outM = aluOut;
+
+wire zrOrNgOut = zrOut | ngOut;
+wire gOut = ~zrOrNgOut;
+wire gOrZrOut = gOut | zrOut;
+wire notZrOut = ~zrOut;
+
+wire pcLoadTemp;
+n2tmux8way n2tmux8way_inst (
+	.data0(1'b0),
+	.data1(gOut),
+	.data2(zrOut),
+	.data3(gOrZrOut),
+	.data4(ngOut),
+	.data5(notZrOut),
+	.data6(zrOrNgOut),
+	.data7(1'b1),
+	.sel(instruction[2:0]),
+	.result(pcLoadTemp)
 );
 
-wire pos = ~ng;
-wire nzr = ~zr;
-wire jgt = instr_bus[15] & instr_bus[0];
-wire posnzr = pos & nzr;
-wire ld1 = jgt & posnzr;
-wire jeq = instr_bus[15] & instr_bus[1];
-wire ld2 = jeq & zr;
-wire jlt = instr_bus[15] & instr_bus[2];
-wire ld3 = jlt & ng;
-wire ldt = ld1 | ld2;
-wire ld = ld3 | ldt;
+wire pcLoad = cInstructionSignal & pcLoadTemp;
+wire pcInc = ~pcLoad;
 
-
-program_counter pc_inst (
-	.in(areg_out_bus),
-	.reset(reset),
-	.load(ld),
-	.inc(1'b1),
-	.clk(clk),
-	.out(pc_out_bus)
+wire [15:0] pc_out;
+wire pc_clk;
+assign pc_clk = ~clk;
+cpu_pc cpu_pc_inst (
+	.clock(pc_clk),
+	.cnt_en(pcInc),
+	.data(aRegisterOut),
+	.sclr(reset),
+	.sload(pcLoad),
+	.q(pc_out)
 );
+assign pc = pc_out[14:0];
 
 endmodule

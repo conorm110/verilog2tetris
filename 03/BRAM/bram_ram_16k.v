@@ -1,31 +1,22 @@
-module bram_ram_16K (
+module bram_ram_16k (
 	input [15:0] in,
-	input [13:0] address,
+	input [14:0] address,
 	input clk,
 	input load,
 	output [15:0] out
 );
-
 wire lda;
 wire ldb;
 wire ldc;
 wire ldd;
-wire lde;
-wire ldf;
-wire ldg;
-wire ldh;
 wire [15:0] outa;
 wire [15:0] outb;
 wire [15:0] outc;
 wire [15:0] outd;
-wire [15:0] oute;
-wire [15:0] outf;
-wire [15:0] outg;
-wire [15:0] outh;
 
-dmux_8_way dmux_8_way_a (
+dmux_4_way dmux_4_way_inst_a (
 	.in(load),
-	.select(address[13:12]),
+	.sel(address[13:12]),
 	.a(lda),
 	.b(ldb),
 	.c(ldc),
@@ -61,16 +52,17 @@ bram_ram_4k bram_ram_4k_d (
 	.out(outd)
 );
 
-
 n8WayMux16 n8WayMux16_a (
 	.a(outa),
 	.b(outb),
 	.c(outc),
 	.d(outd),
+	.e(outa),
+	.f(outb),
+	.g(outc),
+	.h(outd),
 	.sel(address[13:12]),
 	.out(out)
 );
-
-
 
 endmodule

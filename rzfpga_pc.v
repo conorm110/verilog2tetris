@@ -1,97 +1,139 @@
 module rzfpga_pc (
 	// System IO
 	input clk50,
-	
-	// General IO
-	input key0,
-	input key1,
-	input key2,
-	input key3,
-	
-	// SDRAM
-	inout DQ0,
-	inout DQ1,
-	inout DQ2,
-	inout DQ3,
-	inout DQ4,
-	inout DQ5,
-	inout DQ6,
-	inout DQ7,
-	inout DQ8,
-	inout DQ9,
-	inout DQ10,
-	inout DQ11,
-	inout DQ12,
-	inout DQ13,
-	inout DQ14,
-	inout DQ15,
-	output SDA0,
-	output SDA1,
-	output SDA2,
-	output SDA3,
-	output SDA4,
-	output SDA5,
-	output SDA6,
-	output SDA7,
-	output SDA8,
-	output SDA9,
-	output SDA10,
-	output SDA11,
-	output SDBS0,
-	output SDBS1,
-	output SDLDQM,
-	output SDUDQM,
-	output SDCKE,
-	output SDCLK,
-	output SDCS,
-	output SDRAS,
-	output SDCAS,
-	output SDWE,
-	output led1,
-	output led2,
-	output led3,
-	output led4,
+	input reset,
+	input [3:0] key,
+	output [3:0] led,
 	
 	// VGA
-	output pix0,
-	output pix1,
-	output pix2,
+	output reg [2:0] vga_c,
 	output hsyncout,
-	output vsyncout
+	output vsyncout,
+	
+	inout [15:0] sd_dq,  
+	output [11:0] sd_a,
+	output [1:0] sd_bs,
+	output [1:0] sd_dqm,
+	output sd_cke,
+	output sd_clk,
+	output sd_cs,
+	output sd_ras,
+	output sd_cas,
+	output sd_we,
+	
+	// LCD
+	output lcd_rs,
+	output lcd_rw,
+	output lcd_e,
+	inout [7:0] lcd_d,
+	
+	// tubeeeee
+	output [3:0] dig,
+	output [7:0] seg
+	
+);
+wire [3:0] inv_led;
+assign led = ~inv_led;
+
+wire clk_cpu;
+assign clk_cpu = counter[23];
+reg [24:0] counter = 25'b0_0000_0000_0000_0000_0000_0000;
+reg cpu_clk_inhibit = 0;
+always@(posedge clk50)
+begin
+	if (~cpu_clk_inhibit)
+	begin
+		counter <= counter + 1;
+	end
+end
+
+reg [15:0] seven_seg_in;
+seven_seg_controller seven_seg_controller_inst (
+	.clk50(clk50),
+	.num(seven_seg_in),
+	.dig(dig),
+	.seg(seg)
+);
+always @(posedge clk_cpu)
+begin
+	
+	seven_seg_in <= data_output;
+end
+
+wire [15:0] rom_out;
+wire [14:0] rom_addr;
+rom_quartus_ip rom_quartus_ip_inst (
+	.address(rom_addr),
+	.clock(clk_cpu),
+	.q(rom_out)
 );
 
-wire [15:0] instr_in_bus;
-wire [15:0] data_in_bus;
-wire [15:0] data_out_bus;
-wire [14:0] data_address_bus;
-wire [14:0] instruction_address_bus;
-
-assign led4 = ~data_out_bus[0];
-assign led3 = ~data_out_bus[1];
-assign led2 = ~data_out_bus[2];
-assign led1 = ~data_out_bus[3];
-wire we;
+wire [15:0] ram_in_cpu;
+wire ram_we_cpu;
+wire [14:0] ram_addr_cpu;
+wire [14:0] rom_addr_temp;
 hack_cpu cpu (
-	.clk(clk50),
-	.instr_bus(instr_in_bus),
-	.data_in_bus(data_in_bus),
-	.reset(~key0), // set to a button after debuging
-	.data_out_bus(data_out_bus),
-	.write_enable(we),
-	.data_address_bus(data_address_bus),
-	.instruction_address_bus(instruction_address_bus)
+	.clk(clk_cpu),
+	.inM(data_output),
+	.instruction(rom_out),
+	.reset(~reset),
+	.outM(ram_in_cpu),
+	.writeM(ram_we_cpu),
+	.addressM(ram_addr_cpu),
+	.pc(rom_addr)
 );
- 
-bram_ram_512 main_ram (
-	.in(data_out_bus),
-	.address(data_address_bus),
-	.clk(clk),
-	.load(we),
-	.out(data_in_bus)
+
+assign sdram_buffer_addr_in = ram_addr_cpu;
+assign sdram_buffer_data_in = ram_in_cpu;
+assign sdram_buffer_rw_in = ram_we_cpu;
+
+reg req_state = 1'b0;
+always @(posedge clk50)
+begin
+	if (sdram_buffer_empty && req_state == 1'b0)
+	begin
+		sdram_buffer_wrreq <= 1'b1;
+		req_state <= 1'b1;
+	end
+	if (req_state == 1'b1)
+	begin
+		sdram_buffer_wrreq <= 1'b0;
+		req_state <= 1'b0;
+	end
+end
+
+wire [19:0] sdram_buffer_addr_in;
+wire [15:0] sdram_buffer_data_in;
+wire sdram_buffer_rw_in;
+reg sdram_buffer_wrreq;
+wire [15:0] data_output;
+wire [19:0] current_address;
+wire sdram_buffer_empty;
+wire sdram_buffer_full;
+ram_manager ram_manager_inst (
+	.clk50(clk50),
+	.clk100_0ds(mem_clk),
+	.sd_dq(sd_dq),
+	.sd_a(sd_a),
+	.sd_bs(sd_bs),
+	.sd_dqm(sd_dqm),
+	.sd_cke(sd_cke),
+	.sd_clk(sd_clk),
+	.sd_cs(sd_cs),
+	.sd_ras(sd_ras),
+	.sd_cas(sd_cas),
+	.sd_we(sd_we),
+	.sdram_buffer_addr_in(sdram_buffer_addr_in),
+	.sdram_buffer_data_in(sdram_buffer_data_in),
+	.sdram_buffer_rw_in(sdram_buffer_rw_in),
+	.sdram_buffer_wrreq(sdram_buffer_wrreq),
+	.data_output(data_output),
+	.current_address(current_address),
+	.sdram_buffer_empty(sdram_buffer_empty),
+	.sdram_buffer_full(sdram_buffer_full)
 );
-rom_simulator rom (
-	.clk(clk50),
-	.address(instruction_address_bus),
-	.data(instr_in_bus)
-);
+
+
+
+
 endmodule

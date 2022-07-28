@@ -4,15 +4,179 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "led2",
+					"name" : "sd_a[0]",
 					"strict" : false
 				},
 				{
-					"name" : "led3",
+					"name" : "sd_a[1]",
 					"strict" : false
 				},
 				{
-					"name" : "led4",
+					"name" : "sd_a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_a[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_bs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dqm[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dqm[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_ras",
+					"strict" : false
+				},
+				{
+					"name" : "sd_cas",
+					"strict" : false
+				},
+				{
+					"name" : "sd_we",
+					"strict" : false
+				},
+				{
+					"name" : "dig[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dig[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dig[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dig[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sd_dq[15]",
 					"strict" : false
 				},
 				{
@@ -20,7 +184,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "key0",
+					"name" : "reset",
 					"strict" : false
 				}
 			]

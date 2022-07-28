@@ -1,0 +1,14 @@
+
+State Machine - |rzfpga_pc|ram_manager:ram_manager_inst|buffer_reader_state
+Name buffer_reader_state.11 buffer_reader_state.10 buffer_reader_state.01 buffer_reader_state.00 
+buffer_reader_state.00 0 0 0 0 
+buffer_reader_state.01 0 0 1 1 
+buffer_reader_state.10 0 1 0 1 
+buffer_reader_state.11 1 0 0 1 
+
+State Machine - |rzfpga_pc|ram_manager:ram_manager_inst|sdram:sdram_inst|state
+Name state.11 state.10 state.01 state.00 
+state.00 0 0 0 0 
+state.01 0 0 1 1 
+state.10 0 1 0 1 
+state.11 1 0 0 1 

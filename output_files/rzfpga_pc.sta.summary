@@ -2,40 +2,184 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'counter[23]'
+Slack : -16.558
+TNS   : -624.607
+
+Type  : Slow 1200mV 85C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -16.070
+TNS   : -291.953
+
+Type  : Slow 1200mV 85C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.999
+TNS   : -79.929
+
 Type  : Slow 1200mV 85C Model Setup 'clk50'
-Slack : -2.745
-TNS   : -43.478
+Slack : -1.459
+TNS   : -1.459
+
+Type  : Slow 1200mV 85C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.452
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk50'
-Slack : 0.553
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'counter[23]'
+Slack : 0.761
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 6.943
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 1.292
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'counter[23]'
+Slack : -3.201
+TNS   : -114.828
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ram_manager:ram_manager_inst|rdreq_buffer'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.703
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
-Slack : -3.000
-TNS   : -32.740
+Slack : 9.783
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4999.718
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'counter[23]'
+Slack : -15.518
+TNS   : -585.721
+
+Type  : Slow 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -14.864
+TNS   : -241.948
+
+Type  : Slow 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.511
+TNS   : -66.243
 
 Type  : Slow 1200mV 0C Model Setup 'clk50'
-Slack : -2.391
-TNS   : -38.451
+Slack : -1.333
+TNS   : -1.333
+
+Type  : Slow 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.236
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.400
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk50'
-Slack : 0.511
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'counter[23]'
+Slack : 0.709
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 7.132
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 1.185
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'counter[23]'
+Slack : -3.201
+TNS   : -114.828
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ram_manager:ram_manager_inst|rdreq_buffer'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.680
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
-Slack : -3.000
-TNS   : -32.740
+Slack : 9.774
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4999.715
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'counter[23]'
+Slack : -6.544
+TNS   : -234.641
+
+Type  : Fast 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -6.357
+TNS   : -94.856
+
+Type  : Fast 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.940
+TNS   : -24.413
 
 Type  : Fast 1200mV 0C Model Setup 'clk50'
-Slack : -0.639
-TNS   : -7.518
+Slack : -0.423
+TNS   : -0.423
+
+Type  : Fast 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.124
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.186
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk50'
-Slack : 0.231
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'counter[23]'
+Slack : 0.303
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 8.587
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.548
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'counter[23]'
+Slack : -1.000
+TNS   : -68.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ram_manager:ram_manager_inst|rdreq_buffer'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.730
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
-Slack : -3.000
-TNS   : -24.296
+Slack : 9.435
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4999.798
+TNS   : 0.000
 
 ------------------------------------------------------------

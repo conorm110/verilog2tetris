@@ -5,7 +5,6 @@ module bram_ram_4k (
 	input load,
 	output [15:0] out
 );
-
 wire lda;
 wire ldb;
 wire ldc;
@@ -36,57 +35,58 @@ dmux_8_way dmux_8_way_a (
 	.h(ldh)
 );
 
-bram_ram_512 bram_ram_512_a (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_a (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(lda),
 	.out(outa)
 );
-bram_ram_512 bram_ram_512_b (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_b (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(ldb),
 	.out(outb)
 );
-bram_ram_512 bram_ram_512_c (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_c (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(ldc),
 	.out(outc)
 );
-bram_ram_512 bram_ram_512_d (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_d (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(ldd),
 	.out(outd)
 );
-bram_ram_512 bram_ram_512_e (
+bram_ram_512 bram_ram_512_inst_e (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(lde),
 	.out(oute)
 );
-bram_ram_512 bram_ram_512_f (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_f (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(ldf),
 	.out(outf)
 );
-bram_ram_512 bram_ram_512_g (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_g (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(ldg),
 	.out(outg)
 );
-bram_ram_512 bram_ram_512_h (
-	.address(address[8:0]),
+bram_ram_512 bram_ram_512_inst_h (
 	.in(in),
+	.address(address[8:0]),
 	.clk(clk),
 	.load(ldh),
 	.out(outh)
@@ -102,10 +102,7 @@ n8WayMux16 n8WayMux16_a (
 	.f(outf),
 	.g(outg),
 	.h(outh),
-	.sel(address[11:9]),
+	.sel(address[8:6]),
 	.out(out)
 );
-
-
-
 endmodule
