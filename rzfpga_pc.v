@@ -36,7 +36,7 @@ wire [3:0] inv_led;
 assign led = ~inv_led;
 
 wire clk_cpu;
-assign clk_cpu = counter[23];
+assign clk_cpu = counter[12];
 reg [24:0] counter = 25'b0_0000_0000_0000_0000_0000_0000;
 reg cpu_clk_inhibit = 0;
 always@(posedge clk50)
@@ -56,8 +56,10 @@ seven_seg_controller seven_seg_controller_inst (
 );
 always @(posedge clk_cpu)
 begin
-	
-	seven_seg_in <= data_output;
+	if (ram_we_cpu)
+	begin
+	seven_seg_in <= ram_in_cpu;
+	end
 end
 
 wire [15:0] rom_out;
