@@ -88,9 +88,19 @@ hack_cpu cpu (
 	.pc(rom_addr)
 );
 
-assign sdram_buffer_addr_in = ram_addr_cpu;
+always @(posedge clk50)
+begin
+	if(inDisplayArea)
+	begin
+		sdram_buffer_addr_in <= ram_addr_gpu;
+	end
+	else
+	begin
+		sdram_buffer_addr_in <= ram_addr_cpu;
+	end
+end
 assign sdram_buffer_data_in = ram_in_cpu;
-assign sdram_buffer_rw_in = ram_we_cpu;
+assign sdram_buffer_rw_in = ram_we_cpu & (~inDisplayArea);
 
 reg req_state = 1'b0;
 always @(posedge clk50)
@@ -107,7 +117,7 @@ begin
 	end
 end
 
-wire [19:0] sdram_buffer_addr_in;
+reg [19:0] sdram_buffer_addr_in;
 wire [15:0] sdram_buffer_data_in;
 wire sdram_buffer_rw_in;
 reg sdram_buffer_wrreq;
@@ -141,11 +151,30 @@ ram_manager ram_manager_inst (
 
 
 wire inDisplayArea;
+wire [19:0] ram_addr_gpu;
+wire [9:0] CounterX;
+wire [9:0] CounterY;
 hvsync_generator hvsync_generator_inst (
 	.clk50(clk50),
 	.vga_h_sync(hsyncout),
 	.vga_v_sync(vsyncout),
-	.inDisplayArea(inDisplayArea)
+	.inDisplayArea(inDisplayArea),
+	.CounterX(CounterX),
+	.CounterY(CounterY),
+	.loc(ram_addr_gpu)
 );
+
+always @(posedge clk50)
+begin
+	if (inDisplayArea)
+	begin
+		
+		vga_c <= data_output;
+	end
+	else
+	begin
+		vga_c <= 3'b000;
+	end
+end
 
 endmodule

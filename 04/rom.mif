@@ -4,11 +4,10 @@ ADDRESS_RADIX = DEC;
 DATA_RADIX = HEX;
 CONTENT BEGIN
 0 : ea90;
-1 : e7d0;
-2 : 0000;
-3 : e308;
-4 : ea90;
-5 : fc10;
-6 : 0001;
-7 : ea87;
+1 : e320;
+2 : ea88;
+3 : ede0;
+4 : ec10;
+5 : 0001;
+6 : ea87;
 END;
