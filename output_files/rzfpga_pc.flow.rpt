@@ -1,5 +1,5 @@
 Flow report for rzfpga_pc
-Thu Jul 28 19:00:59 2022
+Fri Jul 29 00:47:28 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jul 28 19:00:56 2022       ;
+; Flow Status                        ; Successful - Fri Jul 29 00:47:25 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 409 / 6,272 ( 7 % )                         ;
-;     Total combinational functions  ; 326 / 6,272 ( 5 % )                         ;
-;     Dedicated logic registers      ; 287 / 6,272 ( 5 % )                         ;
-; Total registers                    ; 287                                         ;
+; Total logic elements               ; 494 / 6,272 ( 8 % )                         ;
+;     Total combinational functions  ; 412 / 6,272 ( 7 % )                         ;
+;     Dedicated logic registers      ; 342 / 6,272 ( 5 % )                         ;
+; Total registers                    ; 342                                         ;
 ; Total pins                         ; 76 / 92 ( 83 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 217,088 / 276,480 ( 79 % )                  ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/28/2022 19:00:34 ;
+; Start date & time ; 07/29/2022 00:47:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rzfpga_pc           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589201.165905283411940         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589201.165907362904384         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; SDRAM/sdram_clkgen_bb.v                ; --            ; --          ; --         ;
@@ -112,11 +112,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4820 MB             ; 00:00:22                           ;
-; Fitter               ; 00:00:07     ; 1.1                     ; 5506 MB             ; 00:00:09                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4702 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4772 MB             ; 00:00:02                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4816 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:05     ; 1.1                     ; 5511 MB             ; 00:00:07                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 4712 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4771 MB             ; 00:00:02                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

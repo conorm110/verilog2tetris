@@ -36,7 +36,9 @@ wire [3:0] inv_led;
 assign led = ~inv_led;
 
 wire clk_cpu;
-assign clk_cpu = counter[12];
+
+
+assign clk_cpu = counter[11];
 reg [24:0] counter = 25'b0_0000_0000_0000_0000_0000_0000;
 reg cpu_clk_inhibit = 0;
 always@(posedge clk50)
@@ -76,6 +78,7 @@ wire [14:0] ram_addr_cpu;
 wire [14:0] rom_addr_temp;
 hack_cpu cpu (
 	.clk(clk_cpu),
+	.hlt(inDisplayArea),
 	.inM(data_output),
 	.instruction(rom_out),
 	.reset(~reset),
@@ -137,5 +140,12 @@ ram_manager ram_manager_inst (
 
 
 
+wire inDisplayArea;
+hvsync_generator hvsync_generator_inst (
+	.clk50(clk50),
+	.vga_h_sync(hsyncout),
+	.vga_v_sync(vsyncout),
+	.inDisplayArea(inDisplayArea)
+);
 
 endmodule

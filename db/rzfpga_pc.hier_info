@@ -1,5 +1,5 @@
 |rzfpga_pc
-clk50 => clk50.IN2
+clk50 => clk50.IN3
 reset => _.IN1
 key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
@@ -12,8 +12,8 @@ led[3] <= <VCC>
 vga_c[0] <= <GND>
 vga_c[1] <= <GND>
 vga_c[2] <= <GND>
-hsyncout <= <GND>
-vsyncout <= <GND>
+hsyncout <= hvsync_generator:hvsync_generator_inst.vga_h_sync
+vsyncout <= hvsync_generator:hvsync_generator_inst.vga_v_sync
 sd_dq[0] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[1] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[2] <> ram_manager:ram_manager_inst.sd_dq
@@ -878,6 +878,7 @@ clk => dRegisterOut[13].CLK
 clk => dRegisterOut[14].CLK
 clk => dRegisterOut[15].CLK
 clk => pc_clk.IN1
+hlt => comb.IN0
 inM[0] => inM[0].IN1
 inM[1] => inM[1].IN1
 inM[2] => inM[2].IN1
@@ -4411,5 +4412,64 @@ SDRAM_DQ[12] <> SDRAM_DQ[12]
 SDRAM_DQ[13] <> SDRAM_DQ[13]
 SDRAM_DQ[14] <> SDRAM_DQ[14]
 SDRAM_DQ[15] <> SDRAM_DQ[15]
+
+
+|rzfpga_pc|hvsync_generator:hvsync_generator_inst
+clk50 => pixel_clk.CLK
+clk50 => counter_value[0].CLK
+clk50 => counter_value[1].CLK
+clk50 => counter_value[2].CLK
+clk50 => counter_value[3].CLK
+clk50 => counter_value[4].CLK
+clk50 => counter_value[5].CLK
+clk50 => counter_value[6].CLK
+clk50 => counter_value[7].CLK
+clk50 => counter_value[8].CLK
+clk50 => counter_value[9].CLK
+clk50 => counter_value[10].CLK
+clk50 => counter_value[11].CLK
+clk50 => counter_value[12].CLK
+clk50 => counter_value[13].CLK
+clk50 => counter_value[14].CLK
+clk50 => counter_value[15].CLK
+clk50 => counter_value[16].CLK
+clk50 => counter_value[17].CLK
+clk50 => counter_value[18].CLK
+clk50 => counter_value[19].CLK
+clk50 => counter_value[20].CLK
+clk50 => counter_value[21].CLK
+clk50 => counter_value[22].CLK
+clk50 => counter_value[23].CLK
+clk50 => counter_value[24].CLK
+clk50 => counter_value[25].CLK
+clk50 => counter_value[26].CLK
+clk50 => counter_value[27].CLK
+clk50 => counter_value[28].CLK
+clk50 => counter_value[29].CLK
+clk50 => counter_value[30].CLK
+clk50 => counter_value[31].CLK
+vga_h_sync <= vga_HS.DB_MAX_OUTPUT_PORT_TYPE
+vga_v_sync <= vga_VS.DB_MAX_OUTPUT_PORT_TYPE
+inDisplayArea <= inDisplayArea~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[0] <= CounterX[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[1] <= CounterX[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[2] <= CounterX[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[3] <= CounterX[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[4] <= CounterX[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[5] <= CounterX[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[6] <= CounterX[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[7] <= CounterX[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[8] <= CounterX[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterX[9] <= CounterX[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[0] <= CounterY[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[1] <= CounterY[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[2] <= CounterY[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[3] <= CounterY[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[4] <= CounterY[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[5] <= CounterY[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[6] <= CounterY[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[7] <= CounterY[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[8] <= CounterY[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CounterY[9] <= CounterY[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

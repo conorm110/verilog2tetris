@@ -1,6 +1,6 @@
 module hack_cpu (
 	input clk,
-	
+	input hlt,
 	input [15:0] inM,
 	input [15:0] instruction,
 	input reset,
@@ -100,7 +100,7 @@ wire pc_clk;
 assign pc_clk = ~clk;
 cpu_pc cpu_pc_inst (
 	.clock(pc_clk),
-	.cnt_en(pcInc),
+	.cnt_en(pcInc & ~hlt),
 	.data(aRegisterOut),
 	.sclr(reset),
 	.sload(pcLoad),

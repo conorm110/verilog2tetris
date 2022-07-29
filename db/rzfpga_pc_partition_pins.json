@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "hsyncout",
+					"strict" : false
+				},
+				{
+					"name" : "vsyncout",
+					"strict" : false
+				},
+				{
 					"name" : "sd_a[0]",
 					"strict" : false
 				},
