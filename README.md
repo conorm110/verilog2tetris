@@ -1,11 +1,11 @@
 # Verilog2Tetris
-Verilog2Tetris is based off the same designs from the Nand2Tetris curriculum but instead of using a custom HDL everything is written in Verilog. The file layout is made for Intel Quartus and the default pin assignments are for the RZ-EasyFPGA A2.2 FPGA (Cyclone IV) development board.
+Verilog2Tetris is based off the same designs from the Nand2Tetris curriculum but instead of using a custom HDL everything is written in Verilog. The project is made for Intel Quartus and the default pin assignments are for the RZ-EasyFPGA A2.2 FPGA (Cyclone IV) development board.
 
 ## Current Functionality
-Currently, the code runs the ALU from Nand2Tetris and has 4KB of block ram. It is hard coded to graph and linear function you input.
+Any program for nand2tetris in hex can run on the board by putting the hex instructions into the .MIF file in 04/. The video memory doesn't fully work (all of memory is being written to the screen instead of just after the vram pointer due to scaling issues). There is no ability to read keyboards either.
 
 ## Future Goals
-Once the main part of Nand2Tetris is completed and translated over to Verilog with everything confirmed to be working on the RZ-EasyFPGA A2.2 FPGA, adapting the simple computer to work with a Verilog-coded VGA adapter will begin. After that PS/2 keyboard support will be added as the RZ_EasyFPGA A2.2 board has a PS/2 port. Finally, I also want to add debug functioality over the built in DSUB-9 port.
+The next goal is to get the PS/2 port working for keyboards. After that the next major step is scaling the HackCPUs accessable VRAM to the entire display.
 
 ## Setup and Programming with RZ-EasyFPGA A2.2
 The RZ-EasyFPGA is not an easy FPGA to set up and it is a pain (mostly because I'm used to Vivado and built in programmers) but its doable. All instructions are for windows 10.
@@ -17,5 +17,3 @@ The RZ-EasyFPGA is not an easy FPGA to set up and it is a pain (mostly because I
 6. Once everything is done, restart your computer
 7. Now open the .qpf, this should open with Quartus Lite by default (this is good)
 8. To program, go to tools -> programmer, select your hardware device and make sure it is set to JTAG. Then select the only file displaced and hit the run button 
-
-![diagram](https://docs.google.com/drawings/d/e/2PACX-1vThhPI7H7_1E36BgRAzLkUydulztc1dD9MvsmBA6jBnoDiTIOIBJGaJPRUbA1Rsx93hKw9AE3IByAk6/pub?w=4512&h=2448)

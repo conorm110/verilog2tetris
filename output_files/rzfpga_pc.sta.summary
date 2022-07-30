@@ -3,51 +3,51 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'counter[11]'
-Slack : -16.575
-TNS   : -759.236
+Slack : -15.839
+TNS   : -735.373
 
 Type  : Slow 1200mV 85C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : -16.067
-TNS   : -273.420
+Slack : -15.406
+TNS   : -232.415
 
 Type  : Slow 1200mV 85C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.973
-TNS   : -79.999
+Slack : -2.999
+TNS   : -80.704
 
 Type  : Slow 1200mV 85C Model Setup 'hvsync_generator:hvsync_generator_inst|pixel_clk'
-Slack : -2.364
-TNS   : -43.176
+Slack : -2.648
+TNS   : -45.171
 
 Type  : Slow 1200mV 85C Model Setup 'clk50'
-Slack : -2.265
-TNS   : -67.262
+Slack : -2.495
+TNS   : -69.225
 
 Type  : Slow 1200mV 85C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.447
+Slack : 0.348
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.452
+Slack : 0.454
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk50'
 Slack : 0.465
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'counter[11]'
-Slack : 0.696
+Type  : Slow 1200mV 85C Model Hold 'hvsync_generator:hvsync_generator_inst|pixel_clk'
+Slack : 0.637
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'hvsync_generator:hvsync_generator_inst|pixel_clk'
-Slack : 0.731
+Type  : Slow 1200mV 85C Model Hold 'counter[11]'
+Slack : 0.763
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 7.559
+Slack : 7.733
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.886
+Slack : 1.147
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'counter[11]'
@@ -63,7 +63,7 @@ Slack : -1.487
 TNS   : -1.487
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 4.703
+Slack : 4.721
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
@@ -71,55 +71,55 @@ Slack : 9.783
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 4999.715
+Slack : 4999.718
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'counter[11]'
-Slack : -15.527
-TNS   : -708.106
+Slack : -14.808
+TNS   : -684.505
 
 Type  : Slow 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : -14.847
-TNS   : -218.620
+Slack : -14.211
+TNS   : -202.641
 
 Type  : Slow 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.473
-TNS   : -66.370
+Slack : -2.521
+TNS   : -67.164
 
 Type  : Slow 1200mV 0C Model Setup 'hvsync_generator:hvsync_generator_inst|pixel_clk'
-Slack : -2.141
-TNS   : -38.183
+Slack : -2.391
+TNS   : -39.778
 
 Type  : Slow 1200mV 0C Model Setup 'clk50'
-Slack : -2.011
-TNS   : -59.190
+Slack : -2.246
+TNS   : -61.451
 
 Type  : Slow 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.399
+Slack : 0.243
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.400
+Slack : 0.401
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk50'
-Slack : 0.416
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'counter[11]'
-Slack : 0.637
+Slack : 0.417
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'hvsync_generator:hvsync_generator_inst|pixel_clk'
-Slack : 0.652
+Slack : 0.594
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'counter[11]'
+Slack : 0.709
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 7.714
+Slack : 7.912
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.814
+Slack : 1.045
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'counter[11]'
@@ -132,66 +132,66 @@ TNS   : -34.201
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ram_manager:ram_manager_inst|rdreq_buffer'
 Slack : -1.487
-TNS   : -1.495
+TNS   : -1.487
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 4.673
+Slack : 4.718
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
-Slack : 9.773
+Slack : 9.772
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 4999.715
+Slack : 4999.718
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'counter[11]'
-Slack : -6.530
-TNS   : -280.607
+Slack : -6.282
+TNS   : -273.055
 
 Type  : Fast 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : -6.284
-TNS   : -81.193
+Slack : -6.021
+TNS   : -78.762
 
 Type  : Fast 1200mV 0C Model Setup 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.933
-TNS   : -24.490
+Slack : -0.943
+TNS   : -24.792
 
 Type  : Fast 1200mV 0C Model Setup 'hvsync_generator:hvsync_generator_inst|pixel_clk'
-Slack : -0.414
-TNS   : -5.339
+Slack : -0.582
+TNS   : -7.019
 
 Type  : Fast 1200mV 0C Model Setup 'clk50'
-Slack : -0.343
-TNS   : -6.076
+Slack : -0.415
+TNS   : -7.281
 
 Type  : Fast 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.185
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.186
+Slack : 0.113
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk50'
-Slack : 0.193
+Slack : 0.187
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'counter[11]'
-Slack : 0.268
+Type  : Fast 1200mV 0C Model Hold 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'hvsync_generator:hvsync_generator_inst|pixel_clk'
-Slack : 0.277
+Slack : 0.259
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'counter[11]'
+Slack : 0.303
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 8.888
+Slack : 8.944
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.381
+Slack : 0.510
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'counter[11]'
@@ -207,7 +207,7 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 4.726
+Slack : 4.731
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
@@ -215,7 +215,7 @@ Slack : 9.434
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'seven_seg_controller_inst|clk_7seg_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 4999.797
+Slack : 4999.798
 TNS   : 0.000
 
 ------------------------------------------------------------

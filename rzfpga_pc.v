@@ -100,10 +100,10 @@ begin
 	end
 end
 assign sdram_buffer_data_in = ram_in_cpu;
-assign sdram_buffer_rw_in = ram_we_cpu & (~inDisplayArea);
+assign sdram_buffer_rw_in = ram_we_cpu & (~inDisplayArea); // force to read only during display area time
 
 reg req_state = 1'b0;
-always @(posedge clk50)
+always @(posedge mem_clk)
 begin
 	if (sdram_buffer_empty && req_state == 1'b0)
 	begin
@@ -125,6 +125,7 @@ wire [15:0] data_output;
 wire [19:0] current_address;
 wire sdram_buffer_empty;
 wire sdram_buffer_full;
+wire mem_clk;
 ram_manager ram_manager_inst (
 	.clk50(clk50),
 	.clk100_0ds(mem_clk),

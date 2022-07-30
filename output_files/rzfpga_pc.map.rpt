@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Fri Jul 29 04:52:45 2022
+Fri Jul 29 19:20:06 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 29 04:52:45 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 29 19:20:06 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -187,8 +187,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -231,7 +230,7 @@ https://fpgasoftware.intel.com/eula.
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc              ;         ;
 ; db/altsyncram_31a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf   ;         ;
-; ./04/rom.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif               ;         ;
+; 04/rom.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif               ;         ;
 ; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf               ;         ;
 ; muxlut.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/muxlut.inc                ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/bypassff.inc              ;         ;
@@ -293,7 +292,7 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 2                                                                                                                                       ;
 ;                                             ;                                                                                                                                         ;
 ; Maximum fan-out node                        ; ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component|sdram_clkgen_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 209                                                                                                                                     ;
+; Maximum fan-out                             ; 210                                                                                                                                     ;
 ; Total fan-out                               ; 3719                                                                                                                                    ;
 ; Average fan-out                             ; 3.47                                                                                                                                    ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -1503,7 +1502,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port              ; Type   ; Severity ; Details                                                                             ;
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; clk100_0ds        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; current_address   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; sdram_buffer_full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1593,7 +1591,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1603,7 +1601,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Jul 29 04:52:34 2022
+    Info: Processing started: Fri Jul 29 19:19:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1679,14 +1677,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file sdram/s
     Info (12023): Found entity 1: sdram_clk_100MHz File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clk_100MHz.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file sdram/ram_manager.v
     Info (12023): Found entity 1: ram_manager File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at rzfpga_pc.v(130): created implicit net for "mem_clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 130
 Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(25): created implicit net for "direct_rd_gnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 25
 Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(26): created implicit net for "ram_clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 26
 Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(130): created implicit net for "RdGnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 130
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
 Warning (10858): Verilog HDL warning at rzfpga_pc.v(35): object inv_led used but never assigned File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
 Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(48): truncated value with size 32 to match size of target (25) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(172): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 172
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(173): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 173
 Warning (10030): Net "inv_led" at rzfpga_pc.v(35) has no driver or initial value, using a default initial value '0' File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
 Warning (10034): Output port "lcd_rs" at rzfpga_pc.v(25) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
 Warning (10034): Output port "lcd_rw" at rzfpga_pc.v(26) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
@@ -1776,9 +1773,6 @@ Info (12133): Instantiated megafunction "rom_quartus_ip:rom_quartus_ip_inst|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_31a1.tdf
     Info (12023): Found entity 1: altsyncram_31a1 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_31a1" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component|altsyncram_31a1:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 121 out of 128 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif Line: 1
-    Warning (113027): Addresses ranging from 7 to 127 are not initialized File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif Line: 1
-Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (128) in the Memory Initialization File "C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
 Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 89
 Info (12128): Elaborating entity "n2tmux16" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 37
 Info (12128): Elaborating entity "n2tmux" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 20
@@ -1808,7 +1802,7 @@ Info (12133): Instantiated megafunction "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_cou
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ltj.tdf
     Info (12023): Found entity 1: cntr_ltj File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_ltj.tdf Line: 26
 Info (12128): Elaborating entity "cntr_ltj" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
-Info (12128): Elaborating entity "ram_manager" for hierarchy "ram_manager:ram_manager_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 149
+Info (12128): Elaborating entity "ram_manager" for hierarchy "ram_manager:ram_manager_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 150
 Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(25): object "direct_rd_gnt" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 25
 Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(26): object "ram_clk" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 26
 Warning (10034): Output port "sd_cs" at ram_manager.v(11) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 11
@@ -1911,7 +1905,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sdra
     Info (12023): Found entity 1: sdram_clkgen_altpll File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/sdram_clkgen_altpll.v Line: 30
 Info (12128): Elaborating entity "sdram_clkgen_altpll" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component|sdram_clkgen_altpll:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "sdram" for hierarchy "ram_manager:ram_manager_inst|sdram:sdram_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 148
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync_generator_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 165
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync_generator_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 166
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(35): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 35
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(41): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 41
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(61): truncated value with size 32 to match size of target (20) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 61
@@ -1954,10 +1948,10 @@ Info (21057): Implemented 724 device resources after synthesis - the final resou
     Info (21061): Implemented 593 logic cells
     Info (21064): Implemented 53 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 4812 megabytes
-    Info: Processing ended: Fri Jul 29 04:52:45 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Fri Jul 29 19:20:06 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:17
 
 
