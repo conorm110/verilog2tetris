@@ -1,7 +1,0 @@
-bram_ram_16k (
-	input [15:0] in,
-	input [14:0] address,
-	input clk,
-	input load,
-	output [15:0] out
-);

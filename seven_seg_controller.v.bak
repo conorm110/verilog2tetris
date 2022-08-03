@@ -1,8 +1,0 @@
-module seven_seg_controller(
-	input [15:0] num,
-	output [3:0] dig,
-	output [7:0] seg
-);
-wire [3:0] dig_0;
-
-endmodule

@@ -1,6 +1,0 @@
-module num_to_seg (
-	input [3:0] num,
-	output [7:0] seg
-);
-
-endmodule

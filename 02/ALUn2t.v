@@ -1,25 +1,18 @@
 /**
- * The ALU (Arithmetic Logic Unit).
- * Computes one of the following functions:
- * x+y, x-y, y-x, 0, 1, -1, x, y, -x, -y, !x, !y,
- * x+1, y+1, x-1, y-1, x&y, x|y on two 16-bit inputs, 
- * according to 6 input bits denoted zx,nx,zy,ny,f,no.
- * In addition, the ALU computes two 1-bit outputs:
- * if the ALU output == 0, zr is set to 1; otherwise zr is set to 0;
- * if the ALU output < 0, ng is set to 1; otherwise ng is set to 0.
- */
+Copyright 2022 Conor Mika
 
-// Implementation: the ALU logic manipulates the x and y inputs
-// and operates on the resulting values, as follows:
-// if (zx == 1) set x = 0        // 16-bit constant
-// if (nx == 1) set x = !x       // bitwise not
-// if (zy == 1) set y = 0        // 16-bit constant
-// if (ny == 1) set y = !y       // bitwise not
-// if (f == 1)  set out = x + y  // integer 2's complement addition
-// if (f == 0)  set out = x & y  // bitwise and
-// if (no == 1) set out = !out   // bitwise not
-// if (out == 0) set zr = 1
-// if (out < 0) set ng = 1
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+**/
 
 module ALUn2t(
 input [15:0] x,
