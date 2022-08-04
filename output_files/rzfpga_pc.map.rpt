@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Wed Aug  3 23:58:01 2022
+Wed Aug  3 23:59:08 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug  3 23:58:01 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug  3 23:59:08 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -230,7 +230,7 @@ https://fpgasoftware.intel.com/eula.
 ; altram.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                                          ;         ;
 ; altdpram.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc                                        ;         ;
 ; db/altsyncram_31a1.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf                             ;         ;
-; ./04/rom.mif                                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif                                         ;         ;
+; 04/rom.mif                                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif                                         ;         ;
 ; lpm_mux.tdf                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf                                         ;         ;
 ; muxlut.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/muxlut.inc                                          ;         ;
 ; bypassff.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/bypassff.inc                                        ;         ;
@@ -1594,7 +1594,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Aug  3 23:57:53 2022
+    Info: Processing started: Wed Aug  3 23:58:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1742,9 +1742,6 @@ Info (12133): Instantiated megafunction "rom_quartus_ip:rom_quartus_ip_inst|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_31a1.tdf
     Info (12023): Found entity 1: altsyncram_31a1 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_31a1" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component|altsyncram_31a1:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 120 out of 128 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif Line: 1
-    Warning (113027): Addresses ranging from 8 to 127 are not initialized File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif Line: 1
-Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (128) in the Memory Initialization File "C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
 Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 105
 Info (12128): Elaborating entity "n2tmux16" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 53
 Info (12128): Elaborating entity "n2tmux" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 24
@@ -1915,10 +1912,10 @@ Info (21057): Implemented 669 device resources after synthesis - the final resou
     Info (21061): Implemented 538 logic cells
     Info (21064): Implemented 53 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
     Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Wed Aug  3 23:58:01 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Wed Aug  3 23:59:08 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 

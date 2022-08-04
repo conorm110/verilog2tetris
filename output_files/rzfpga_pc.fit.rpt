@@ -1,5 +1,5 @@
 Fitter report for rzfpga_pc
-Wed Aug  3 23:58:08 2022
+Wed Aug  3 23:59:14 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Aug  3 23:58:08 2022       ;
+; Fitter Status                      ; Successful - Wed Aug  3 23:59:14 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -161,13 +161,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.7%      ;
-;     Processors 3-4         ;   2.7%      ;
+;     Processor 2            ;   2.9%      ;
+;     Processors 3-4         ;   2.8%      ;
 +----------------------------+-------------+
 
 
@@ -2112,7 +2112,7 @@ Info (170195): Router estimated average interconnect usage is 2% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.71 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.70 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2129,10 +2129,10 @@ Warning (169064): Following 8 pins have no output enable or a GND or VCC output 
     Info (169065): Pin lcd_d[7] has a permanently disabled output enable File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
 Info (144001): Generated suppressed messages file C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/output_files/rzfpga_pc.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5503 megabytes
-    Info: Processing ended: Wed Aug  3 23:58:09 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 5520 megabytes
+    Info: Processing ended: Wed Aug  3 23:59:15 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +----------------------------+
