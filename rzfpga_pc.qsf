@@ -159,26 +159,18 @@ set_global_assignment -name VERILOG_FILE 01/n8WayMux16.v
 set_global_assignment -name VERILOG_FILE 01/dmux_8_way.v
 set_global_assignment -name VERILOG_FILE 01/dmux_4_way.v
 set_global_assignment -name VERILOG_FILE 01/dmux.v
-set_global_assignment -name VERILOG_FILE 03/BRAM/register.v
-set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_8.v
-set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_64.v
-set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_512.v
-set_global_assignment -name VERILOG_FILE program_counter.v
 set_global_assignment -name VERILOG_FILE 05/hack_cpu.v
 set_global_assignment -name VERILOG_FILE 04/rom_simulator.v
-set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_4k.v
-set_global_assignment -name VERILOG_FILE 03/BRAM/bram_ram_16k.v
 set_global_assignment -name QIP_FILE 01/n2tmux8way.qip
 set_global_assignment -name QIP_FILE 04/rom_quartus_ip.qip
 set_global_assignment -name QIP_FILE 05/cpu_pc.qip
-set_global_assignment -name VERILOG_FILE seven_seg_controller.v
-set_global_assignment -name VERILOG_FILE num_to_seg.v
-set_global_assignment -name QIP_FILE clk_7seg.qip
-set_global_assignment -name VERILOG_FILE SDRAM/sdram.v
 set_global_assignment -name QIP_FILE SDRAM/addr_mux.qip
 set_global_assignment -name QIP_FILE SDRAM/wrreq_mux.qip
 set_global_assignment -name QIP_FILE SDRAM/rdreq_mux.qip
 set_global_assignment -name QIP_FILE SDRAM/wrdata_mux.qip
-set_global_assignment -name QIP_FILE SDRAM/sdram_clk_100MHz.qip
-set_global_assignment -name VERILOG_FILE SDRAM/ram_manager.v
+set_global_assignment -name VERILOG_FILE "7 Seg Display/num_to_seg.v"
+set_global_assignment -name QIP_FILE "7 Seg Display/7 Seg Clock Gen IP/clk_7seg.qip"
+set_global_assignment -name VERILOG_FILE "7 Seg Display/seven_seg_controller.v"
+set_global_assignment -name VERILOG_FILE 03/SDRAM/ram_manager.v
+set_global_assignment -name VERILOG_FILE 03/SDRAM/sdram.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

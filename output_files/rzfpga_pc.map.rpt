@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Fri Jul 29 19:20:06 2022
+Wed Aug  3 23:42:12 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 29 19:20:06 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug  3 23:42:12 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -191,75 +191,75 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; SDRAM/sdram_clkgen.v             ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clkgen.v     ;         ;
-; SDRAM/sdram_buffer.v             ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_buffer.v     ;         ;
-; 01/n2tmux.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v              ;         ;
-; 01/n2tmux16.v                    ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v            ;         ;
-; VGA/hvsync_generator.v           ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v   ;         ;
-; 02/HalfAdder.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v           ;         ;
-; 02/FullAdder.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v           ;         ;
-; 02/Add16.v                       ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v               ;         ;
-; 02/ALUn2t.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v              ;         ;
-; rzfpga_pc.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v              ;         ;
-; 05/hack_cpu.v                    ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v            ;         ;
-; 01/n2tmux8way.v                  ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux8way.v          ;         ;
-; 04/rom_quartus_ip.v              ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v      ;         ;
-; 05/cpu_pc.v                      ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v              ;         ;
-; seven_seg_controller.v           ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/seven_seg_controller.v   ;         ;
-; num_to_seg.v                     ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/num_to_seg.v             ;         ;
-; clk_7seg.v                       ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clk_7seg.v               ;         ;
-; SDRAM/sdram.v                    ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram.v            ;         ;
-; SDRAM/ram_manager.v              ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v      ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf                ;         ;
-; aglobal211.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc            ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_pll.inc           ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratixii_pll.inc         ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cycloneii_pll.inc         ;         ;
-; db/clk_7seg_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/clk_7seg_altpll.v     ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc                ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc              ;         ;
-; db/altsyncram_31a1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf   ;         ;
-; 04/rom.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif               ;         ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf               ;         ;
-; muxlut.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/muxlut.inc                ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/bypassff.inc              ;         ;
-; altshift.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altshift.inc              ;         ;
-; db/mux_frc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_frc.tdf           ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.tdf           ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_constant.inc          ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc           ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cmpconst.inc              ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_compare.inc           ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.inc           ;         ;
-; dffeea.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/dffeea.inc                ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/alt_counter_stratix.inc   ;         ;
-; db/cntr_ltj.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_ltj.tdf          ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/scfifo.tdf                ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_regfifo.inc             ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_dpfifo.inc              ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_i2fifo.inc              ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_fffifo.inc              ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_f2fifo.inc              ;         ;
-; db/scfifo_sj31.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/scfifo_sj31.tdf       ;         ;
-; db/a_dpfifo_3q31.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/a_dpfifo_3q31.tdf     ;         ;
-; db/altsyncram_p3c1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_p3c1.tdf   ;         ;
-; db/cmpr_0u8.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cmpr_0u8.tdf          ;         ;
-; db/cntr_dpb.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_dpb.tdf          ;         ;
-; db/cntr_qp7.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_qp7.tdf          ;         ;
-; db/cntr_epb.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_epb.tdf          ;         ;
-; db/sdram_clkgen_altpll.v         ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/sdram_clkgen_altpll.v ;         ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
++---------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path            ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                        ; Library ;
++---------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; SDRAM/sdram_clkgen.v                        ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clkgen.v                        ;         ;
+; SDRAM/sdram_buffer.v                        ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_buffer.v                        ;         ;
+; 01/n2tmux.v                                 ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v                                 ;         ;
+; 01/n2tmux16.v                               ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v                               ;         ;
+; VGA/hvsync_generator.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v                      ;         ;
+; 02/HalfAdder.v                              ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v                              ;         ;
+; 02/FullAdder.v                              ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v                              ;         ;
+; 02/Add16.v                                  ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v                                  ;         ;
+; 02/ALUn2t.v                                 ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v                                 ;         ;
+; rzfpga_pc.v                                 ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v                                 ;         ;
+; 05/hack_cpu.v                               ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v                               ;         ;
+; 01/n2tmux8way.v                             ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux8way.v                             ;         ;
+; 04/rom_quartus_ip.v                         ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v                         ;         ;
+; 05/cpu_pc.v                                 ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v                                 ;         ;
+; 7 Seg Display/num_to_seg.v                  ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/num_to_seg.v                  ;         ;
+; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v ;         ;
+; 7 Seg Display/seven_seg_controller.v        ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v        ;         ;
+; 03/SDRAM/ram_manager.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v                      ;         ;
+; 03/SDRAM/sdram.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/sdram.v                            ;         ;
+; altpll.tdf                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf                                   ;         ;
+; aglobal211.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc                               ;         ;
+; stratix_pll.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_pll.inc                              ;         ;
+; stratixii_pll.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratixii_pll.inc                            ;         ;
+; cycloneii_pll.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cycloneii_pll.inc                            ;         ;
+; db/clk_7seg_altpll.v                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/clk_7seg_altpll.v                        ;         ;
+; altsyncram.tdf                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf                               ;         ;
+; stratix_ram_block.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc                        ;         ;
+; lpm_mux.inc                                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc                                  ;         ;
+; lpm_decode.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc                               ;         ;
+; a_rdenreg.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc                                ;         ;
+; altrom.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc                                   ;         ;
+; altram.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                                   ;         ;
+; altdpram.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc                                 ;         ;
+; db/altsyncram_31a1.tdf                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf                      ;         ;
+; ./04/rom.mif                                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif                                  ;         ;
+; lpm_mux.tdf                                 ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf                                  ;         ;
+; muxlut.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/muxlut.inc                                   ;         ;
+; bypassff.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/bypassff.inc                                 ;         ;
+; altshift.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altshift.inc                                 ;         ;
+; db/mux_frc.tdf                              ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_frc.tdf                              ;         ;
+; lpm_counter.tdf                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.tdf                              ;         ;
+; lpm_constant.inc                            ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_constant.inc                             ;         ;
+; lpm_add_sub.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc                              ;         ;
+; cmpconst.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cmpconst.inc                                 ;         ;
+; lpm_compare.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_compare.inc                              ;         ;
+; lpm_counter.inc                             ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.inc                              ;         ;
+; dffeea.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/dffeea.inc                                   ;         ;
+; alt_counter_stratix.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                      ;         ;
+; db/cntr_ltj.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_ltj.tdf                             ;         ;
+; scfifo.tdf                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/scfifo.tdf                                   ;         ;
+; a_regfifo.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_regfifo.inc                                ;         ;
+; a_dpfifo.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_dpfifo.inc                                 ;         ;
+; a_i2fifo.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_i2fifo.inc                                 ;         ;
+; a_fffifo.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_fffifo.inc                                 ;         ;
+; a_f2fifo.inc                                ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_f2fifo.inc                                 ;         ;
+; db/scfifo_sj31.tdf                          ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/scfifo_sj31.tdf                          ;         ;
+; db/a_dpfifo_3q31.tdf                        ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/a_dpfifo_3q31.tdf                        ;         ;
+; db/altsyncram_p3c1.tdf                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_p3c1.tdf                      ;         ;
+; db/cmpr_0u8.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cmpr_0u8.tdf                             ;         ;
+; db/cntr_dpb.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_dpb.tdf                             ;         ;
+; db/cntr_qp7.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_qp7.tdf                             ;         ;
+; db/cntr_epb.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_epb.tdf                             ;         ;
+; db/sdram_clkgen_altpll.v                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/sdram_clkgen_altpll.v                    ;         ;
++---------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -323,39 +323,39 @@ https://fpgasoftware.intel.com/eula.
 ;             |FullAdder:full_adder_inst_n|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_n                                                                                ; FullAdder            ; work         ;
 ;             |FullAdder:full_adder_inst_o|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_o                                                                                ; FullAdder            ; work         ;
 ;          |n2tmux16:mux16_alu_a|                     ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a                                                                                                         ; n2tmux16             ; work         ;
-;             |n2tmux:mux16_b|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_b                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_c|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_c                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_d|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_d                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_e|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_e                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_f|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_f                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_g|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_g                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_i|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_i                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_j|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_j                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_l|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_l                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_m|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_m                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_n|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_n                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_o|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_o                                                                                          ; n2tmux               ; work         ;
-;             |n2tmux:mux16_p|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_p                                                                                          ; n2tmux               ; work         ;
+;             |n2tmux:mux_b|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_b                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_c|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_c                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_d|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_d                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_e|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_e                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_f|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_f                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_g|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_g                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_i|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_i                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_j|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_j                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_l|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_l                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_m|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_m                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_n|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_n                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_o|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_o                                                                                            ; n2tmux               ; work         ;
+;             |n2tmux:mux_p|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_p                                                                                            ; n2tmux               ; work         ;
 ;       |cpu_pc:cpu_pc_inst|                          ; 26 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst                                                                                                                             ; cpu_pc               ; work         ;
 ;          |lpm_counter:LPM_COUNTER_component|        ; 26 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component                                                                                           ; lpm_counter          ; work         ;
 ;             |cntr_ltj:auto_generated|               ; 26 (26)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated                                                                   ; cntr_ltj             ; work         ;
 ;       |n2tmux16:Mux16_aluOut_instruction|           ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction                                                                                                              ; n2tmux16             ; work         ;
-;          |n2tmux:mux16_a|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_a                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_b|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_b                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_c|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_c                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_d|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_d                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_e|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_e                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_f|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_f                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_g|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_g                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_h|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_h                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_i|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_i                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_j|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_j                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_k|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_k                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_l|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_l                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_m|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_m                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_n|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_n                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_o|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_o                                                                                               ; n2tmux               ; work         ;
-;          |n2tmux:mux16_p|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_p                                                                                               ; n2tmux               ; work         ;
+;          |n2tmux:mux_a|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_a                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_b|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_b                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_c|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_c                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_d|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_d                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_e|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_e                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_f|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_f                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_g|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_g                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_h|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_h                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_i|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_i                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_j|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_j                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_k|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_k                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_l|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_l                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_m|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_m                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_n|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_n                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_o|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_o                                                                                                 ; n2tmux               ; work         ;
+;          |n2tmux:mux_p|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_p                                                                                                 ; n2tmux               ; work         ;
 ;    |hvsync_generator:hvsync_generator_inst|         ; 105 (105)           ; 76 (76)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync_generator_inst                                                                                                                      ; hvsync_generator     ; work         ;
 ;    |ram_manager:ram_manager_inst|                   ; 119 (19)            ; 171 (24)                  ; 151552      ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst                                                                                                                                ; ram_manager          ; work         ;
 ;       |sdram:sdram_inst|                            ; 33 (33)             ; 94 (94)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram:sdram_inst                                                                                                               ; sdram                ; work         ;
@@ -395,18 +395,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                   ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+----------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                  ; IP Include File      ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+----------------------+
-; Altera ; LPM_COUNTER  ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst                                       ; 05/cpu_pc.v          ;
-; Altera ; LPM_MUX      ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|n2tmux8way:n2tmux8way_inst                               ; 01/n2tmux8way.v      ;
-; Altera ; FIFO         ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst           ; SDRAM/sdram_buffer.v ;
-; Altera ; ALTPLL       ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst           ; SDRAM/sdram_clkgen.v ;
-; Altera ; ROM: 1-PORT  ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|rom_quartus_ip:rom_quartus_ip_inst                                    ; 04/rom_quartus_ip.v  ;
-; Altera ; ALTPLL       ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst ; clk_7seg.v           ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+----------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                          ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+---------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                  ; IP Include File                             ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+---------------------------------------------+
+; Altera ; LPM_COUNTER  ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst                                       ; 05/cpu_pc.v                                 ;
+; Altera ; LPM_MUX      ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|n2tmux8way:n2tmux8way_inst                               ; 01/n2tmux8way.v                             ;
+; Altera ; FIFO         ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst           ; SDRAM/sdram_buffer.v                        ;
+; Altera ; ALTPLL       ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst           ; SDRAM/sdram_clkgen.v                        ;
+; Altera ; ROM: 1-PORT  ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|rom_quartus_ip:rom_quartus_ip_inst                                    ; 04/rom_quartus_ip.v                         ;
+; Altera ; ALTPLL       ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+---------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -1601,7 +1601,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Jul 29 19:19:53 2022
+    Info: Processing started: Wed Aug  3 23:42:04 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1610,61 +1610,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file sdram/s
 Info (12021): Found 1 design units, including 1 entities, in source file sdram/sdram_buffer.v
     Info (12023): Found entity 1: sdram_buffer File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_buffer.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tmux.v
-    Info (12023): Found entity 1: n2tmux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v Line: 13
+    Info (12023): Found entity 1: n2tmux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux.v Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tmux16.v
-    Info (12023): Found entity 1: n2tmux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 13
+    Info (12023): Found entity 1: n2tmux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file vga/hvsync_generator.v
-    Info (12023): Found entity 1: hvsync_generator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 1
+    Info (12023): Found entity 1: hvsync_generator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 02/halfadder.v
-    Info (12023): Found entity 1: HalfAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v Line: 14
+    Info (12023): Found entity 1: HalfAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/HalfAdder.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file 02/fulladder.v
-    Info (12023): Found entity 1: FullAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 14
+    Info (12023): Found entity 1: FullAdder File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 02/add16.v
-    Info (12023): Found entity 1: Add16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 16
+    Info (12023): Found entity 1: Add16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file 02/alun2t.v
-    Info (12023): Found entity 1: ALUn2t File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 24
+    Info (12023): Found entity 1: ALUn2t File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file rzfpga_pc.v
-    Info (12023): Found entity 1: rzfpga_pc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 1
+    Info (12023): Found entity 1: rzfpga_pc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 01/n8waymux16.v
-    Info (12023): Found entity 1: n8WayMux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n8WayMux16.v Line: 1
+    Info (12023): Found entity 1: n8WayMux16 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n8WayMux16.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 01/dmux_8_way.v
-    Info (12023): Found entity 1: dmux_8_way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 1
+    Info (12023): Found entity 1: dmux_8_way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_8_way.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 01/dmux_4_way.v
-    Info (12023): Found entity 1: dmux_4_way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_4_way.v Line: 1
+    Info (12023): Found entity 1: dmux_4_way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux_4_way.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 01/dmux.v
-    Info (12023): Found entity 1: dmux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/register.v
-    Info (12023): Found entity 1: register File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/register.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_8.v
-    Info (12023): Found entity 1: bram_ram_8 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_8.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_64.v
-    Info (12023): Found entity 1: bram_ram_64 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_64.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_512.v
-    Info (12023): Found entity 1: bram_ram_512 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_512.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file program_counter.v
-    Info (12023): Found entity 1: program_counter File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/program_counter.v Line: 1
+    Info (12023): Found entity 1: dmux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/dmux.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 05/hack_cpu.v
-    Info (12023): Found entity 1: hack_cpu File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 1
+    Info (12023): Found entity 1: hack_cpu File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 04/rom_simulator.v
     Info (12023): Found entity 1: rom_simulator File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_simulator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_4k.v
-    Info (12023): Found entity 1: bram_ram_4k File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_4k.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file 03/bram/bram_ram_16k.v
-    Info (12023): Found entity 1: bram_ram_16k File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/BRAM/bram_ram_16k.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tmux8way.v
     Info (12023): Found entity 1: n2tmux8way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux8way.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file 04/rom_quartus_ip.v
     Info (12023): Found entity 1: rom_quartus_ip File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file 05/cpu_pc.v
     Info (12023): Found entity 1: cpu_pc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file seven_seg_controller.v
-    Info (12023): Found entity 1: seven_seg_controller File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/seven_seg_controller.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file num_to_seg.v
-    Info (12023): Found entity 1: num_to_seg File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/num_to_seg.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file clk_7seg.v
-    Info (12023): Found entity 1: clk_7seg File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clk_7seg.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/sdram.v
-    Info (12023): Found entity 1: sdram File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sdram/addr_mux.v
     Info (12023): Found entity 1: addr_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/addr_mux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file sdram/wrreq_mux.v
@@ -1673,27 +1651,33 @@ Info (12021): Found 1 design units, including 1 entities, in source file sdram/r
     Info (12023): Found entity 1: rdreq_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/rdreq_mux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file sdram/wrdata_mux.v
     Info (12023): Found entity 1: wrdata_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/wrdata_mux.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/sdram_clk_100mhz.v
-    Info (12023): Found entity 1: sdram_clk_100MHz File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clk_100MHz.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/ram_manager.v
-    Info (12023): Found entity 1: ram_manager File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(25): created implicit net for "direct_rd_gnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(26): created implicit net for "ram_clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(130): created implicit net for "RdGnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 130
+Info (12021): Found 1 design units, including 1 entities, in source file 7 seg display/num_to_seg.v
+    Info (12023): Found entity 1: num_to_seg File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/num_to_seg.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file 7 seg display/7 seg clock gen ip/clk_7seg.v
+    Info (12023): Found entity 1: clk_7seg File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file 7 seg display/seven_seg_controller.v
+    Info (12023): Found entity 1: seven_seg_controller File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file 03/sdram/ram_manager.v
+    Info (12023): Found entity 1: ram_manager File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file 03/sdram/sdram.v
+    Info (12023): Found entity 1: sdram File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/sdram.v Line: 17
+Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(41): created implicit net for "direct_rd_gnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(42): created implicit net for "ram_clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(146): created implicit net for "RdGnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 146
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
-Warning (10858): Verilog HDL warning at rzfpga_pc.v(35): object inv_led used but never assigned File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(48): truncated value with size 32 to match size of target (25) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 48
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(173): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 173
-Warning (10030): Net "inv_led" at rzfpga_pc.v(35) has no driver or initial value, using a default initial value '0' File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
-Warning (10034): Output port "lcd_rs" at rzfpga_pc.v(25) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
-Warning (10034): Output port "lcd_rw" at rzfpga_pc.v(26) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
-Warning (10034): Output port "lcd_e" at rzfpga_pc.v(27) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
-Info (12128): Elaborating entity "seven_seg_controller" for hierarchy "seven_seg_controller:seven_seg_controller_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 58
-Warning (10230): Verilog HDL assignment warning at seven_seg_controller.v(77): truncated value with size 32 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/seven_seg_controller.v Line: 77
-Info (12128): Elaborating entity "clk_7seg" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/seven_seg_controller.v Line: 12
-Info (12128): Elaborating entity "altpll" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clk_7seg.v Line: 91
-Info (12130): Elaborated megafunction instantiation "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clk_7seg.v Line: 91
-Info (12133): Instantiated megafunction "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/clk_7seg.v Line: 91
+Warning (10858): Verilog HDL warning at rzfpga_pc.v(51): object inv_led used but never assigned File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(64): truncated value with size 32 to match size of target (25) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 64
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(189): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 189
+Warning (10030): Net "inv_led" at rzfpga_pc.v(51) has no driver or initial value, using a default initial value '0' File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
+Warning (10034): Output port "lcd_rs" at rzfpga_pc.v(41) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 41
+Warning (10034): Output port "lcd_rw" at rzfpga_pc.v(42) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
+Warning (10034): Output port "lcd_e" at rzfpga_pc.v(43) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
+Info (12128): Elaborating entity "seven_seg_controller" for hierarchy "seven_seg_controller:seven_seg_controller_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 74
+Warning (10230): Verilog HDL assignment warning at seven_seg_controller.v(93): truncated value with size 32 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 93
+Info (12128): Elaborating entity "clk_7seg" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 28
+Info (12128): Elaborating entity "altpll" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v Line: 91
+Info (12130): Elaborated megafunction instantiation "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v Line: 91
+Info (12133): Instantiated megafunction "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v Line: 91
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "500"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1751,8 +1735,8 @@ Info (12133): Instantiated megafunction "seven_seg_controller:seven_seg_controll
 Info (12021): Found 1 design units, including 1 entities, in source file db/clk_7seg_altpll.v
     Info (12023): Found entity 1: clk_7seg_altpll File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/clk_7seg_altpll.v Line: 30
 Info (12128): Elaborating entity "clk_7seg_altpll" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component|clk_7seg_altpll:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "num_to_seg" for hierarchy "seven_seg_controller:seven_seg_controller_inst|num_to_seg:num_to_seg_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/seven_seg_controller.v Line: 31
-Info (12128): Elaborating entity "rom_quartus_ip" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 73
+Info (12128): Elaborating entity "num_to_seg" for hierarchy "seven_seg_controller:seven_seg_controller_inst|num_to_seg:num_to_seg_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 47
+Info (12128): Elaborating entity "rom_quartus_ip" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 89
 Info (12128): Elaborating entity "altsyncram" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
 Info (12130): Elaborated megafunction instantiation "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
 Info (12133): Instantiated megafunction "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
@@ -1773,14 +1757,17 @@ Info (12133): Instantiated megafunction "rom_quartus_ip:rom_quartus_ip_inst|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_31a1.tdf
     Info (12023): Found entity 1: altsyncram_31a1 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_31a1" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component|altsyncram_31a1:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 89
-Info (12128): Elaborating entity "n2tmux16" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 37
-Info (12128): Elaborating entity "n2tmux" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 20
-Info (12128): Elaborating entity "ALUn2t" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 73
-Info (12128): Elaborating entity "Add16" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 77
-Info (12128): Elaborating entity "FullAdder" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 30
-Info (12128): Elaborating entity "HalfAdder" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 43
-Info (12128): Elaborating entity "n2tmux8way" for hierarchy "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 93
+Warning (113028): 120 out of 128 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif Line: 1
+    Warning (113027): Addresses ranging from 8 to 127 are not initialized File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif Line: 1
+Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (128) in the Memory Initialization File "C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
+Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 105
+Info (12128): Elaborating entity "n2tmux16" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 53
+Info (12128): Elaborating entity "n2tmux" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 24
+Info (12128): Elaborating entity "ALUn2t" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 89
+Info (12128): Elaborating entity "Add16" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/ALUn2t.v Line: 70
+Info (12128): Elaborating entity "FullAdder" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/Add16.v Line: 41
+Info (12128): Elaborating entity "HalfAdder" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/02/FullAdder.v Line: 46
+Info (12128): Elaborating entity "n2tmux8way" for hierarchy "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 109
 Info (12128): Elaborating entity "lpm_mux" for hierarchy "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst|lpm_mux:LPM_MUX_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux8way.v Line: 86
 Info (12130): Elaborated megafunction instantiation "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst|lpm_mux:LPM_MUX_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux8way.v Line: 86
 Info (12133): Instantiated megafunction "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux8way.v Line: 86
@@ -1791,7 +1778,7 @@ Info (12133): Instantiated megafunction "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_frc.tdf
     Info (12023): Found entity 1: mux_frc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_frc.tdf Line: 23
 Info (12128): Elaborating entity "mux_frc" for hierarchy "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst|lpm_mux:LPM_MUX_component|mux_frc:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
-Info (12128): Elaborating entity "cpu_pc" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 108
+Info (12128): Elaborating entity "cpu_pc" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 124
 Info (12128): Elaborating entity "lpm_counter" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 73
 Info (12130): Elaborated megafunction instantiation "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 73
 Info (12133): Instantiated megafunction "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 73
@@ -1802,11 +1789,11 @@ Info (12133): Instantiated megafunction "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_cou
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ltj.tdf
     Info (12023): Found entity 1: cntr_ltj File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_ltj.tdf Line: 26
 Info (12128): Elaborating entity "cntr_ltj" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
-Info (12128): Elaborating entity "ram_manager" for hierarchy "ram_manager:ram_manager_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 150
-Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(25): object "direct_rd_gnt" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 25
-Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(26): object "ram_clk" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 26
-Warning (10034): Output port "sd_cs" at ram_manager.v(11) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 11
-Info (12128): Elaborating entity "sdram_buffer" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 41
+Info (12128): Elaborating entity "ram_manager" for hierarchy "ram_manager:ram_manager_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 166
+Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(41): object "direct_rd_gnt" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 41
+Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(42): object "ram_clk" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 42
+Warning (10034): Output port "sd_cs" at ram_manager.v(27) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 27
+Info (12128): Elaborating entity "sdram_buffer" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 57
 Info (12128): Elaborating entity "scfifo" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_buffer.v Line: 79
 Info (12130): Elaborated megafunction instantiation "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_buffer.v Line: 79
 Info (12133): Instantiated megafunction "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_buffer.v Line: 79
@@ -1842,7 +1829,7 @@ Info (12128): Elaborating entity "cntr_qp7" for hierarchy "ram_manager:ram_manag
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_epb.tdf
     Info (12023): Found entity 1: cntr_epb File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_epb.tdf Line: 26
 Info (12128): Elaborating entity "cntr_epb" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_sj31:auto_generated|a_dpfifo_3q31:dpfifo|cntr_epb:wr_ptr" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/a_dpfifo_3q31.tdf Line: 59
-Info (12128): Elaborating entity "sdram_clkgen" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 60
+Info (12128): Elaborating entity "sdram_clkgen" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 76
 Info (12128): Elaborating entity "altpll" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clkgen.v Line: 95
 Info (12130): Elaborated megafunction instantiation "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clkgen.v Line: 95
 Info (12133): Instantiated megafunction "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/sdram_clkgen.v Line: 95
@@ -1904,43 +1891,43 @@ Info (12133): Instantiated megafunction "ram_manager:ram_manager_inst|sdram_clkg
 Info (12021): Found 1 design units, including 1 entities, in source file db/sdram_clkgen_altpll.v
     Info (12023): Found entity 1: sdram_clkgen_altpll File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/sdram_clkgen_altpll.v Line: 30
 Info (12128): Elaborating entity "sdram_clkgen_altpll" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component|sdram_clkgen_altpll:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "sdram" for hierarchy "ram_manager:ram_manager_inst|sdram:sdram_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/ram_manager.v Line: 148
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync_generator_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 166
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(35): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 35
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(41): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 41
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(61): truncated value with size 32 to match size of target (20) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 61
+Info (12128): Elaborating entity "sdram" for hierarchy "ram_manager:ram_manager_inst|sdram:sdram_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 164
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync_generator_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 182
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 51
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(57): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 57
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(77): truncated value with size 32 to match size of target (20) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 77
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "lcd_d[0]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[1]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[2]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[3]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[4]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[5]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[6]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
-    Warning (13040): bidirectional pin "lcd_d[7]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 28
+    Warning (13040): bidirectional pin "lcd_d[0]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[1]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[2]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[3]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[4]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[5]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[6]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13040): bidirectional pin "lcd_d[7]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led[0]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 6
-    Warning (13410): Pin "led[1]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 6
-    Warning (13410): Pin "led[2]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 6
-    Warning (13410): Pin "led[3]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 6
-    Warning (13410): Pin "sd_a[11]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 14
-    Warning (13410): Pin "sd_bs[1]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 15
-    Warning (13410): Pin "sd_cke" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 17
-    Warning (13410): Pin "sd_cs" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 19
-    Warning (13410): Pin "lcd_rs" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 25
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 26
-    Warning (13410): Pin "lcd_e" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 27
-    Warning (13410): Pin "seg[7]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 34
+    Warning (13410): Pin "led[0]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+    Warning (13410): Pin "led[1]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+    Warning (13410): Pin "led[2]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+    Warning (13410): Pin "led[3]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
+    Warning (13410): Pin "sd_a[11]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 30
+    Warning (13410): Pin "sd_bs[1]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 31
+    Warning (13410): Pin "sd_cke" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 33
+    Warning (13410): Pin "sd_cs" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 35
+    Warning (13410): Pin "lcd_rs" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 41
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
+    Warning (13410): Pin "lcd_e" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
+    Warning (13410): Pin "seg[7]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 50
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 21 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key[0]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
-    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
-    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
-    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 5
+    Warning (15610): No output dependent on input pin "key[0]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
+    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
+    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
+    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
 Info (21057): Implemented 724 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 46 output pins
@@ -1948,10 +1935,10 @@ Info (21057): Implemented 724 device resources after synthesis - the final resou
     Info (21061): Implemented 593 logic cells
     Info (21064): Implemented 53 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
     Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Fri Jul 29 19:20:06 2022
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Wed Aug  3 23:42:12 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:16
 
 

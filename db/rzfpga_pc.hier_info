@@ -5,15 +5,15 @@ key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => ~NO_FANOUT~
-led[0] <= <VCC>
-led[1] <= <VCC>
-led[2] <= <VCC>
-led[3] <= <VCC>
-vga_c[0] <= vga_c[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_c[1] <= vga_c[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_c[2] <= vga_c[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-hsyncout <= hvsync_generator:hvsync_generator_inst.vga_h_sync
-vsyncout <= hvsync_generator:hvsync_generator_inst.vga_v_sync
+led[0] << <VCC>
+led[1] << <VCC>
+led[2] << <VCC>
+led[3] << <VCC>
+vga_c[0] << vga_c[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_c[1] << vga_c[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_c[2] << vga_c[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+hsyncout << hvsync_generator:hvsync_generator_inst.vga_h_sync
+vsyncout << hvsync_generator:hvsync_generator_inst.vga_v_sync
 sd_dq[0] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[1] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[2] <> ram_manager:ram_manager_inst.sd_dq
@@ -30,31 +30,31 @@ sd_dq[12] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[13] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[14] <> ram_manager:ram_manager_inst.sd_dq
 sd_dq[15] <> ram_manager:ram_manager_inst.sd_dq
-sd_a[0] <= ram_manager:ram_manager_inst.sd_a
-sd_a[1] <= ram_manager:ram_manager_inst.sd_a
-sd_a[2] <= ram_manager:ram_manager_inst.sd_a
-sd_a[3] <= ram_manager:ram_manager_inst.sd_a
-sd_a[4] <= ram_manager:ram_manager_inst.sd_a
-sd_a[5] <= ram_manager:ram_manager_inst.sd_a
-sd_a[6] <= ram_manager:ram_manager_inst.sd_a
-sd_a[7] <= ram_manager:ram_manager_inst.sd_a
-sd_a[8] <= ram_manager:ram_manager_inst.sd_a
-sd_a[9] <= ram_manager:ram_manager_inst.sd_a
-sd_a[10] <= ram_manager:ram_manager_inst.sd_a
-sd_a[11] <= ram_manager:ram_manager_inst.sd_a
-sd_bs[0] <= ram_manager:ram_manager_inst.sd_bs
-sd_bs[1] <= ram_manager:ram_manager_inst.sd_bs
-sd_dqm[0] <= ram_manager:ram_manager_inst.sd_dqm
-sd_dqm[1] <= ram_manager:ram_manager_inst.sd_dqm
-sd_cke <= ram_manager:ram_manager_inst.sd_cke
-sd_clk <= ram_manager:ram_manager_inst.sd_clk
-sd_cs <= ram_manager:ram_manager_inst.sd_cs
-sd_ras <= ram_manager:ram_manager_inst.sd_ras
-sd_cas <= ram_manager:ram_manager_inst.sd_cas
-sd_we <= ram_manager:ram_manager_inst.sd_we
-lcd_rs <= <GND>
-lcd_rw <= <GND>
-lcd_e <= <GND>
+sd_a[0] << ram_manager:ram_manager_inst.sd_a
+sd_a[1] << ram_manager:ram_manager_inst.sd_a
+sd_a[2] << ram_manager:ram_manager_inst.sd_a
+sd_a[3] << ram_manager:ram_manager_inst.sd_a
+sd_a[4] << ram_manager:ram_manager_inst.sd_a
+sd_a[5] << ram_manager:ram_manager_inst.sd_a
+sd_a[6] << ram_manager:ram_manager_inst.sd_a
+sd_a[7] << ram_manager:ram_manager_inst.sd_a
+sd_a[8] << ram_manager:ram_manager_inst.sd_a
+sd_a[9] << ram_manager:ram_manager_inst.sd_a
+sd_a[10] << ram_manager:ram_manager_inst.sd_a
+sd_a[11] << ram_manager:ram_manager_inst.sd_a
+sd_bs[0] << ram_manager:ram_manager_inst.sd_bs
+sd_bs[1] << ram_manager:ram_manager_inst.sd_bs
+sd_dqm[0] << ram_manager:ram_manager_inst.sd_dqm
+sd_dqm[1] << ram_manager:ram_manager_inst.sd_dqm
+sd_cke << ram_manager:ram_manager_inst.sd_cke
+sd_clk << ram_manager:ram_manager_inst.sd_clk
+sd_cs << ram_manager:ram_manager_inst.sd_cs
+sd_ras << ram_manager:ram_manager_inst.sd_ras
+sd_cas << ram_manager:ram_manager_inst.sd_cas
+sd_we << ram_manager:ram_manager_inst.sd_we
+lcd_rs << <GND>
+lcd_rw << <GND>
+lcd_e << <GND>
 lcd_d[0] <> <UNC>
 lcd_d[1] <> <UNC>
 lcd_d[2] <> <UNC>
@@ -63,18 +63,18 @@ lcd_d[4] <> <UNC>
 lcd_d[5] <> <UNC>
 lcd_d[6] <> <UNC>
 lcd_d[7] <> <UNC>
-dig[0] <= seven_seg_controller:seven_seg_controller_inst.dig
-dig[1] <= seven_seg_controller:seven_seg_controller_inst.dig
-dig[2] <= seven_seg_controller:seven_seg_controller_inst.dig
-dig[3] <= seven_seg_controller:seven_seg_controller_inst.dig
-seg[0] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[1] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[2] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[3] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[4] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[5] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[6] <= seven_seg_controller:seven_seg_controller_inst.seg
-seg[7] <= seven_seg_controller:seven_seg_controller_inst.seg
+dig[0] << seven_seg_controller:seven_seg_controller_inst.dig
+dig[1] << seven_seg_controller:seven_seg_controller_inst.dig
+dig[2] << seven_seg_controller:seven_seg_controller_inst.dig
+dig[3] << seven_seg_controller:seven_seg_controller_inst.dig
+seg[0] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[1] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[2] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[3] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[4] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[5] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[6] << seven_seg_controller:seven_seg_controller_inst.seg
+seg[7] << seven_seg_controller:seven_seg_controller_inst.seg
 
 
 |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst
@@ -995,25 +995,25 @@ b[13] => b[13].IN1
 b[14] => b[14].IN1
 b[15] => b[15].IN1
 sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
+out[0] <= n2tmux:mux_a.out
+out[1] <= n2tmux:mux_b.out
+out[2] <= n2tmux:mux_c.out
+out[3] <= n2tmux:mux_d.out
+out[4] <= n2tmux:mux_e.out
+out[5] <= n2tmux:mux_f.out
+out[6] <= n2tmux:mux_g.out
+out[7] <= n2tmux:mux_h.out
+out[8] <= n2tmux:mux_i.out
+out[9] <= n2tmux:mux_j.out
+out[10] <= n2tmux:mux_k.out
+out[11] <= n2tmux:mux_l.out
+out[12] <= n2tmux:mux_m.out
+out[13] <= n2tmux:mux_n.out
+out[14] <= n2tmux:mux_o.out
+out[15] <= n2tmux:mux_p.out
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_a
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_a
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1021,7 +1021,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_b
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_b
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1029,7 +1029,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_c
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_c
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1037,7 +1037,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_d
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_d
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1045,7 +1045,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_e
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_e
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1053,7 +1053,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_f
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_f
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1061,7 +1061,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_g
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_g
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1069,7 +1069,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_h
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_h
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1077,7 +1077,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_i
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_i
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1085,7 +1085,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_j
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_j
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1093,7 +1093,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_k
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_k
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1101,7 +1101,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_l
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_l
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1109,7 +1109,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_m
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_m
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1117,7 +1117,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_n
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_n
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1125,7 +1125,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_o
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_o
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1133,7 +1133,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux16_p
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_p
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1175,25 +1175,25 @@ b[13] => b[13].IN1
 b[14] => b[14].IN1
 b[15] => b[15].IN1
 sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
+out[0] <= n2tmux:mux_a.out
+out[1] <= n2tmux:mux_b.out
+out[2] <= n2tmux:mux_c.out
+out[3] <= n2tmux:mux_d.out
+out[4] <= n2tmux:mux_e.out
+out[5] <= n2tmux:mux_f.out
+out[6] <= n2tmux:mux_g.out
+out[7] <= n2tmux:mux_h.out
+out[8] <= n2tmux:mux_i.out
+out[9] <= n2tmux:mux_j.out
+out[10] <= n2tmux:mux_k.out
+out[11] <= n2tmux:mux_l.out
+out[12] <= n2tmux:mux_m.out
+out[13] <= n2tmux:mux_n.out
+out[14] <= n2tmux:mux_o.out
+out[15] <= n2tmux:mux_p.out
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_a
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_a
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1201,7 +1201,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_b
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_b
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1209,7 +1209,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_c
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_c
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1217,7 +1217,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_d
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_d
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1225,7 +1225,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_e
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_e
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1233,7 +1233,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_f
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_f
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1241,7 +1241,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_g
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_g
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1249,7 +1249,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_h
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_h
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1257,7 +1257,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_i
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_i
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1265,7 +1265,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_j
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_j
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1273,7 +1273,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_k
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_k
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1281,7 +1281,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_l
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_l
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1289,7 +1289,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_m
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_m
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1297,7 +1297,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_n
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_n
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1305,7 +1305,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_o
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_o
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1313,7 +1313,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux16_p
+|rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aRegisterOut_inM|n2tmux:mux_p
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1956,25 +1956,25 @@ b[13] => b[13].IN1
 b[14] => b[14].IN1
 b[15] => b[15].IN1
 sel => sel.IN16
-out[0] <= n2tmux:mux16_a.out
-out[1] <= n2tmux:mux16_b.out
-out[2] <= n2tmux:mux16_c.out
-out[3] <= n2tmux:mux16_d.out
-out[4] <= n2tmux:mux16_e.out
-out[5] <= n2tmux:mux16_f.out
-out[6] <= n2tmux:mux16_g.out
-out[7] <= n2tmux:mux16_h.out
-out[8] <= n2tmux:mux16_i.out
-out[9] <= n2tmux:mux16_j.out
-out[10] <= n2tmux:mux16_k.out
-out[11] <= n2tmux:mux16_l.out
-out[12] <= n2tmux:mux16_m.out
-out[13] <= n2tmux:mux16_n.out
-out[14] <= n2tmux:mux16_o.out
-out[15] <= n2tmux:mux16_p.out
+out[0] <= n2tmux:mux_a.out
+out[1] <= n2tmux:mux_b.out
+out[2] <= n2tmux:mux_c.out
+out[3] <= n2tmux:mux_d.out
+out[4] <= n2tmux:mux_e.out
+out[5] <= n2tmux:mux_f.out
+out[6] <= n2tmux:mux_g.out
+out[7] <= n2tmux:mux_h.out
+out[8] <= n2tmux:mux_i.out
+out[9] <= n2tmux:mux_j.out
+out[10] <= n2tmux:mux_k.out
+out[11] <= n2tmux:mux_l.out
+out[12] <= n2tmux:mux_m.out
+out[13] <= n2tmux:mux_n.out
+out[14] <= n2tmux:mux_o.out
+out[15] <= n2tmux:mux_p.out
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_a
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_a
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1982,7 +1982,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_b
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_b
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1990,7 +1990,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_c
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_c
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -1998,7 +1998,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_d
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_d
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2006,7 +2006,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_e
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_e
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2014,7 +2014,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_f
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_f
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2022,7 +2022,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_g
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_g
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2030,7 +2030,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_h
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_h
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2038,7 +2038,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_i
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_i
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2046,7 +2046,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_j
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_j
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2054,7 +2054,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_k
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_k
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2062,7 +2062,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_l
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_l
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2070,7 +2070,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_m
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_m
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2078,7 +2078,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_n
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_n
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2086,7 +2086,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_o
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_o
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
@@ -2094,7 +2094,7 @@ sel => aansel.IN1
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux16_p
+|rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_p
 a => aansel.IN0
 b => basel.IN0
 sel => basel.IN1
