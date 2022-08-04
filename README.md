@@ -1,5 +1,5 @@
 # Verilog2Tetris
-Verilog2Tetris is based off the same designs from the Nand2Tetris curriculum but instead of using a custom HDL everything is written in Verilog. The project is made for Intel Quartus and the default pin assignments are for the RZ-EasyFPGA A2.2 FPGA (Cyclone IV) development board.
+Verilog2Tetris is based off the same architecture from the Nand2Tetris curriculum but instead of using a custom HDL everything is written in Verilog. The project is made for Intel Quartus and the default pin assignments are for the RZ-EasyFPGA A2.2 FPGA (Cyclone IV) development board.
 
 ## Current Functionality
 Any program for nand2tetris in hex can run on the board by putting the hex instructions into the .MIF file in 04/. The video memory doesn't fully work (all of memory is being written to the screen instead of just after the vram pointer due to scaling issues). There is no ability to read keyboards either.
