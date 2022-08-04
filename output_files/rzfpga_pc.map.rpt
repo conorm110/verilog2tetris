@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rzfpga_pc
-Wed Aug  3 23:42:12 2022
+Wed Aug  3 23:48:23 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug  3 23:42:12 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug  3 23:48:23 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -1601,7 +1601,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Aug  3 23:42:04 2022
+    Info: Processing started: Wed Aug  3 23:48:15 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1643,14 +1643,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file 04/rom_
     Info (12023): Found entity 1: rom_quartus_ip File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file 05/cpu_pc.v
     Info (12023): Found entity 1: cpu_pc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/addr_mux.v
-    Info (12023): Found entity 1: addr_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/addr_mux.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/wrreq_mux.v
-    Info (12023): Found entity 1: wrreq_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/wrreq_mux.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/rdreq_mux.v
-    Info (12023): Found entity 1: rdreq_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/rdreq_mux.v Line: 40
-Info (12021): Found 1 design units, including 1 entities, in source file sdram/wrdata_mux.v
-    Info (12023): Found entity 1: wrdata_mux File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/SDRAM/wrdata_mux.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file 7 seg display/num_to_seg.v
     Info (12023): Found entity 1: num_to_seg File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/num_to_seg.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file 7 seg display/7 seg clock gen ip/clk_7seg.v
@@ -1937,8 +1929,8 @@ Info (21057): Implemented 724 device resources after synthesis - the final resou
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
     Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Wed Aug  3 23:42:12 2022
+    Info: Processing ended: Wed Aug  3 23:48:23 2022
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:17
 
 

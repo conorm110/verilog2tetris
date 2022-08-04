@@ -1,5 +1,5 @@
 Fitter report for rzfpga_pc
-Wed Aug  3 23:42:18 2022
+Wed Aug  3 23:48:29 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Aug  3 23:42:18 2022       ;
+; Fitter Status                      ; Successful - Wed Aug  3 23:48:29 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
@@ -167,8 +167,8 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   2.4%      ;
-;     Processor 3            ;   2.4%      ;
-;     Processor 4            ;   2.4%      ;
+;     Processor 3            ;   2.3%      ;
+;     Processor 4            ;   2.3%      ;
 +----------------------------+-------------+
 
 
@@ -1062,7 +1062,7 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
 +----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-;0;(0000000000000000) (0) (0) (00)    ;(1110101010010000) (165220) (60048) (EA90)   ;(1110001100100000) (161440) (58144) (E320)   ;(1110111111001000) (167710) (61384) (EFC8)   ;(1110110111100000) (166740) (60896) (EDE0)   ;(1110110000010000) (166020) (60432) (EC10)   ;(0000000000000010) (2) (2) (02)   ;(1110101010000111) (165207) (60039) (EA87)   ;
+;0;(0000000000000000) (0) (0) (00)    ;(1110101010010000) (165220) (60048) (EA90)   ;(1110001100100000) (161440) (58144) (E320)   ;(1110101010001000) (165210) (60040) (EA88)   ;(1110110111100000) (166740) (60896) (EDE0)   ;(1110110000010000) (166020) (60432) (EC10)   ;(0000000000000010) (2) (2) (02)   ;(1110101010000111) (165207) (60039) (EA87)   ;
 ;8;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;16;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
 ;24;(0000000000000000) (0) (0) (00)    ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
@@ -2106,7 +2106,7 @@ Info (170195): Router estimated average interconnect usage is 3% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.67 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.68 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2123,8 +2123,8 @@ Warning (169064): Following 8 pins have no output enable or a GND or VCC output 
     Info (169065): Pin lcd_d[7] has a permanently disabled output enable File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
 Info (144001): Generated suppressed messages file C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/output_files/rzfpga_pc.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5511 megabytes
-    Info: Processing ended: Wed Aug  3 23:42:19 2022
+    Info: Peak virtual memory: 5506 megabytes
+    Info: Processing ended: Wed Aug  3 23:48:30 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:07
 
