@@ -1,5 +1,5 @@
 Flow report for rzfpga_pc
-Wed Aug  3 23:48:35 2022
+Wed Aug  3 23:58:14 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Aug  3 23:48:31 2022       ;
+; Flow Status                        ; Successful - Wed Aug  3 23:58:10 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; rzfpga_pc                                   ;
 ; Top-level Entity Name              ; rzfpga_pc                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 543 / 6,272 ( 9 % )                         ;
-;     Total combinational functions  ; 457 / 6,272 ( 7 % )                         ;
-;     Dedicated logic registers      ; 385 / 6,272 ( 6 % )                         ;
-; Total registers                    ; 385                                         ;
+; Total logic elements               ; 485 / 6,272 ( 8 % )                         ;
+;     Total combinational functions  ; 415 / 6,272 ( 7 % )                         ;
+;     Dedicated logic registers      ; 349 / 6,272 ( 6 % )                         ;
+; Total registers                    ; 349                                         ;
 ; Total pins                         ; 76 / 92 ( 83 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 217,088 / 276,480 ( 79 % )                  ;
+; Total memory bits                  ; 66,720 / 276,480 ( 24 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
 ; Total PLLs                         ; 1 / 2 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -65,40 +65,40 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/03/2022 23:48:15 ;
+; Start date & time ; 08/03/2022 23:57:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rzfpga_pc           ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+-------------------------------------+------------------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                          ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589201.165958849509072                 ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                             ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                              ; --            ; --          ; --         ;
-; MISC_FILE                           ; SDRAM/sdram_clkgen_bb.v                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; SDRAM/sdram_clkgen.ppf                         ; --            ; --          ; --         ;
-; MISC_FILE                           ; SDRAM/sdram_buffer_bb.v                        ; --            ; --          ; --         ;
-; MISC_FILE                           ; 01/n2tmux8way_bb.v                             ; --            ; --          ; --         ;
-; MISC_FILE                           ; 04/rom_quartus_ip_bb.v                         ; --            ; --          ; --         ;
-; MISC_FILE                           ; 05/cpu_pc_bb.v                                 ; --            ; --          ; --         ;
-; MISC_FILE                           ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg_bb.v ; --            ; --          ; --         ;
-; MISC_FILE                           ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.ppf  ; --            ; --          ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                           ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                              ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                              ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                     ; --            ; --          ; --         ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                     ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)         ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                            ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW          ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                   ; --            ; --          ; --         ;
-+-------------------------------------+------------------------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                       ;
++-------------------------------------+-------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+-------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 10995770589201.165958907301292                        ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                     ; --            ; --          ; --         ;
+; MISC_FILE                           ; 01/n2tmux8way_bb.v                                    ; --            ; --          ; --         ;
+; MISC_FILE                           ; 04/rom_quartus_ip_bb.v                                ; --            ; --          ; --         ;
+; MISC_FILE                           ; 05/cpu_pc_bb.v                                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg_bb.v        ; --            ; --          ; --         ;
+; MISC_FILE                           ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.ppf         ; --            ; --          ; --         ;
+; MISC_FILE                           ; 03/SDRAM/FIFO On Chip IP/sdram_buffer_bb.v            ; --            ; --          ; --         ;
+; MISC_FILE                           ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen_bb.v ; --            ; --          ; --         ;
+; MISC_FILE                           ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.ppf  ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                  ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                   ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --            ; --          ; --         ;
++-------------------------------------+-------------------------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -106,10 +106,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4804 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:05     ; 1.1                     ; 5506 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4771 MB             ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4801 MB             ; 00:00:16                           ;
+; Fitter               ; 00:00:06     ; 1.1                     ; 5503 MB             ; 00:00:07                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 4706 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 4775 MB             ; 00:00:02                           ;
 ; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 

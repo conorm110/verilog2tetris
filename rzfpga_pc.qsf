@@ -144,8 +144,6 @@ set_location_assignment PIN_132 -to seg[4]
 set_location_assignment PIN_126 -to seg[5]
 set_location_assignment PIN_124 -to seg[6]
 set_location_assignment PIN_127 -to seg[7]
-set_global_assignment -name QIP_FILE SDRAM/sdram_clkgen.qip
-set_global_assignment -name QIP_FILE SDRAM/sdram_buffer.qip
 set_global_assignment -name VERILOG_FILE 01/n2tmux.v
 set_global_assignment -name VERILOG_FILE 01/n2tmux16.v
 set_global_assignment -name VERILOG_FILE VGA/hvsync_generator.v
@@ -169,4 +167,6 @@ set_global_assignment -name QIP_FILE "7 Seg Display/7 Seg Clock Gen IP/clk_7seg.
 set_global_assignment -name VERILOG_FILE "7 Seg Display/seven_seg_controller.v"
 set_global_assignment -name VERILOG_FILE 03/SDRAM/ram_manager.v
 set_global_assignment -name VERILOG_FILE 03/SDRAM/sdram.v
+set_global_assignment -name QIP_FILE "03/SDRAM/FIFO On Chip IP/sdram_buffer.qip"
+set_global_assignment -name QIP_FILE "03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.qip"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
