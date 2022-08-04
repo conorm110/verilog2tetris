@@ -17,3 +17,8 @@ The RZ-EasyFPGA is not an easy FPGA to set up and it is a pain (mostly because I
 6. Once everything is done, restart your computer
 7. Now open the .qpf, this should open with Quartus Lite by default (this is good)
 8. To program, go to tools -> programmer, select your hardware device and make sure it is set to JTAG. Then select the only file displaced and hit the run button 
+
+## Running Assembly
+In the Assembly Examples folders there are currently 3 code examples. You can copy paste the formatted code from the .mif files to rom.mif in 04/. 
+
+To create your own assembly programs, this is the same exact assembly as the Nand2Tetris course, just follow the .mif formatting after compiling with the Nand2Tetris tools.
