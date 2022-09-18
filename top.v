@@ -48,21 +48,21 @@ module top (
     wire alu_zr;
     wire alu_ng;
     ALU ALU_INST_A (
-        .x(16'b0000000000000101),
-        .y(16'b0000000000000011),
+        .x(16'b0000000000000100),
+        .y(16'b0000000000000001),
         .zx(1'b0),
         .nx(1'b0),
         .zy(1'b0),
         .ny(1'b0),
         .f(1'b1),
-        .no(1'b1),
+        .no(1'b0),
         .out(alu_out),
         .zr(alu_zr),
         .ng(alu_ng)
     );
 
     wire [2:0] rgb;
-    assign rgb = out[2:0];
+    assign rgb = alu_out[2:0];
 
     SB_RGBA_DRV RGBA_DRIVER (
         .CURREN(1'b1),
