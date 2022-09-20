@@ -81,7 +81,7 @@ module top (
     reg [15:0] rom_dout;
     CPU CPU_INST_A (
         .clk(div[22]),
-        .inM(16'b0000_0000_0000_0000),
+        .inM(inM),
         .instruction(rom_dout),
         .reset(1'b0),
         .outM(outM),
@@ -96,13 +96,22 @@ module top (
         .Dout(Dout)
     );
 
+    wire [15:0] inM;
+    RAM8 RAM8_INST_A (
+        .clk(clk),
+        .in(outM),
+        .load(writeM),
+        .address(addressM),
+        .out(inM)
+    );
+
     always @(posedge clk)
     begin
         if (pc_out[2:0] == 3'b000) begin
-            rom_dout <= 16'b0000000000000011;
+            rom_dout <= 16'b0000000000000000;
         end
         if (pc_out[2:0] == 3'b001) begin
-            rom_dout <= 16'b1110101010000111;
+            rom_dout <= 16'b1110110000001000;
         end
         if (pc_out[2:0] == 3'b010) begin
             rom_dout <= 16'b0000000000000000;
@@ -111,25 +120,30 @@ module top (
             rom_dout <= 16'b0000000000000000;
         end
         if (pc_out[2:0] == 3'b100) begin
-            rom_dout <= 16'b1110101010000111;
+            rom_dout <= 16'b1111110000010000;
         end
         if (pc_out[2:0] == 3'b101) begin
-            rom_dout <= 16'b0000000000000000;
+            rom_dout <= 16'b1110011111001000;
         end
         if (pc_out[2:0] == 3'b110) begin
-            rom_dout <= 16'b0000000000000000;
+            rom_dout <= 16'b0000000000000010;
         end
         if (pc_out[2:0] == 3'b111) begin
-            rom_dout <= 16'b0000000000000000;
+            rom_dout <= 16'b1110101010000111;
         end
+    end
+
+    reg [2:0] rgb_buffer;
+    always @(posedge clk) begin
+        rgb_buffer <= inM[2:0];
     end
 
     SB_RGBA_DRV RGBA_DRIVER (
         .CURREN(1'b1),
         .RGBLEDEN(1'b1),
-        .`BLUEPWM(pc_out[0]),
-        .`REDPWM(pc_out[1]),
-        .`GREENPWM(pc_out[2]),
+        .`BLUEPWM(rgb_buffer[0]),
+        .`REDPWM(rgb_buffer[1]),
+        .`GREENPWM(rgb_buffer[2]),
         .RGB0(rgb0),
         .RGB1(rgb1),
         .RGB2(rgb2)
