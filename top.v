@@ -44,6 +44,7 @@ module top (
         .GLOBAL_BUFFER_OUTPUT(clk)
     );
 
+    /**
     wire [15:0] alu_out;
     wire alu_zr;
     wire alu_ng;
@@ -60,16 +61,75 @@ module top (
         .zr(alu_zr),
         .ng(alu_ng)
     );
+    **/
+    
 
-    wire [2:0] rgb;
-    assign rgb = alu_out[2:0];
+    reg [23:0] div;
+    always @(posedge clk) begin
+        div <= div + 1;
+    end
+    
+    wire [15:0] outM;
+    wire writeM;
+    wire [15:0] addressM;
+    wire [15:0] pc_out;
+    wire [15:0] Aout;
+    wire [15:0] Aregin;
+    wire [15:0] Dout;
+    wire loadA;
+
+    reg [15:0] rom_dout;
+    CPU CPU_INST_A (
+        .clk(div[22]),
+        .inM(16'b0000_0000_0000_0000),
+        .instruction(rom_dout),
+        .reset(1'b0),
+        .outM(outM),
+        .writeM(writeM),
+        .addressM(addressM),
+        .pc_16(pc_out),
+        .PCinc(PCinc),
+        .PCload(PCload),
+        .Aregin(Aregin),
+        .loadA(loadA),
+        .Aout(Aout),
+        .Dout(Dout)
+    );
+
+    always @(posedge clk)
+    begin
+        if (pc_out[2:0] == 3'b000) begin
+            rom_dout <= 16'b0000000000000011;
+        end
+        if (pc_out[2:0] == 3'b001) begin
+            rom_dout <= 16'b1110101010000111;
+        end
+        if (pc_out[2:0] == 3'b010) begin
+            rom_dout <= 16'b0000000000000000;
+        end
+        if (pc_out[2:0] == 3'b011) begin
+            rom_dout <= 16'b0000000000000000;
+        end
+        if (pc_out[2:0] == 3'b100) begin
+            rom_dout <= 16'b1110101010000111;
+        end
+        if (pc_out[2:0] == 3'b101) begin
+            rom_dout <= 16'b0000000000000000;
+        end
+        if (pc_out[2:0] == 3'b110) begin
+            rom_dout <= 16'b0000000000000000;
+        end
+        if (pc_out[2:0] == 3'b111) begin
+            rom_dout <= 16'b0000000000000000;
+        end
+    end
 
     SB_RGBA_DRV RGBA_DRIVER (
         .CURREN(1'b1),
         .RGBLEDEN(1'b1),
-        .`BLUEPWM(rgb[0]),
-        .`REDPWM(rgb[1]),
-        .`GREENPWM(rgb[2]),
+        .`BLUEPWM(pc_out[0]),
+        .`REDPWM(pc_out[1]),
+        .`GREENPWM(pc_out[2]),
         .RGB0(rgb0),
         .RGB1(rgb1),
         .RGB2(rgb2)
