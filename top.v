@@ -43,25 +43,6 @@ module top (
         .USER_SIGNAL_TO_GLOBAL_BUFFER(clki),
         .GLOBAL_BUFFER_OUTPUT(clk)
     );
-
-    /**
-    wire [15:0] alu_out;
-    wire alu_zr;
-    wire alu_ng;
-    ALU ALU_INST_A (
-        .x(16'b0000000000000100),
-        .y(16'b0000000000000001),
-        .zx(1'b0),
-        .nx(1'b0),
-        .zy(1'b0),
-        .ny(1'b0),
-        .f(1'b1),
-        .no(1'b0),
-        .out(alu_out),
-        .zr(alu_zr),
-        .ng(alu_ng)
-    );
-    **/
     
 
     reg [23:0] div;
@@ -78,7 +59,7 @@ module top (
     wire [15:0] Dout;
     wire loadA;
 
-    reg [15:0] rom_dout;
+    wire [15:0] rom_dout;
     CPU CPU_INST_A (
         .clk(div[22]),
         .inM(inM),
@@ -105,33 +86,11 @@ module top (
         .out(inM)
     );
 
-    always @(posedge clk)
-    begin
-        if (pc_out[2:0] == 3'b000) begin
-            rom_dout <= 16'b0000000000000000;
-        end
-        if (pc_out[2:0] == 3'b001) begin
-            rom_dout <= 16'b1110110000001000;
-        end
-        if (pc_out[2:0] == 3'b010) begin
-            rom_dout <= 16'b0000000000000000;
-        end
-        if (pc_out[2:0] == 3'b011) begin
-            rom_dout <= 16'b0000000000000000;
-        end
-        if (pc_out[2:0] == 3'b100) begin
-            rom_dout <= 16'b1111110000010000;
-        end
-        if (pc_out[2:0] == 3'b101) begin
-            rom_dout <= 16'b1110011111001000;
-        end
-        if (pc_out[2:0] == 3'b110) begin
-            rom_dout <= 16'b0000000000000010;
-        end
-        if (pc_out[2:0] == 3'b111) begin
-            rom_dout <= 16'b1110101010000111;
-        end
-    end
+    ROM ROM_main (
+        .rom_dout(rom_dout),
+        .clk(clk),
+        .pc_out(pc_out)
+    );
 
     reg [2:0] rgb_buffer;
     always @(posedge clk) begin
