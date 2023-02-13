@@ -1,6 +1,6 @@
 Analysis & Synthesis report for rzfpga_pc
-Wed Aug  3 23:59:08 2022
-Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Mon Feb 13 16:49:53 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -30,27 +30,29 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component
  23. Parameter Settings for User Entity Instance: ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component
  24. Parameter Settings for User Entity Instance: ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component
- 25. altpll Parameter Settings by Entity Instance
- 26. altsyncram Parameter Settings by Entity Instance
- 27. scfifo Parameter Settings by Entity Instance
- 28. Port Connectivity Checks: "hvsync_generator:hvsync_generator_inst"
- 29. Port Connectivity Checks: "ram_manager:ram_manager_inst|sdram:sdram_inst"
- 30. Port Connectivity Checks: "ram_manager:ram_manager_inst"
- 31. Port Connectivity Checks: "hack_cpu:cpu|cpu_pc:cpu_pc_inst"
- 32. Port Connectivity Checks: "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst"
- 33. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
- 34. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
- 35. Port Connectivity Checks: "rom_quartus_ip:rom_quartus_ip_inst"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+ 25. Parameter Settings for User Entity Instance: n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component
+ 26. altpll Parameter Settings by Entity Instance
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. scfifo Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "hvsync_generator:hvsync_generator_inst"
+ 30. Port Connectivity Checks: "ram_manager:ram_manager_inst|sdram:sdram_inst"
+ 31. Port Connectivity Checks: "ram_manager:ram_manager_inst"
+ 32. Port Connectivity Checks: "hack_cpu:cpu|cpu_pc:cpu_pc_inst"
+ 33. Port Connectivity Checks: "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst"
+ 34. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_p"
+ 35. Port Connectivity Checks: "hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a"
+ 36. Port Connectivity Checks: "rom_quartus_ip:rom_quartus_ip_inst"
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
+ 40. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2021  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -67,24 +69,24 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug  3 23:59:08 2022       ;
-; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
-; Revision Name                      ; rzfpga_pc                                   ;
-; Top-level Entity Name              ; rzfpga_pc                                   ;
-; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 520                                         ;
-;     Total combinational functions  ; 414                                         ;
-;     Dedicated logic registers      ; 349                                         ;
-; Total registers                    ; 349                                         ;
-; Total pins                         ; 76                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 66,720                                      ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 2                                           ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Feb 13 16:49:53 2023          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; rzfpga_pc                                      ;
+; Top-level Entity Name              ; rzfpga_pc                                      ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 606                                            ;
+;     Total combinational functions  ; 470                                            ;
+;     Dedicated logic registers      ; 382                                            ;
+; Total registers                    ; 382                                            ;
+; Total pins                         ; 76                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 66,720                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 2                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -186,8 +188,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -215,42 +216,43 @@ https://fpgasoftware.intel.com/eula.
 ; 03/SDRAM/sdram.v                                   ; yes             ; User Verilog HDL File                  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/sdram.v                                   ;         ;
 ; 03/SDRAM/FIFO On Chip IP/sdram_buffer.v            ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/FIFO On Chip IP/sdram_buffer.v            ;         ;
 ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v ;         ;
-; altpll.tdf                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf                                          ;         ;
-; aglobal211.inc                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc                                      ;         ;
-; stratix_pll.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_pll.inc                                     ;         ;
-; stratixii_pll.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratixii_pll.inc                                   ;         ;
-; cycloneii_pll.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                   ;         ;
+; 01/n2tmux16way.v                                   ; yes             ; User Wizard-Generated File             ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16way.v                                   ;         ;
+; altpll.tdf                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf                                       ;         ;
+; aglobal221.inc                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                   ;         ;
+; stratix_pll.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_pll.inc                                  ;         ;
+; stratixii_pll.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratixii_pll.inc                                ;         ;
+; cycloneii_pll.inc                                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/cycloneii_pll.inc                                ;         ;
 ; db/clk_7seg_altpll.v                               ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/clk_7seg_altpll.v                               ;         ;
-; altsyncram.tdf                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf                                      ;         ;
-; stratix_ram_block.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc                               ;         ;
-; lpm_mux.inc                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc                                         ;         ;
-; lpm_decode.inc                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc                                      ;         ;
-; a_rdenreg.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc                                       ;         ;
-; altrom.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc                                          ;         ;
-; altram.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                                          ;         ;
-; altdpram.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc                                        ;         ;
+; altsyncram.tdf                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf                                   ;         ;
+; stratix_ram_block.inc                              ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                            ;         ;
+; lpm_mux.inc                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc                                      ;         ;
+; lpm_decode.inc                                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc                                   ;         ;
+; a_rdenreg.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                    ;         ;
+; altrom.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
+; altram.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc                                       ;         ;
+; altdpram.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
 ; db/altsyncram_31a1.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf                             ;         ;
 ; 04/rom.mif                                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom.mif                                         ;         ;
-; lpm_mux.tdf                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf                                         ;         ;
-; muxlut.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/muxlut.inc                                          ;         ;
-; bypassff.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/bypassff.inc                                        ;         ;
-; altshift.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altshift.inc                                        ;         ;
+; lpm_mux.tdf                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.tdf                                      ;         ;
+; muxlut.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/muxlut.inc                                       ;         ;
+; bypassff.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc                                     ;         ;
+; altshift.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altshift.inc                                     ;         ;
 ; db/mux_frc.tdf                                     ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_frc.tdf                                     ;         ;
-; lpm_counter.tdf                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.tdf                                     ;         ;
-; lpm_constant.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_constant.inc                                    ;         ;
-; lpm_add_sub.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                     ;         ;
-; cmpconst.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/cmpconst.inc                                        ;         ;
-; lpm_compare.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_compare.inc                                     ;         ;
-; lpm_counter.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.inc                                     ;         ;
-; dffeea.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/dffeea.inc                                          ;         ;
-; alt_counter_stratix.inc                            ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                             ;         ;
+; lpm_counter.tdf                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_counter.tdf                                  ;         ;
+; lpm_constant.inc                                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_constant.inc                                 ;         ;
+; lpm_add_sub.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                                  ;         ;
+; cmpconst.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/cmpconst.inc                                     ;         ;
+; lpm_compare.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_compare.inc                                  ;         ;
+; lpm_counter.inc                                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_counter.inc                                  ;         ;
+; dffeea.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/dffeea.inc                                       ;         ;
+; alt_counter_stratix.inc                            ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/alt_counter_stratix.inc                          ;         ;
 ; db/cntr_ltj.tdf                                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_ltj.tdf                                    ;         ;
-; scfifo.tdf                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/scfifo.tdf                                          ;         ;
-; a_regfifo.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_regfifo.inc                                       ;         ;
-; a_dpfifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_dpfifo.inc                                        ;         ;
-; a_i2fifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_i2fifo.inc                                        ;         ;
-; a_fffifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_fffifo.inc                                        ;         ;
-; a_f2fifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_f2fifo.inc                                        ;         ;
+; scfifo.tdf                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/scfifo.tdf                                       ;         ;
+; a_regfifo.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_regfifo.inc                                    ;         ;
+; a_dpfifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_dpfifo.inc                                     ;         ;
+; a_i2fifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_i2fifo.inc                                     ;         ;
+; a_fffifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_fffifo.inc                                     ;         ;
+; a_f2fifo.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_f2fifo.inc                                     ;         ;
 ; db/scfifo_uh31.tdf                                 ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/scfifo_uh31.tdf                                 ;         ;
 ; db/a_dpfifo_5o31.tdf                               ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/a_dpfifo_5o31.tdf                               ;         ;
 ; db/a_fefifo_66e.tdf                                ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/a_fefifo_66e.tdf                                ;         ;
@@ -258,6 +260,7 @@ https://fpgasoftware.intel.com/eula.
 ; db/altsyncram_akm1.tdf                             ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_akm1.tdf                             ;         ;
 ; db/cntr_0ob.tdf                                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_0ob.tdf                                    ;         ;
 ; db/sdram_clkgen_altpll.v                           ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/sdram_clkgen_altpll.v                           ;         ;
+; db/mux_vsc.tdf                                     ; yes             ; Auto-Generated Megafunction            ; C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_vsc.tdf                                     ;         ;
 +----------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -266,20 +269,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                                   ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 520                                                                                                                                     ;
+; Estimated Total logic elements              ; 606                                                                                                                                     ;
 ;                                             ;                                                                                                                                         ;
-; Total combinational functions               ; 414                                                                                                                                     ;
+; Total combinational functions               ; 470                                                                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                                         ;
-;     -- 4 input functions                    ; 173                                                                                                                                     ;
-;     -- 3 input functions                    ; 53                                                                                                                                      ;
-;     -- <=2 input functions                  ; 188                                                                                                                                     ;
+;     -- 4 input functions                    ; 225                                                                                                                                     ;
+;     -- 3 input functions                    ; 59                                                                                                                                      ;
+;     -- <=2 input functions                  ; 186                                                                                                                                     ;
 ;                                             ;                                                                                                                                         ;
 ; Logic elements by mode                      ;                                                                                                                                         ;
-;     -- normal mode                          ; 313                                                                                                                                     ;
-;     -- arithmetic mode                      ; 101                                                                                                                                     ;
+;     -- normal mode                          ; 371                                                                                                                                     ;
+;     -- arithmetic mode                      ; 99                                                                                                                                      ;
 ;                                             ;                                                                                                                                         ;
-; Total registers                             ; 349                                                                                                                                     ;
-;     -- Dedicated logic registers            ; 349                                                                                                                                     ;
+; Total registers                             ; 382                                                                                                                                     ;
+;     -- Dedicated logic registers            ; 382                                                                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                                                                       ;
 ;                                             ;                                                                                                                                         ;
 ; I/O pins                                    ; 76                                                                                                                                      ;
@@ -292,8 +295,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                                         ;
 ; Maximum fan-out node                        ; ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component|sdram_clkgen_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 174                                                                                                                                     ;
-; Total fan-out                               ; 2970                                                                                                                                    ;
-; Average fan-out                             ; 2.99                                                                                                                                    ;
+; Total fan-out                               ; 3288                                                                                                                                    ;
+; Average fan-out                             ; 3.06                                                                                                                                    ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -302,13 +305,12 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                         ; Entity Name          ; Library Name ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |rzfpga_pc                                          ; 414 (37)            ; 349 (52)                  ; 66720       ; 0            ; 0       ; 0         ; 76   ; 0            ; |rzfpga_pc                                                                                                                                                                                  ; rzfpga_pc            ; work         ;
-;    |hack_cpu:cpu|                                   ; 147 (11)            ; 44 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu                                                                                                                                                                     ; hack_cpu             ; work         ;
-;       |ALUn2t:alu_inst_a|                           ; 94 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a                                                                                                                                                   ; ALUn2t               ; work         ;
+; |rzfpga_pc                                          ; 470 (112)           ; 382 (105)                 ; 66720       ; 0            ; 0       ; 0         ; 76   ; 0            ; |rzfpga_pc                                                                                                                                                                                  ; rzfpga_pc            ; work         ;
+;    |hack_cpu:cpu|                                   ; 145 (11)            ; 44 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu                                                                                                                                                                     ; hack_cpu             ; work         ;
+;       |ALUn2t:alu_inst_a|                           ; 91 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a                                                                                                                                                   ; ALUn2t               ; work         ;
 ;          |Add16:add16_alu_a|                        ; 15 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a                                                                                                                                 ; Add16                ; work         ;
-;             |FullAdder:full_adder_inst_a|           ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a                                                                                                     ; FullAdder            ; work         ;
-;                |HalfAdder:half_adder_inst_a|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_a|HalfAdder:half_adder_inst_a                                                                         ; HalfAdder            ; work         ;
-;             |FullAdder:full_adder_inst_b|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_b                                                                                                     ; FullAdder            ; work         ;
+;             |FullAdder:full_adder_inst_b|           ; 2 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_b                                                                                                     ; FullAdder            ; work         ;
+;                |HalfAdder:half_adder_inst_b|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_b|HalfAdder:half_adder_inst_b                                                                         ; HalfAdder            ; work         ;
 ;             |FullAdder:full_adder_inst_c|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_c                                                                                                     ; FullAdder            ; work         ;
 ;             |FullAdder:full_adder_inst_d|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_d                                                                                                     ; FullAdder            ; work         ;
 ;             |FullAdder:full_adder_inst_e|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_e                                                                                                     ; FullAdder            ; work         ;
@@ -322,14 +324,11 @@ https://fpgasoftware.intel.com/eula.
 ;             |FullAdder:full_adder_inst_m|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_m                                                                                                     ; FullAdder            ; work         ;
 ;             |FullAdder:full_adder_inst_n|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_n                                                                                                     ; FullAdder            ; work         ;
 ;             |FullAdder:full_adder_inst_o|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|Add16:add16_alu_a|FullAdder:full_adder_inst_o                                                                                                     ; FullAdder            ; work         ;
-;          |n2tmux16:mux16_alu_a|                     ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a                                                                                                                              ; n2tmux16             ; work         ;
+;          |n2tmux16:mux16_alu_a|                     ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a                                                                                                                              ; n2tmux16             ; work         ;
 ;             |n2tmux:mux_b|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_b                                                                                                                 ; n2tmux               ; work         ;
 ;             |n2tmux:mux_c|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_c                                                                                                                 ; n2tmux               ; work         ;
 ;             |n2tmux:mux_d|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_d                                                                                                                 ; n2tmux               ; work         ;
 ;             |n2tmux:mux_f|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_f                                                                                                                 ; n2tmux               ; work         ;
-;             |n2tmux:mux_g|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_g                                                                                                                 ; n2tmux               ; work         ;
-;             |n2tmux:mux_h|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_h                                                                                                                 ; n2tmux               ; work         ;
-;             |n2tmux:mux_i|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_i                                                                                                                 ; n2tmux               ; work         ;
 ;             |n2tmux:mux_j|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_j                                                                                                                 ; n2tmux               ; work         ;
 ;             |n2tmux:mux_k|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_k                                                                                                                 ; n2tmux               ; work         ;
 ;             |n2tmux:mux_l|                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|ALUn2t:alu_inst_a|n2tmux16:mux16_alu_a|n2tmux:mux_l                                                                                                                 ; n2tmux               ; work         ;
@@ -340,7 +339,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |cpu_pc:cpu_pc_inst|                          ; 26 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst                                                                                                                                                  ; cpu_pc               ; work         ;
 ;          |lpm_counter:LPM_COUNTER_component|        ; 26 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component                                                                                                                ; lpm_counter          ; work         ;
 ;             |cntr_ltj:auto_generated|               ; 26 (26)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated                                                                                        ; cntr_ltj             ; work         ;
-;       |n2tmux16:Mux16_aluOut_instruction|           ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction                                                                                                                                   ; n2tmux16             ; work         ;
+;       |n2tmux16:Mux16_aluOut_instruction|           ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction                                                                                                                                   ; n2tmux16             ; work         ;
 ;          |n2tmux:mux_a|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_a                                                                                                                      ; n2tmux               ; work         ;
 ;          |n2tmux:mux_b|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_b                                                                                                                      ; n2tmux               ; work         ;
 ;          |n2tmux:mux_c|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_c                                                                                                                      ; n2tmux               ; work         ;
@@ -356,15 +355,18 @@ https://fpgasoftware.intel.com/eula.
 ;          |n2tmux:mux_m|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_m                                                                                                                      ; n2tmux               ; work         ;
 ;          |n2tmux:mux_n|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_n                                                                                                                      ; n2tmux               ; work         ;
 ;          |n2tmux:mux_o|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_o                                                                                                                      ; n2tmux               ; work         ;
-;          |n2tmux:mux_p|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_p                                                                                                                      ; n2tmux               ; work         ;
-;    |hvsync_generator:hvsync_generator_inst|         ; 105 (105)           ; 76 (76)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync_generator_inst                                                                                                                                           ; hvsync_generator     ; work         ;
+;          |n2tmux:mux_p|                             ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_p                                                                                                                      ; n2tmux               ; work         ;
+;    |hvsync_generator:hvsync_generator_inst|         ; 84 (84)             ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|hvsync_generator:hvsync_generator_inst                                                                                                                                           ; hvsync_generator     ; work         ;
+;    |n2tmux16way:n2tmux16way_inst_a|                 ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|n2tmux16way:n2tmux16way_inst_a                                                                                                                                                   ; n2tmux16way          ; work         ;
+;       |lpm_mux:LPM_MUX_component|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component                                                                                                                         ; lpm_mux              ; work         ;
+;          |mux_vsc:auto_generated|                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component|mux_vsc:auto_generated                                                                                                  ; mux_vsc              ; work         ;
 ;    |ram_manager:ram_manager_inst|                   ; 76 (19)             ; 135 (24)                  ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst                                                                                                                                                     ; ram_manager          ; work         ;
 ;       |sdram:sdram_inst|                            ; 33 (33)             ; 94 (94)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram:sdram_inst                                                                                                                                    ; sdram                ; work         ;
 ;       |sdram_buffer:sdram_buffer_inst|              ; 24 (0)              ; 17 (0)                    ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst                                                                                                                      ; sdram_buffer         ; work         ;
 ;          |scfifo:scfifo_component|                  ; 24 (0)              ; 17 (0)                    ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component                                                                                              ; scfifo               ; work         ;
 ;             |scfifo_uh31:auto_generated|            ; 24 (0)              ; 17 (0)                    ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated                                                                   ; scfifo_uh31          ; work         ;
-;                |a_dpfifo_5o31:dpfifo|               ; 24 (2)              ; 17 (0)                    ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo                                              ; a_dpfifo_5o31        ; work         ;
-;                   |a_fefifo_66e:fifo_state|         ; 12 (7)              ; 7 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo|a_fefifo_66e:fifo_state                      ; a_fefifo_66e         ; work         ;
+;                |a_dpfifo_5o31:dpfifo|               ; 24 (1)              ; 17 (0)                    ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo                                              ; a_dpfifo_5o31        ; work         ;
+;                   |a_fefifo_66e:fifo_state|         ; 13 (8)              ; 7 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo|a_fefifo_66e:fifo_state                      ; a_fefifo_66e         ; work         ;
 ;                      |cntr_co7:count_usedw|         ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo|a_fefifo_66e:fifo_state|cntr_co7:count_usedw ; cntr_co7             ; work         ;
 ;                   |altsyncram_akm1:FIFOram|         ; 0 (0)               ; 0 (0)                     ; 1184        ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo|altsyncram_akm1:FIFOram                      ; altsyncram_akm1      ; work         ;
 ;                   |cntr_0ob:rd_ptr_count|           ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo|cntr_0ob:rd_ptr_count                        ; cntr_0ob             ; work         ;
@@ -402,12 +404,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+----------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                  ; IP Include File                                    ;
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+----------------------------------------------------+
-; Altera ; LPM_COUNTER  ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst                                       ; 05/cpu_pc.v                                        ;
-; Altera ; LPM_MUX      ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|n2tmux8way:n2tmux8way_inst                               ; 01/n2tmux8way.v                                    ;
-; Altera ; FIFO         ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst           ; 03/SDRAM/FIFO On Chip IP/sdram_buffer.v            ;
-; Altera ; ALTPLL       ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst           ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v ;
-; Altera ; ROM: 1-PORT  ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|rom_quartus_ip:rom_quartus_ip_inst                                    ; 04/rom_quartus_ip.v                                ;
-; Altera ; ALTPLL       ; 21.1    ; N/A          ; N/A          ; |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v        ;
+; Altera ; LPM_COUNTER  ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|cpu_pc:cpu_pc_inst                                       ; 05/cpu_pc.v                                        ;
+; Altera ; LPM_MUX      ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|hack_cpu:cpu|n2tmux8way:n2tmux8way_inst                               ; 01/n2tmux8way.v                                    ;
+; Altera ; LPM_MUX      ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|n2tmux16way:n2tmux16way_inst_a                                        ; 01/n2tmux16way.v                                   ;
+; Altera ; FIFO         ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst           ; 03/SDRAM/FIFO On Chip IP/sdram_buffer.v            ;
+; Altera ; ALTPLL       ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst           ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v ;
+; Altera ; ROM: 1-PORT  ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|rom_quartus_ip:rom_quartus_ip_inst                                    ; 04/rom_quartus_ip.v                                ;
+; Altera ; ALTPLL       ; 22.1    ; N/A          ; N/A          ; |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v        ;
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------+----------------------------------------------------+
 
 
@@ -444,6 +447,27 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 ; hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated|counter_reg_bit[12..15] ; Lost fanout                            ;
 ; sdram_buffer_wrreq                                                                                                ; Merged with req_state                  ;
+; attempt_color[1,2]                                                                                                ; Merged with attempt_color[0]           ;
+; ram_addr_gpu_res[19]                                                                                              ; Merged with last_ram_addr_gpu[19]      ;
+; ram_addr_gpu_res[18]                                                                                              ; Merged with last_ram_addr_gpu[18]      ;
+; ram_addr_gpu_res[17]                                                                                              ; Merged with last_ram_addr_gpu[17]      ;
+; ram_addr_gpu_res[16]                                                                                              ; Merged with last_ram_addr_gpu[16]      ;
+; ram_addr_gpu_res[15]                                                                                              ; Merged with last_ram_addr_gpu[15]      ;
+; ram_addr_gpu_res[14]                                                                                              ; Merged with last_ram_addr_gpu[14]      ;
+; ram_addr_gpu_res[13]                                                                                              ; Merged with last_ram_addr_gpu[13]      ;
+; ram_addr_gpu_res[12]                                                                                              ; Merged with last_ram_addr_gpu[12]      ;
+; ram_addr_gpu_res[11]                                                                                              ; Merged with last_ram_addr_gpu[11]      ;
+; ram_addr_gpu_res[10]                                                                                              ; Merged with last_ram_addr_gpu[10]      ;
+; ram_addr_gpu_res[9]                                                                                               ; Merged with last_ram_addr_gpu[9]       ;
+; ram_addr_gpu_res[8]                                                                                               ; Merged with last_ram_addr_gpu[8]       ;
+; ram_addr_gpu_res[7]                                                                                               ; Merged with last_ram_addr_gpu[7]       ;
+; ram_addr_gpu_res[6]                                                                                               ; Merged with last_ram_addr_gpu[6]       ;
+; ram_addr_gpu_res[5]                                                                                               ; Merged with last_ram_addr_gpu[5]       ;
+; ram_addr_gpu_res[4]                                                                                               ; Merged with last_ram_addr_gpu[4]       ;
+; ram_addr_gpu_res[3]                                                                                               ; Merged with last_ram_addr_gpu[3]       ;
+; ram_addr_gpu_res[2]                                                                                               ; Merged with last_ram_addr_gpu[2]       ;
+; ram_addr_gpu_res[1]                                                                                               ; Merged with last_ram_addr_gpu[1]       ;
+; ram_addr_gpu_res[0]                                                                                               ; Merged with last_ram_addr_gpu[0]       ;
 ; seven_seg_controller:seven_seg_controller_inst|num_to_seg:num_to_seg_a|seg[7]                                     ; Stuck at VCC due to stuck port data_in ;
 ; seven_seg_controller:seven_seg_controller_inst|num_to_seg:num_to_seg_b|seg[7]                                     ; Stuck at VCC due to stuck port data_in ;
 ; seven_seg_controller:seven_seg_controller_inst|num_to_seg:num_to_seg_c|seg[7]                                     ; Stuck at VCC due to stuck port data_in ;
@@ -454,8 +478,8 @@ Encoding Type:  One-Hot
 ; ram_manager:ram_manager_inst|sdram:sdram_inst|state~2                                                             ; Lost fanout                            ;
 ; ram_manager:ram_manager_inst|sdram:sdram_inst|state~3                                                             ; Lost fanout                            ;
 ; ram_manager:ram_manager_inst|sdram:sdram_inst|state.11                                                            ; Stuck at GND due to stuck port data_in ;
-; counter[12..24]                                                                                                   ; Lost fanout                            ;
-; Total Number of Removed Registers = 28                                                                            ;                                        ;
+; counter[6..24]                                                                                                    ; Lost fanout                            ;
+; Total Number of Removed Registers = 56                                                                            ;                                        ;
 +-------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -474,12 +498,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 349   ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 382   ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 102   ;
+; Number of registers using Clock Enable       ; 161   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -492,7 +516,14 @@ Encoding Type:  One-Hot
 ; ram_manager:ram_manager_inst|sdram:sdram_inst|SDRAM_CMD[2] ; 1       ;
 ; ram_manager:ram_manager_inst|sdram:sdram_inst|SDRAM_CMD[1] ; 1       ;
 ; ram_manager:ram_manager_inst|sdram:sdram_inst|SDRAM_CMD[0] ; 1       ;
-; Total number of inverted registers = 3                     ;         ;
+; pixel_chunk[10]                                            ; 1       ;
+; next_addr[0]                                               ; 8       ;
+; pixel_chunk[13]                                            ; 1       ;
+; pixel_chunk[15]                                            ; 1       ;
+; pixel_chunk[6]                                             ; 1       ;
+; pixel_chunk[1]                                             ; 1       ;
+; pixel_chunk[3]                                             ; 1       ;
+; Total number of inverted registers = 10                    ;         ;
 +------------------------------------------------------------+---------+
 
 
@@ -502,8 +533,9 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |rzfpga_pc|ram_manager:ram_manager_inst|sdram:sdram_inst|SDRAM_A[9] ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst|seg[6]    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |rzfpga_pc|ram_manager:ram_manager_inst|Selector4                   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |rzfpga_pc|seven_seg_controller:seven_seg_controller_inst|seg[1]    ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |rzfpga_pc|next_addr[5]                                             ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |rzfpga_pc|ram_manager:ram_manager_inst|Selector1                   ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |rzfpga_pc|ram_manager:ram_manager_inst|Selector2                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 
@@ -1410,6 +1442,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component ;
++------------------------+--------------+---------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                          ;
++------------------------+--------------+---------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                ;
+; LPM_WIDTH              ; 1            ; Signed Integer                                                ;
+; LPM_SIZE               ; 16           ; Signed Integer                                                ;
+; LPM_WIDTHS             ; 4            ; Signed Integer                                                ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                       ;
+; CBXI_PARAMETER         ; mux_vsc      ; Untyped                                                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                       ;
++------------------------+--------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                                                                                  ;
 +-------------------------------+-----------------------------------------------------------------------------------------------+
@@ -1470,14 +1521,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hvsync_generator:hvsync_generator_inst"                                                 ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; CounterX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; CounterY ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsync_generator:hvsync_generator_inst"                                                                            ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                  ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; CounterX[9..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; loc            ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1553,29 +1604,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 76                          ;
-; cycloneiii_ff         ; 349                         ;
+; cycloneiii_ff         ; 382                         ;
 ;     CLR               ; 2                           ;
-;     ENA               ; 75                          ;
+;     ENA               ; 134                         ;
 ;     ENA CLR           ; 15                          ;
 ;     ENA SLD           ; 12                          ;
-;     SCLR              ; 20                          ;
-;     plain             ; 225                         ;
-; cycloneiii_io_obuf    ; 24                          ;
-; cycloneiii_lcell_comb ; 422                         ;
-;     arith             ; 101                         ;
-;         2 data inputs ; 96                          ;
-;         3 data inputs ; 5                           ;
-;     normal            ; 321                         ;
+;     plain             ; 219                         ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 478                         ;
+;     arith             ; 99                          ;
+;         2 data inputs ; 93                          ;
+;         3 data inputs ; 6                           ;
+;     normal            ; 379                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 19                          ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 48                          ;
-;         4 data inputs ; 173                         ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 74                          ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 225                         ;
 ; cycloneiii_pll        ; 2                           ;
 ; cycloneiii_ram_block  ; 53                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 21.00                       ;
-; Average LUT depth     ; 4.02                        ;
+; Average LUT depth     ; 4.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1584,7 +1634,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1593,8 +1643,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Aug  3 23:58:59 2022
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Mon Feb 13 16:49:45 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rzfpga_pc -c rzfpga_pc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1646,18 +1696,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file 03/sdra
     Info (12023): Found entity 1: sdram_buffer File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/FIFO On Chip IP/sdram_buffer.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file 03/sdram/altpll 100mhz clock gen ip/sdram_clkgen.v
     Info (12023): Found entity 1: sdram_clkgen File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file 01/n2tmux16way.v
+    Info (12023): Found entity 1: n2tmux16way File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16way.v Line: 40
 Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(41): created implicit net for "direct_rd_gnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 41
 Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(42): created implicit net for "ram_clk" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 42
 Warning (10236): Verilog HDL Implicit Net warning at ram_manager.v(146): created implicit net for "RdGnt" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 146
 Info (12127): Elaborating entity "rzfpga_pc" for the top level hierarchy
 Warning (10858): Verilog HDL warning at rzfpga_pc.v(51): object inv_led used but never assigned File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(64): truncated value with size 32 to match size of target (25) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 64
-Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(189): truncated value with size 16 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 189
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(68): truncated value with size 32 to match size of target (25) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at rzfpga_pc.v(178): variable "inDisplayArea" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 178
+Warning (10235): Verilog HDL Always Construct warning at rzfpga_pc.v(180): variable "attempt_color" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 180
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(243): truncated value with size 32 to match size of target (24) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 243
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(253): truncated value with size 3 to match size of target (1) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 253
+Warning (10230): Verilog HDL assignment warning at rzfpga_pc.v(259): truncated value with size 32 to match size of target (1) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 259
 Warning (10030): Net "inv_led" at rzfpga_pc.v(51) has no driver or initial value, using a default initial value '0' File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 51
+Warning (10034): Output port "lcd_d[7..5]" at rzfpga_pc.v(44) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
 Warning (10034): Output port "lcd_rs" at rzfpga_pc.v(41) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 41
 Warning (10034): Output port "lcd_rw" at rzfpga_pc.v(42) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
 Warning (10034): Output port "lcd_e" at rzfpga_pc.v(43) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
-Info (12128): Elaborating entity "seven_seg_controller" for hierarchy "seven_seg_controller:seven_seg_controller_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 74
+Info (12128): Elaborating entity "seven_seg_controller" for hierarchy "seven_seg_controller:seven_seg_controller_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 78
 Warning (10230): Verilog HDL assignment warning at seven_seg_controller.v(93): truncated value with size 32 to match size of target (3) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 93
 Info (12128): Elaborating entity "clk_7seg" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 28
 Info (12128): Elaborating entity "altpll" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v Line: 91
@@ -1719,9 +1776,9 @@ Info (12133): Instantiated megafunction "seven_seg_controller:seven_seg_controll
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/clk_7seg_altpll.v
     Info (12023): Found entity 1: clk_7seg_altpll File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/clk_7seg_altpll.v Line: 30
-Info (12128): Elaborating entity "clk_7seg_altpll" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component|clk_7seg_altpll:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "clk_7seg_altpll" for hierarchy "seven_seg_controller:seven_seg_controller_inst|clk_7seg:clk_7seg_inst|altpll:altpll_component|clk_7seg_altpll:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "num_to_seg" for hierarchy "seven_seg_controller:seven_seg_controller_inst|num_to_seg:num_to_seg_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/7 Seg Display/seven_seg_controller.v Line: 47
-Info (12128): Elaborating entity "rom_quartus_ip" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 89
+Info (12128): Elaborating entity "rom_quartus_ip" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 93
 Info (12128): Elaborating entity "altsyncram" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
 Info (12130): Elaborated megafunction instantiation "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
 Info (12133): Instantiated megafunction "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/04/rom_quartus_ip.v Line: 82
@@ -1741,8 +1798,8 @@ Info (12133): Instantiated megafunction "rom_quartus_ip:rom_quartus_ip_inst|alts
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_31a1.tdf
     Info (12023): Found entity 1: altsyncram_31a1 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/altsyncram_31a1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_31a1" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component|altsyncram_31a1:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 105
+Info (12128): Elaborating entity "altsyncram_31a1" for hierarchy "rom_quartus_ip:rom_quartus_ip_inst|altsyncram:altsyncram_component|altsyncram_31a1:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "hack_cpu" for hierarchy "hack_cpu:cpu" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 109
 Info (12128): Elaborating entity "n2tmux16" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 53
 Info (12128): Elaborating entity "n2tmux" for hierarchy "hack_cpu:cpu|n2tmux16:Mux16_aluOut_instruction|n2tmux:mux_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16.v Line: 24
 Info (12128): Elaborating entity "ALUn2t" for hierarchy "hack_cpu:cpu|ALUn2t:alu_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 89
@@ -1759,7 +1816,7 @@ Info (12133): Instantiated megafunction "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst
     Info (12134): Parameter "lpm_widths" = "3"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_frc.tdf
     Info (12023): Found entity 1: mux_frc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_frc.tdf Line: 23
-Info (12128): Elaborating entity "mux_frc" for hierarchy "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst|lpm_mux:LPM_MUX_component|mux_frc:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "mux_frc" for hierarchy "hack_cpu:cpu|n2tmux8way:n2tmux8way_inst|lpm_mux:LPM_MUX_component|mux_frc:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
 Info (12128): Elaborating entity "cpu_pc" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/hack_cpu.v Line: 124
 Info (12128): Elaborating entity "lpm_counter" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 73
 Info (12130): Elaborated megafunction instantiation "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/05/cpu_pc.v Line: 73
@@ -1770,8 +1827,8 @@ Info (12133): Instantiated megafunction "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_cou
     Info (12134): Parameter "lpm_width" = "16"
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ltj.tdf
     Info (12023): Found entity 1: cntr_ltj File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/cntr_ltj.tdf Line: 26
-Info (12128): Elaborating entity "cntr_ltj" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
-Info (12128): Elaborating entity "ram_manager" for hierarchy "ram_manager:ram_manager_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 166
+Info (12128): Elaborating entity "cntr_ltj" for hierarchy "hack_cpu:cpu|cpu_pc:cpu_pc_inst|lpm_counter:LPM_COUNTER_component|cntr_ltj:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
+Info (12128): Elaborating entity "ram_manager" for hierarchy "ram_manager:ram_manager_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 156
 Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(41): object "direct_rd_gnt" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 41
 Warning (10036): Verilog HDL or VHDL warning at ram_manager.v(42): object "ram_clk" assigned a value but never read File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 42
 Warning (10034): Output port "sd_cs" at ram_manager.v(27) has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 27
@@ -1791,7 +1848,7 @@ Info (12133): Instantiated megafunction "ram_manager:ram_manager_inst|sdram_buff
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_uh31.tdf
     Info (12023): Found entity 1: scfifo_uh31 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/scfifo_uh31.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_uh31" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+Info (12128): Elaborating entity "scfifo_uh31" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_5o31.tdf
     Info (12023): Found entity 1: a_dpfifo_5o31 File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/a_dpfifo_5o31.tdf Line: 29
 Info (12128): Elaborating entity "a_dpfifo_5o31" for hierarchy "ram_manager:ram_manager_inst|sdram_buffer:sdram_buffer_inst|scfifo:scfifo_component|scfifo_uh31:auto_generated|a_dpfifo_5o31:dpfifo" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/scfifo_uh31.tdf Line: 37
@@ -1867,22 +1924,24 @@ Info (12133): Instantiated megafunction "ram_manager:ram_manager_inst|sdram_clkg
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/sdram_clkgen_altpll.v
     Info (12023): Found entity 1: sdram_clkgen_altpll File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/sdram_clkgen_altpll.v Line: 30
-Info (12128): Elaborating entity "sdram_clkgen_altpll" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component|sdram_clkgen_altpll:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "sdram_clkgen_altpll" for hierarchy "ram_manager:ram_manager_inst|sdram_clkgen:sdram_clkgen_inst|altpll:altpll_component|sdram_clkgen_altpll:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "sdram" for hierarchy "ram_manager:ram_manager_inst|sdram:sdram_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/03/SDRAM/ram_manager.v Line: 164
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync_generator_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 182
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(51): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 51
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(57): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 57
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(77): truncated value with size 32 to match size of target (20) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 77
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "lcd_d[0]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[1]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[2]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[3]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[4]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[5]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[6]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
-    Warning (13040): bidirectional pin "lcd_d[7]" has no driver File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync_generator_inst" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 172
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(52): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 52
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(58): truncated value with size 32 to match size of target (10) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 58
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(78): truncated value with size 32 to match size of target (20) File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/VGA/hvsync_generator.v Line: 78
+Info (12128): Elaborating entity "n2tmux16way" for hierarchy "n2tmux16way:n2tmux16way_inst_a" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 210
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16way.v Line: 110
+Info (12130): Elaborated megafunction instantiation "n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16way.v Line: 110
+Info (12133): Instantiated megafunction "n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component" with the following parameter: File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/01/n2tmux16way.v Line: 110
+    Info (12134): Parameter "lpm_size" = "16"
+    Info (12134): Parameter "lpm_type" = "LPM_MUX"
+    Info (12134): Parameter "lpm_width" = "1"
+    Info (12134): Parameter "lpm_widths" = "4"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_vsc.tdf
+    Info (12023): Found entity 1: mux_vsc File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/db/mux_vsc.tdf Line: 23
+Info (12128): Elaborating entity "mux_vsc" for hierarchy "n2tmux16way:n2tmux16way_inst_a|lpm_mux:LPM_MUX_component|mux_vsc:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led[0]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
     Warning (13410): Pin "led[1]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 22
@@ -1895,9 +1954,13 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rs" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 41
     Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 42
     Warning (13410): Pin "lcd_e" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 43
+    Warning (13410): Pin "lcd_d[5]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13410): Pin "lcd_d[6]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
+    Warning (13410): Pin "lcd_d[7]" is stuck at GND File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 44
     Warning (13410): Pin "seg[7]" is stuck at VCC File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 50
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 21 registers lost all their fanouts during netlist optimizations.
+Info (17049): 27 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/output_files/rzfpga_pc.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
@@ -1905,17 +1968,23 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
     Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
     Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 21
-Info (21057): Implemented 669 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 755 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 46 output pins
-    Info (21060): Implemented 24 bidirectional pins
-    Info (21061): Implemented 538 logic cells
+    Info (21059): Implemented 54 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 624 logic cells
     Info (21064): Implemented 53 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Wed Aug  3 23:59:08 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Mon Feb 13 16:49:53 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/output_files/rzfpga_pc.map.smsg.
 
 

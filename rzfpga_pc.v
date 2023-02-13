@@ -41,7 +41,7 @@ module rzfpga_pc (
 	output lcd_rs,
 	output lcd_rw,
 	output lcd_e,
-	inout [7:0] lcd_d,
+	output [7:0] lcd_d,
 	
 	// tubeeeee
 	output [3:0] dig,
@@ -53,8 +53,12 @@ assign led = ~inv_led;
 
 wire clk_cpu;
 
+assign lcd_d[2:0] = vga_c;
+assign lcd_d[3] = hsyncout;
+assign lcd_d[4] = vsyncout;
 
-assign clk_cpu = counter[11];
+
+assign clk_cpu = counter[5];
 reg [24:0] counter = 25'b0_0000_0000_0000_0000_0000_0000;
 reg cpu_clk_inhibit = 0;
 always@(posedge clk50)
@@ -103,20 +107,6 @@ hack_cpu cpu (
 	.addressM(ram_addr_cpu),
 	.pc(rom_addr)
 );
-
-always @(posedge clk50)
-begin
-	if(inDisplayArea)
-	begin
-		sdram_buffer_addr_in <= ram_addr_gpu;
-	end
-	else
-	begin
-		sdram_buffer_addr_in <= ram_addr_cpu;
-	end
-end
-assign sdram_buffer_data_in = ram_in_cpu;
-assign sdram_buffer_rw_in = ram_we_cpu & (~inDisplayArea); // force to read only during display area time
 
 reg req_state = 1'b0;
 always @(posedge mem_clk)
@@ -167,8 +157,8 @@ ram_manager ram_manager_inst (
 
 
 
+wire pixel_clk;
 wire inDisplayArea;
-wire [19:0] ram_addr_gpu;
 wire [9:0] CounterX;
 wire [9:0] CounterY;
 hvsync_generator hvsync_generator_inst (
@@ -177,21 +167,122 @@ hvsync_generator hvsync_generator_inst (
 	.vga_v_sync(vsyncout),
 	.inDisplayArea(inDisplayArea),
 	.CounterX(CounterX),
-	.CounterY(CounterY),
-	.loc(ram_addr_gpu)
+	.pixel_clk(pixel_clk),
+	.CounterY(CounterY)
 );
 
-always @(posedge clk50)
+
+reg [2:0] attempt_color;
+always @(pixel_clk)
 begin
 	if (inDisplayArea)
 	begin
-		
-		vga_c <= data_output;
+		vga_c <= attempt_color;
 	end
 	else
 	begin
 		vga_c <= 3'b000;
 	end
 end
+
+wire [3:0] gpu_mux_sel;
+assign gpu_mux_sel = next_addr[3:0];
+wire color_out;
+n2tmux16way n2tmux16way_inst_a (
+	.data0(pixel_chunk[0]),
+	.data1(pixel_chunk[1]),
+	.data2(pixel_chunk[2]),
+	.data3(pixel_chunk[3]),
+	.data4(pixel_chunk[4]),
+	.data5(pixel_chunk[5]),
+	.data6(pixel_chunk[6]),
+	.data7(pixel_chunk[7]),
+	.data8(pixel_chunk[8]),
+	.data9(pixel_chunk[9]),
+	.data10(pixel_chunk[10]),
+	.data11(pixel_chunk[11]),
+	.data12(pixel_chunk[12]),
+	.data13(pixel_chunk[13]),
+	.data14(pixel_chunk[14]),
+	.data15(pixel_chunk[15]),
+	.sel(gpu_mux_sel),
+	.result(color_out)
+);
+
+reg [15:0] pixel_chunk = 16'b1010010001001010;
+reg [23:0] next_addr = 24'b000000000000000000000001;
+wire [19:0] ram_addr_gpu;
+assign ram_addr_gpu = next_addr[23:4];
+wire [1:0] scaler_state;
+assign scaler_state = CounterX[1:0];
+always @(posedge pixel_clk) begin
+case(scaler_state)
+	2'h0: begin
+		
+		if (CounterY > 480) begin
+			next_addr <= 24'b000000000000000000000001;
+		end
+	end
+	2'h1: begin
+	
+		if (CounterY > 480) begin
+			next_addr <= 24'b000000000000000000000001;
+		end
+	end
+	2'h2: begin
+	
+		if (CounterY > 480) begin
+			next_addr <= 24'b000000000000000000000001;
+		end
+	end
+	2'h3: begin
+		attempt_color[0] = color_out;
+		attempt_color[1] = color_out;
+		attempt_color[2] = color_out;
+		if (inDisplayArea) begin
+			next_addr <= next_addr + 1;
+		end
+		if (CounterY > 480) begin
+			next_addr <= 24'b000000000000000000000001;
+		end
+	end
+endcase
+end
+
+reg [19:0] last_ram_addr_gpu;
+reg fill_buffer_state = 3'b000;
+always @(posedge pixel_clk) begin
+case(fill_buffer_state)
+	2'h0: begin
+		if (ram_addr_gpu != last_ram_addr_gpu) begin
+			last_ram_addr_gpu <= ram_addr_gpu;
+			fill_buffer_state <= fill_buffer_state + 1;
+			ram_addr_gpu_res <= ram_addr_gpu;
+		end
+	end
+	2'h1: begin
+			if (sdram_buffer_empty) begin
+				pixel_chunk <= data_output;
+				fill_buffer_state <= 0;
+			end
+	end
+
+endcase
+end
+
+reg [19:0] ram_addr_gpu_res;
+always @(posedge clk50)
+begin
+	if(inDisplayArea)
+	begin
+		sdram_buffer_addr_in <= ram_addr_gpu_res;
+	end
+	else
+	begin
+		sdram_buffer_addr_in <= ram_addr_cpu;
+	end
+end
+assign sdram_buffer_data_in = ram_in_cpu;
+assign sdram_buffer_rw_in = ram_we_cpu & (~inDisplayArea); // force to read only during display area time
 
 endmodule

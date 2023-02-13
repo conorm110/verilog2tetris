@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE6E22C8
 set_global_assignment -name TOP_LEVEL_ENTITY rzfpga_pc
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:49:33  APRIL 18, 2022"
-set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -80,7 +80,7 @@ set_location_assignment PIN_87 -to led[0]
 set_location_assignment PIN_86 -to led[1]
 set_location_assignment PIN_85 -to led[2]
 set_location_assignment PIN_84 -to led[3]
-set_location_assignment PIN_104 -to vga_c[0]
+set_location_assignment PIN_111 -to vga_c[0]
 set_location_assignment PIN_105 -to vga_c[1]
 set_location_assignment PIN_106 -to vga_c[2]
 set_location_assignment PIN_28 -to sd_dq[0]
@@ -169,4 +169,5 @@ set_global_assignment -name VERILOG_FILE 03/SDRAM/ram_manager.v
 set_global_assignment -name VERILOG_FILE 03/SDRAM/sdram.v
 set_global_assignment -name QIP_FILE "03/SDRAM/FIFO On Chip IP/sdram_buffer.qip"
 set_global_assignment -name QIP_FILE "03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.qip"
+set_global_assignment -name QIP_FILE 01/n2tmux16way.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

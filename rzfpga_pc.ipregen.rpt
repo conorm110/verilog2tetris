@@ -1,6 +1,6 @@
 IP Upgrade report for rzfpga_pc
-Wed Aug  3 23:55:46 2022
-Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Sun Dec 11 14:43:00 2022
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -8,14 +8,15 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 ---------------------
   1. Legal Notice
   2. IP Upgrade Summary
-  3. IP Upgrade Messages
+  3. Successfully Upgraded IP Components
+  4. IP Upgrade Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2021  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -32,25 +33,45 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------+
-; IP Upgrade Summary                                                         ;
-+------------------------------+---------------------------------------------+
-; IP Components Upgrade Status ; Failed - Wed Aug  3 23:55:46 2022           ;
-; Quartus Prime Version        ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
-; Revision Name                ; rzfpga_pc                                   ;
-; Top-level Entity Name        ; rzfpga_pc                                   ;
-; Family                       ; Cyclone IV E                                ;
-+------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; IP Upgrade Summary                                                            ;
++------------------------------+------------------------------------------------+
+; IP Components Upgrade Status ; Passed - Sun Dec 11 14:43:00 2022              ;
+; Quartus Prime Version        ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                ; rzfpga_pc                                      ;
+; Top-level Entity Name        ; rzfpga_pc                                      ;
+; Family                       ; Cyclone IV E                                   ;
++------------------------------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Successfully Upgraded IP Components                                                                                                                                                                                  ;
++--------------+----------------+---------+------------------------------------------------------+----------------------------------------------------+------------------------------------------------------+---------+
+; Entity Name  ; Component Name ; Version ; Original Source File                                 ; Generation File Path                               ; New Source File                                      ; Message ;
++--------------+----------------+---------+------------------------------------------------------+----------------------------------------------------+------------------------------------------------------+---------+
+; clk_7seg     ; ALTPLL         ; 21.1    ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.qip        ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v        ; 7 Seg Display/7 Seg Clock Gen IP/clk_7seg.qip        ;         ;
+; sdram_buffer ; FIFO           ; 21.1    ; 03/SDRAM/FIFO On Chip IP/sdram_buffer.qip            ; 03/SDRAM/FIFO On Chip IP/sdram_buffer.v            ; 03/SDRAM/FIFO On Chip IP/sdram_buffer.qip            ;         ;
+; sdram_clkgen ; ALTPLL         ; 21.1    ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.qip ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v ; 03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.qip ;         ;
++--------------+----------------+---------+------------------------------------------------------+----------------------------------------------------+------------------------------------------------------+---------+
 
 
 +---------------------+
 ; IP Upgrade Messages ;
 +---------------------+
-Info (23030): Evaluation of Tcl script c:/intelfpga_lite/21.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
+Info (11902): Backing up file "7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v" to "7 Seg Display/7 Seg Clock Gen IP/clk_7seg.BAK.v"
+Info (11837): Started upgrading IP component ALTPLL with file "7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v"
+Info (11902): Backing up file "03/SDRAM/FIFO On Chip IP/sdram_buffer.v" to "03/SDRAM/FIFO On Chip IP/sdram_buffer.BAK.v"
+Info (11837): Started upgrading IP component FIFO with file "03/SDRAM/FIFO On Chip IP/sdram_buffer.v"
+Info (11902): Backing up file "03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v" to "03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.BAK.v"
+Info (11837): Started upgrading IP component ALTPLL with file "03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v"
+Info (11131): Completed upgrading IP component ALTPLL with file "7 Seg Display/7 Seg Clock Gen IP/clk_7seg.v"
+Info (11131): Completed upgrading IP component FIFO with file "03/SDRAM/FIFO On Chip IP/sdram_buffer.v"
+Info (11131): Completed upgrading IP component ALTPLL with file "03/SDRAM/ALTPLL 100MHz Clock Gen IP/sdram_clkgen.v"
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/22.1std/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Wed Aug  3 23:55:46 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Sun Dec 11 14:43:00 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:22
 
 

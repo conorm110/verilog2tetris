@@ -21,11 +21,12 @@ module hvsync_generator(
     output reg inDisplayArea,
     output reg [9:0] CounterX,
     output reg [9:0] CounterY,
+	 output reg pixel_clk,
 	 output reg [19:0] loc
   );
 
 // Take 50 MHz clock and divide it in half to make a 25Mhz pixel clock
-reg pixel_clk;
+
 localparam div_value = 0;
 integer counter_value = 0;
 always@ (posedge clk50)
