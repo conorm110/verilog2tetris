@@ -1,0 +1,1 @@
+ROM is emulated by array in ROM_small Verilog module. "fill" and "mult" projects can be pasted into the default ROM_small. "template" contains template ROM_small.

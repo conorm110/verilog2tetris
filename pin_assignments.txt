@@ -1,0 +1,7 @@
+To, Assignment Name, Value
+clk_50, Location, PIN_23
+led[0], Location, PIN_87
+led[1], Location, PIN_86
+led[2], Location, PIN_85
+key, Location, PIN_88
+rst, Location, PIN_25

@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at rzfpga_pc.v(218): always construct contains both blocking and non-blocking assignments File: C:/Users/mjoco/OneDrive/Documents/GitHub/verilog2tetris/rzfpga_pc.v Line: 218

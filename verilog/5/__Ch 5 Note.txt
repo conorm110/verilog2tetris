@@ -1,0 +1,6 @@
+Chapter 5 Verilog Chips:
+CPU
+HackComputer (Computer.hdl in n2t)
+
+EXCLUDED:
+Memory - RAM_small from Ch 3 directly used & adjusted to fit FPGA

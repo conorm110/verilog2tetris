@@ -1,0 +1,15 @@
+Chapter 3 Verilog Chips
+PC
+RAM_small
+Register
+
+EXCLUDES:
+Bit
+RAM8
+RAM64
+RAM4K
+RAM16K
+RAM512
+
+NOTE:
+RAM implementation varies depending on board; RAM_small is a small enough that it should be able to be implemeted on any FPGA. RAM is not build from Register in this Verilog version.

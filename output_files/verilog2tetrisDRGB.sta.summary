@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_divider:_clk_divider|out'
+Slack : -15.010
+TNS   : -122.244
+
+Type  : Slow 1200mV 85C Model Setup 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -14.714
+TNS   : -363.008
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50'
+Slack : -4.337
+TNS   : -62.340
+
+Type  : Slow 1200mV 85C Model Hold 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : 0.020
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_divider:_clk_divider|out'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_divider:_clk_divider|out'
+Slack : -3.201
+TNS   : -46.778
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
+Slack : -3.000
+TNS   : -41.662
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -1.487
+TNS   : -47.584
+
+Type  : Slow 1200mV 0C Model Setup 'clk_divider:_clk_divider|out'
+Slack : -13.962
+TNS   : -113.133
+
+Type  : Slow 1200mV 0C Model Setup 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -13.768
+TNS   : -338.680
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50'
+Slack : -4.030
+TNS   : -54.955
+
+Type  : Slow 1200mV 0C Model Hold 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -0.027
+TNS   : -0.080
+
+Type  : Slow 1200mV 0C Model Hold 'clk_divider:_clk_divider|out'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_divider:_clk_divider|out'
+Slack : -3.201
+TNS   : -46.868
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
+Slack : -3.000
+TNS   : -41.662
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -1.487
+TNS   : -47.584
+
+Type  : Fast 1200mV 0C Model Setup 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -5.783
+TNS   : -135.056
+
+Type  : Fast 1200mV 0C Model Setup 'clk_divider:_clk_divider|out'
+Slack : -5.573
+TNS   : -37.337
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50'
+Slack : -1.283
+TNS   : -12.197
+
+Type  : Fast 1200mV 0C Model Hold 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : 0.176
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_divider:_clk_divider|out'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
+Slack : -3.000
+TNS   : -30.672
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'HackComputer:_HackComputer|ROM_small:_ROM_small|data[15]'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_divider:_clk_divider|out'
+Slack : -1.000
+TNS   : -28.000
+
+------------------------------------------------------------
