@@ -5,3 +5,10 @@ led[1], Location, PIN_86
 led[2], Location, PIN_85
 key, Location, PIN_88
 rst, Location, PIN_25
+hsync, Location, PIN_101
+vsync, Location, PIN_103
+vga_c[0], Location, PIN_111
+vga_c[1], Location, PIN_105
+vga_c[2], Location, PIN_106
+ps_clk, Location, PIN_119
+ps_data, Location, PIN_120
