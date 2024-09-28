@@ -7,23 +7,24 @@ module ROM_small (
 reg [15:0] memory [0:15]; // 16x16-bit memory array
 
 initial begin
-    // Initialize memory with desired values
-    memory[0] = 16'h0000;
-    memory[1] = 16'hfdc8;
-    memory[2] = 16'hea87;
-    memory[3] = 16'he7d0;
-    memory[4] = 16'h0001;
-    memory[5] = 16'hea87;
-    memory[6] = 16'hea87;
-    memory[7] = 16'hea87;
-    memory[8] = 16'b1010_1010_0101_0101;
-    memory[9] = 16'b0101_0101_1010_1010;
-    memory[10] = 16'b1111_0000_0000_1111;
-    memory[11] = 16'b0000_1111_1111_0000;
-    memory[12] = 16'b1010_1111_0101_1110;
-    memory[13] = 16'b0101_0000_1010_0001;
-    memory[14] = 16'b1111_0101_0000_1010;
-    memory[15] = 16'b0000_1010_1111_0101;
+      // Initialize memory with desired values
+      memory[0] = 16'hea90;
+memory[1] = 16'he320;
+memory[2] = 16'hee88;
+memory[3] = 16'he7d0;
+memory[4] = 16'h0001;
+memory[5] = 16'hea87;
+memory[6] = 16'h0000;
+memory[7] = 16'h0000;
+memory[8] = 16'h0000;
+memory[9] = 16'h0000;
+memory[10] = 16'h0000;
+memory[11] = 16'h0000;
+memory[12] = 16'h0000;
+memory[13] = 16'h0000;
+memory[14] = 16'h0000;
+memory[15] = 16'h0000;
+
 end
 
 always @(posedge clock) begin
@@ -32,3 +33,88 @@ always @(posedge clock) begin
 end
 
 endmodule
+
+/**
+Alternate between incrementing R0 and R1 so that R0 only ever 
+	contains odd numbers and R1 only ever contains even numbers
+	
+memory[0] = 16'heaa0;
+memory[1] = 16'he7d0;
+memory[2] = 16'he308;
+memory[3] = 16'hefe0;
+memory[4] = 16'he7d0;
+memory[5] = 16'he308;
+memory[6] = 16'hea90;
+memory[7] = 16'hfc10;
+memory[8] = 16'h0000;
+memory[9] = 16'hea87;
+memory[10] = 16'h0000;
+memory[11] = 16'h0000;
+memory[12] = 16'h0000;
+memory[13] = 16'h0000;
+memory[14] = 16'h0000;
+memory[15] = 16'h0000;
+**/
+
+/**
+Increment R0 using M=M+1 and 0;JMP for basic test
+memory[0] = 16'heaa0;
+memory[1] = 16'hfdc8;
+memory[2] = 16'hea87;
+memory[3] = 16'h0000;
+memory[4] = 16'h0000;
+memory[5] = 16'h0000;
+memory[6] = 16'h0000;
+memory[7] = 16'h0000;
+memory[8] = 16'h0000;
+memory[9] = 16'h0000;
+memory[10] = 16'h0000;
+memory[11] = 16'h0000;
+memory[12] = 16'h0000;
+memory[13] = 16'h0000;
+memory[14] = 16'h0000;
+memory[15] = 16'h0000;
+**/
+
+/**
+Starting with A=0, set each word in memory to contain its
+	address plus one
+	
+memory[0] = 16'hea90;
+memory[1] = 16'he320;
+memory[2] = 16'he7d0;
+memory[3] = 16'he308;
+memory[4] = 16'hefe0;
+memory[5] = 16'hea87;
+memory[6] = 16'h0000;
+memory[7] = 16'h0000;
+memory[8] = 16'h0000;
+memory[9] = 16'h0000;
+memory[10] = 16'h0000;
+memory[11] = 16'h0000;
+memory[12] = 16'h0000;
+memory[13] = 16'h0000;
+memory[14] = 16'h0000;
+memory[15] = 16'h0000;
+**/
+
+/** 
+Fill every memory address with -1
+memory[0] = 16'hea90;
+memory[1] = 16'he320;
+memory[2] = 16'hee88;
+memory[3] = 16'he7d0;
+memory[4] = 16'h0001;
+memory[5] = 16'hea87;
+memory[6] = 16'h0000;
+memory[7] = 16'h0000;
+memory[8] = 16'h0000;
+memory[9] = 16'h0000;
+memory[10] = 16'h0000;
+memory[11] = 16'h0000;
+memory[12] = 16'h0000;
+memory[13] = 16'h0000;
+memory[14] = 16'h0000;
+memory[15] = 16'h0000;
+
+**/

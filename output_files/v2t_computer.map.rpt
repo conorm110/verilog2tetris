@@ -1,0 +1,622 @@
+Analysis & Synthesis report for v2t_computer
+Sat Sep 28 17:19:58 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "RAM_small:_RAM_small"
+ 13. Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_15"
+ 14. Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_0"
+ 15. Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_1"
+ 16. Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_0"
+ 17. Port Connectivity Checks: "CPU:_CPU"
+ 18. Port Connectivity Checks: "hvsync_generator:U_hvsync_generator"
+ 19. Port Connectivity Checks: "keyboard:keyboard_u"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Sep 28 17:19:58 2024       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; v2t_computer                                ;
+; Top-level Entity Name              ; v2t_computer                                ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 5,930                                       ;
+;     Total combinational functions  ; 5,920                                       ;
+;     Dedicated logic registers      ; 2,232                                       ;
+; Total registers                    ; 2232                                        ;
+; Total pins                         ; 17                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                            ; v2t_computer       ; v2t_computer       ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-12        ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+; verilog/clk_divider.v            ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/clk_divider.v          ;         ;
+; verilog/5/CPU.v                  ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/5/CPU.v                ;         ;
+; verilog/4/ROM_small.v            ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/4/ROM_small.v          ;         ;
+; verilog/3/RAM_small.v            ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/3/RAM_small.v          ;         ;
+; verilog/2/HalfAdder.v            ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/HalfAdder.v          ;         ;
+; verilog/2/FullAdder.v            ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/FullAdder.v          ;         ;
+; verilog/2/ALU.v                  ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v                ;         ;
+; verilog/2/Add16.v                ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/Add16.v              ;         ;
+; verilog/1/Or8Way.v               ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Or8Way.v             ;         ;
+; verilog/1/Not16.v                ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Not16.v              ;         ;
+; verilog/1/Mux16Way.v             ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux16Way.v           ;         ;
+; verilog/1/Mux16.v                ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux16.v              ;         ;
+; verilog/1/And16.v                ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/And16.v              ;         ;
+; verilog/VGA/hvsync_generator.v   ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/VGA/hvsync_generator.v ;         ;
+; verilog/v2t_computer.v           ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v         ;         ;
+; verilog/Keyboard/Keyboard.v      ; yes             ; User Verilog HDL File  ; C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v    ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 5,930       ;
+;                                             ;             ;
+; Total combinational functions               ; 5920        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 3655        ;
+;     -- 3 input functions                    ; 2107        ;
+;     -- <=2 input functions                  ; 158         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 5833        ;
+;     -- arithmetic mode                      ; 87          ;
+;                                             ;             ;
+; Total registers                             ; 2232        ;
+;     -- Dedicated logic registers            ; 2232        ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 17          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk_i~input ;
+; Maximum fan-out                             ; 2161        ;
+; Total fan-out                               ; 25881       ;
+; Average fan-out                             ; 3.16        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name      ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+------------------+--------------+
+; |v2t_computer                            ; 5920 (1)            ; 2232 (7)                  ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |v2t_computer                                                                               ; v2t_computer     ; work         ;
+;    |CPU:_CPU|                            ; 124 (43)            ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU                                                                      ; CPU              ; work         ;
+;       |ALU:ALU_0|                        ; 81 (1)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0                                                            ; ALU              ; work         ;
+;          |Add16:_Add16|                  ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16                                               ; Add16            ; work         ;
+;             |FullAdder:_FullAdder_0|     ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_0                        ; FullAdder        ; work         ;
+;                |HalfAdder:_HalfAdder_A|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_0|HalfAdder:_HalfAdder_A ; HalfAdder        ; work         ;
+;             |FullAdder:_FullAdder_10|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_10                       ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_11|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_11                       ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_12|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_12                       ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_13|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_13                       ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_1|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_1                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_2|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_2                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_3|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_3                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_4|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_4                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_5|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_5                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_6|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_6                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_7|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_7                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_8|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_8                        ; FullAdder        ; work         ;
+;             |FullAdder:_FullAdder_9|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_9                        ; FullAdder        ; work         ;
+;          |Mux16:_Mux16_1|                ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_1                                             ; Mux16            ; work         ;
+;          |Mux16:_Mux16_5|                ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_5                                             ; Mux16            ; work         ;
+;          |Mux16:_Mux_16_2|               ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux_16_2                                            ; Mux16            ; work         ;
+;          |Mux16:_Mux_16_3|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux_16_3                                            ; Mux16            ; work         ;
+;    |Mux16Way:Mux16Way_vga_color_select|  ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|Mux16Way:Mux16Way_vga_color_select                                            ; Mux16Way         ; work         ;
+;    |RAM_small:_RAM_small|                ; 5626 (5626)         ; 2084 (2084)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|RAM_small:_RAM_small                                                          ; RAM_small        ; work         ;
+;    |ROM_small:_ROM_small|                ; 11 (11)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|ROM_small:_ROM_small                                                          ; ROM_small        ; work         ;
+;    |clk_divider:_clk_divider|            ; 46 (46)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|clk_divider:_clk_divider                                                      ; clk_divider      ; work         ;
+;    |hvsync_generator:U_hvsync_generator| ; 102 (102)           ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |v2t_computer|hvsync_generator:U_hvsync_generator                                           ; hvsync_generator ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                    ;
++-----------------------------------------------------------+-------------------------------------------+
+; Register name                                             ; Reason for Removal                        ;
++-----------------------------------------------------------+-------------------------------------------+
+; ROM_small:_ROM_small|data[12]                             ; Stuck at GND due to stuck port data_in    ;
+; CPU:_CPU|inM_buf[15]                                      ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[15]                      ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[14]                                      ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[14]                      ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[13]                                      ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[13]                      ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[12]                                      ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[12]                      ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[11]                                      ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[11]                      ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[10]                                      ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[10]                      ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[9]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[9]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[8]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[8]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[7]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[7]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[6]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[6]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[5]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[5]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[4]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[4]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[3]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[3]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[2]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[2]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[1]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[1]                       ; Lost fanout                               ;
+; CPU:_CPU|inM_buf[0]                                       ; Lost fanout                               ;
+; RAM_small:_RAM_small|dout_PORT_A[0]                       ; Lost fanout                               ;
+; ROM_small:_ROM_small|data[9,14,15]                        ; Merged with ROM_small:_ROM_small|data[13] ;
+; ROM_small:_ROM_small|data[2]                              ; Merged with ROM_small:_ROM_small|data[1]  ;
+; hvsync_generator:U_hvsync_generator|pixel_counter[12..15] ; Lost fanout                               ;
+; CPU:_CPU|pc[4..15]                                        ; Lost fanout                               ;
+; Total Number of Removed Registers = 53                    ;                                           ;
++-----------------------------------------------------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                   ;
++-------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name                 ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++-------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; ROM_small:_ROM_small|data[12] ; Stuck at GND              ; CPU:_CPU|inM_buf[15], RAM_small:_RAM_small|dout_PORT_A[15], CPU:_CPU|inM_buf[14], ;
+;                               ; due to stuck port data_in ; RAM_small:_RAM_small|dout_PORT_A[14], CPU:_CPU|inM_buf[13],                       ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[13], CPU:_CPU|inM_buf[12],                       ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[12], CPU:_CPU|inM_buf[11],                       ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[11], CPU:_CPU|inM_buf[10],                       ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[10], CPU:_CPU|inM_buf[9],                        ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[9], CPU:_CPU|inM_buf[8],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[8], CPU:_CPU|inM_buf[7],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[7], CPU:_CPU|inM_buf[6],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[6], CPU:_CPU|inM_buf[5],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[5], CPU:_CPU|inM_buf[4],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[4], CPU:_CPU|inM_buf[3],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[3], CPU:_CPU|inM_buf[2],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[2], CPU:_CPU|inM_buf[1],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[1], CPU:_CPU|inM_buf[0],                         ;
+;                               ;                           ; RAM_small:_RAM_small|dout_PORT_A[0]                                               ;
++-------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2232  ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 70    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |v2t_computer|hvsync_generator:U_hvsync_generator|pixel_counter[3] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |v2t_computer|CPU:_CPU|regD[3]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |v2t_computer|CPU:_CPU|pc[4]                                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |v2t_computer|CPU:_CPU|regA[15]                                    ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |v2t_computer|CPU:_CPU|regA[0]                                     ;
+; 129:1              ; 16 bits   ; 1376 LEs      ; 1376 LEs             ; 0 LEs                  ; Yes        ; |v2t_computer|RAM_small:_RAM_small|dout_PORT_B[9]                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux_16_3|out[15]           ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux_16_2|out[3]            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |v2t_computer|CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_5|out[15]            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RAM_small:_RAM_small"                                                                                                                                                                    ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ain_PORT_A ; Input  ; Warning  ; Input port expression (15 bits) is wider than the input port (12 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; r0[15..4]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_15"                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_0" ;
++------+-------+----------+----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                  ;
++------+-------+----------+----------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                             ;
++------+-------+----------+----------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_1" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_0" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:_CPU"                                                                                                                                   ;
++------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                                                                         ;
++------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+; addressM         ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (15 bits) it drives; bit(s) "addressM[15..15]" have no fanouts ;
+; addressM[14..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                             ;
+; pc               ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (15 bits) it drives; bit(s) "pc[15..15]" have no fanouts       ;
+; pc[14..4]        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                             ;
+; a_reg_debug      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                             ;
+; d_reg_debug      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                             ;
++------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsync_generator:U_hvsync_generator"                                                                                ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; counter_x       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; counter_y       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; pixel_clk       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; in_display_area ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keyboard:keyboard_u"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; LED  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 2232                        ;
+;     ENA               ; 28                          ;
+;     ENA SCLR          ; 26                          ;
+;     ENA SLD           ; 16                          ;
+;     SCLR SLD          ; 4                           ;
+;     plain             ; 2158                        ;
+; cycloneiii_lcell_comb ; 5926                        ;
+;     arith             ; 87                          ;
+;         2 data inputs ; 87                          ;
+;     normal            ; 5839                        ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 65                          ;
+;         3 data inputs ; 2107                        ;
+;         4 data inputs ; 3655                        ;
+;                       ;                             ;
+; Max LUT depth         ; 25.00                       ;
+; Average LUT depth     ; 11.74                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:20     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat Sep 28 17:19:31 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off v2t_computer -c v2t_computer
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/clk_divider.v
+    Info (12023): Found entity 1: clk_divider File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/clk_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/5/hackcomputer.v
+    Info (12023): Found entity 1: HackComputer File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/5/HackComputer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/5/cpu.v
+    Info (12023): Found entity 1: CPU File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/5/CPU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/4/rom_small.v
+    Info (12023): Found entity 1: ROM_small File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/4/ROM_small.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/3/register.v
+    Info (12023): Found entity 1: Register File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/3/Register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/3/ram_small.v
+    Info (12023): Found entity 1: RAM_small File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/3/RAM_small.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/3/pc.v
+    Info (12023): Found entity 1: PC File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/3/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/2/inc16.v
+    Info (12023): Found entity 1: Inc16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/Inc16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/2/halfadder.v
+    Info (12023): Found entity 1: HalfAdder File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/HalfAdder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/2/fulladder.v
+    Info (12023): Found entity 1: FullAdder File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/FullAdder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/2/alu.v
+    Info (12023): Found entity 1: ALU File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/2/add16.v
+    Info (12023): Found entity 1: Add16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/Add16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/or16.v
+    Info (12023): Found entity 1: Or16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Or16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/or8way.v
+    Info (12023): Found entity 1: Or8Way File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Or8Way.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/not16.v
+    Info (12023): Found entity 1: Not16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Not16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/mux16way.v
+    Info (12023): Found entity 1: Mux16Way File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux16Way.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/mux16.v
+    Info (12023): Found entity 1: Mux16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/mux8way16.v
+    Info (12023): Found entity 1: Mux8Way16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux8Way16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/mux4way16.v
+    Info (12023): Found entity 1: Mux4Way16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux4Way16.v Line: 1
+Warning (12090): Entity "Mux" obtained from "verilog/1/Mux.v" instead of from Quartus Prime megafunction library File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/mux.v
+    Info (12023): Found entity 1: Mux File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/Mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/dmux8way.v
+    Info (12023): Found entity 1: DMux8Way File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/DMux8Way.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/dmux4way.v
+    Info (12023): Found entity 1: DMux4Way File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/DMux4Way.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/dmux.v
+    Info (12023): Found entity 1: DMux File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/DMux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/1/and16.v
+    Info (12023): Found entity 1: And16 File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/1/And16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/vga/hvsync_generator.v
+    Info (12023): Found entity 1: hvsync_generator File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/VGA/hvsync_generator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/v2t_computer.v
+    Info (12023): Found entity 1: v2t_computer File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file verilog/keyboard/keyboard.v
+    Info (12023): Found entity 1: keyboard File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v Line: 23
+Info (12127): Elaborating entity "v2t_computer" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at v2t_computer.v(33): object "key_i" assigned a value but never read File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 33
+Info (12128): Elaborating entity "keyboard" for hierarchy "keyboard:keyboard_u" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 21
+Warning (10230): Verilog HDL assignment warning at Keyboard.v(67): truncated value with size 32 to match size of target (8) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v Line: 67
+Warning (10230): Verilog HDL assignment warning at Keyboard.v(79): truncated value with size 32 to match size of target (12) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v Line: 79
+Warning (10230): Verilog HDL assignment warning at Keyboard.v(93): truncated value with size 32 to match size of target (4) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v Line: 93
+Warning (10230): Verilog HDL assignment warning at Keyboard.v(140): truncated value with size 32 to match size of target (8) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v Line: 140
+Warning (10230): Verilog HDL assignment warning at Keyboard.v(142): truncated value with size 32 to match size of target (8) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/Keyboard/Keyboard.v Line: 142
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:U_hvsync_generator" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 63
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(40): truncated value with size 32 to match size of target (10) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/VGA/hvsync_generator.v Line: 40
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(48): truncated value with size 32 to match size of target (10) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/VGA/hvsync_generator.v Line: 48
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(59): truncated value with size 32 to match size of target (16) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/VGA/hvsync_generator.v Line: 59
+Info (12128): Elaborating entity "Mux16Way" for hierarchy "Mux16Way:Mux16Way_vga_color_select" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 70
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:_clk_divider" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 94
+Warning (10230): Verilog HDL assignment warning at clk_divider.v(13): truncated value with size 32 to match size of target (25) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/clk_divider.v Line: 13
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:_CPU" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 117
+Warning (10230): Verilog HDL assignment warning at CPU.v(63): truncated value with size 32 to match size of target (16) File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/5/CPU.v Line: 63
+Info (12128): Elaborating entity "ALU" for hierarchy "CPU:_CPU|ALU:ALU_0" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/5/CPU.v Line: 53
+Info (12128): Elaborating entity "Mux16" for hierarchy "CPU:_CPU|ALU:ALU_0|Mux16:_Mux16_0" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v Line: 22
+Info (12128): Elaborating entity "Not16" for hierarchy "CPU:_CPU|ALU:ALU_0|Not16:_Not16_0" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v Line: 37
+Info (12128): Elaborating entity "Add16" for hierarchy "CPU:_CPU|ALU:ALU_0|Add16:_Add16" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v Line: 67
+Info (12128): Elaborating entity "FullAdder" for hierarchy "CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_0" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/Add16.v Line: 16
+Info (12128): Elaborating entity "HalfAdder" for hierarchy "CPU:_CPU|ALU:ALU_0|Add16:_Add16|FullAdder:_FullAdder_0|HalfAdder:_HalfAdder_A" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/FullAdder.v Line: 15
+Info (12128): Elaborating entity "And16" for hierarchy "CPU:_CPU|ALU:ALU_0|And16:_And16" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v Line: 74
+Info (12128): Elaborating entity "Or8Way" for hierarchy "CPU:_CPU|ALU:ALU_0|Or8Way:_Or8Way_0" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/2/ALU.v Line: 113
+Info (12128): Elaborating entity "ROM_small" for hierarchy "ROM_small:_ROM_small" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 126
+Warning (10030): Net "memory.data_a" at ROM_small.v(7) has no driver or initial value, using a default initial value '0' File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/4/ROM_small.v Line: 7
+Warning (10030): Net "memory.waddr_a" at ROM_small.v(7) has no driver or initial value, using a default initial value '0' File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/4/ROM_small.v Line: 7
+Warning (10030): Net "memory.we_a" at ROM_small.v(7) has no driver or initial value, using a default initial value '0' File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/4/ROM_small.v Line: 7
+Info (12128): Elaborating entity "RAM_small" for hierarchy "RAM_small:_RAM_small" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 145
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "ROM_small:_ROM_small|memory" is uninferred due to inappropriate RAM size File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/4/ROM_small.v Line: 7
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 48 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/output_files/v2t_computer.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key[0]" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 3
+    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 3
+    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 3
+    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 3
+    Warning (15610): No output dependent on input pin "ps_clk" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 5
+    Warning (15610): No output dependent on input pin "ps_data" File: C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/verilog/v2t_computer.v Line: 6
+Info (21057): Implemented 5948 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 5931 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Sat Sep 28 17:19:58 2024
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:37
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/cjmik/OneDrive/Documents/GitHub/verilog2tetris/output_files/v2t_computer.map.smsg.
+
+

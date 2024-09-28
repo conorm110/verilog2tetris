@@ -1,0 +1,32 @@
+module v2t_computer (
+	input clk_i,
+	input [3:0] key,
+	input rst,
+	input ps_clk,
+	input ps_data,
+	
+	output reg [3:0] led,
+	
+	output vsync,
+	output hsync,
+	output reg [2:0] vga_c
+);
+
+wire [9:0] counter_x;
+wire [9:0] counter_y;
+wire vga_display_active;
+hvsync_generator U_hvsync_generator (
+	.clk50(clk_i),
+	.vsync(vsync),
+	.hsync(hsync),
+	.in_display_area(vga_display_active),
+	.counter_x(counter_x),
+	.counter_y(counter_y)
+);
+
+always @(posedge clk_i) begin
+	if (vga_display_active == 1'b1) vga_c <= 3'b101;
+	else                            vga_c <= 3'b000;
+end
+
+endmodule 

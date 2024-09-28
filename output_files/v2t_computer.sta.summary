@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_i'
+Slack : -15.000
+TNS   : -17427.694
+
+Type  : Slow 1200mV 85C Model Setup 'clk_divider:_clk_divider|out'
+Slack : -11.077
+TNS   : -278.720
+
+Type  : Slow 1200mV 85C Model Setup 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : -3.157
+TNS   : -81.172
+
+Type  : Slow 1200mV 85C Model Hold 'clk_i'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_divider:_clk_divider|out'
+Slack : 0.599
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_i'
+Slack : -3.000
+TNS   : -3216.407
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_divider:_clk_divider|out'
+Slack : -1.487
+TNS   : -53.532
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : -1.487
+TNS   : -52.045
+
+Type  : Slow 1200mV 0C Model Setup 'clk_i'
+Slack : -14.110
+TNS   : -16456.044
+
+Type  : Slow 1200mV 0C Model Setup 'clk_divider:_clk_divider|out'
+Slack : -10.400
+TNS   : -262.960
+
+Type  : Slow 1200mV 0C Model Setup 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : -2.876
+TNS   : -72.498
+
+Type  : Slow 1200mV 0C Model Hold 'clk_i'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_divider:_clk_divider|out'
+Slack : 0.494
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_i'
+Slack : -3.000
+TNS   : -3216.407
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_divider:_clk_divider|out'
+Slack : -1.487
+TNS   : -53.532
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : -1.487
+TNS   : -52.045
+
+Type  : Fast 1200mV 0C Model Setup 'clk_i'
+Slack : -5.976
+TNS   : -6630.305
+
+Type  : Fast 1200mV 0C Model Setup 'clk_divider:_clk_divider|out'
+Slack : -4.250
+TNS   : -103.844
+
+Type  : Fast 1200mV 0C Model Setup 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : -0.758
+TNS   : -14.636
+
+Type  : Fast 1200mV 0C Model Hold 'clk_i'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_divider:_clk_divider|out'
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_i'
+Slack : -3.000
+TNS   : -2306.930
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_divider:_clk_divider|out'
+Slack : -1.000
+TNS   : -36.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'hvsync_generator:U_hvsync_generator|pixel_clk'
+Slack : -1.000
+TNS   : -35.000
+
+------------------------------------------------------------

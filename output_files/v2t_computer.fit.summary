@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Sep 28 17:20:21 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : v2t_computer
+Top-level Entity Name : v2t_computer
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 5,930 / 6,272 ( 95 % )
+    Total combinational functions : 5,920 / 6,272 ( 94 % )
+    Dedicated logic registers : 2,232 / 6,272 ( 36 % )
+Total registers : 2232
+Total pins : 17 / 92 ( 18 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
